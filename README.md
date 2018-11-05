@@ -7,5 +7,9 @@ JS utilities used by Vinder Media Engineering
 
 # Install
 ```
+$ yarn add @vinder/vinderjs
+```
+Or
+```
 $ npm install @vinder/vinderjs
 ```
