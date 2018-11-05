@@ -18,7 +18,7 @@
     "webpack-dev": "webpack --watch --progress --color",
     "webpack-prod": "NODE_ENV=production webpack --watch --progress --color",
     "build": "yarn webpack-prod",
-    "prepublish": "yarn build"
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "react": "^16.6.0"
