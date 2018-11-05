@@ -1,0 +1,18 @@
+// Required here instead of webpack config file in order for tests to run
+// See -> http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/
+// We can Stop Babel from compiling ES2015 modules, BUT it breaks our tests
+// Revisit this later to see if we can optimise.
+//
+// "@babel/preset-stage-0" has been removed by Babel.
+// See -> https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties", { loose: false }],
+    "@babel/plugin-transform-object-assign",
+    "@babel/plugin-syntax-dynamic-import",
+  ]
+}

@@ -13,5 +13,35 @@
     "Bootstrap",
     "reactsrap"
   ],
-  "author": "Herman Pretorius (https://github.com/sizeight)"
+  "author": "Herman Pretorius (https://github.com/sizeight)",
+  "scripts": {
+    "webpack-dev": "webpack --watch --progress --color",
+    "webpack-prod": "NODE_ENV=production webpack --watch --progress --color",
+    "build": "yarn webpack-prod",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {
+    "react": "^16.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "webpack": "^4.25.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2"
+  }
 }
