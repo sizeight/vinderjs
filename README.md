@@ -4,3 +4,8 @@
 
 # @vinder/vinderjs
 JS utilities used by Vinder Media Engineering
+
+# Install
+```
+$ npm install @viner/vinderjs
+```
