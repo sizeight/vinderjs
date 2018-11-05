@@ -1,4 +1,17 @@
 {
   "name": "@vinder/vinderjs",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "description": "JS utilities used by Vinder Media Engineering",
+  "license": "MIT",
+  "repository": "sizeight/vinderjs",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "redux",
+    "formik",
+    "FontAwesome",
+    "Bootstrap",
+    "reactsrap"
+  ],
+  "author": "Herman Pretorius (https://github.com/sizeight)"
 }
