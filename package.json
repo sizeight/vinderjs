@@ -15,6 +15,8 @@
   ],
   "author": "Herman Pretorius (https://github.com/sizeight)",
   "scripts": {
+    "test": "mocha --require @babel/register --recursive $(find ./src/ -name '*.spec.js') --require ./src/setup.js",
+    "test:watch": "NODE_PATH=./src/ API_URL='http://127.0.0.1:8000' npm run test -- --watch",
     "webpack-dev": "webpack --watch --progress --color",
     "webpack-prod-analyse": "NODE_ENV=production ANALYSE=true webpack --watch --progress --color",
     "webpack-prod": "NODE_ENV=production webpack --progress --color",
@@ -49,7 +51,14 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "expect": "^23.6.0",
+    "jsdom": "^13.0.0",
+    "mocha": "^5.2.0",
+    "nock": "^10.0.2",
     "react": "^16.6.0",
+    "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.25.0",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2"
