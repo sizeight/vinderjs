@@ -1,3 +1,7 @@
+import AppIconFontAwesome from './components/AppIconFontAwesome';
 import Loading from './components/Loading';
 
-export { Loading };
+export {
+  AppIconFontAwesome,
+  Loading,
+};
