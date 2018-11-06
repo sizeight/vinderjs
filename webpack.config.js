@@ -33,6 +33,7 @@ module.exports = {
   output: {
     path: buildPath,
     filename: isProduction ? 'vinderjs.min.js' : 'vinderjs.js',
+    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [
