@@ -4,8 +4,7 @@
   "description": "JS utilities used by Vinder Media Engineering",
   "license": "MIT",
   "repository": "sizeight/vinderjs",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
+  "main": "lib/vinderjs.min.js",
   "keywords": [
     "react",
     "redux",
