@@ -16,7 +16,7 @@ const mockStore = configureMockStore(middlewares);
 
 const nameSpace = 'websites'; // nameSpace used for testing
 
-describe(`actions -> ${nameSpace} (async)`, () => {
+describe('actions -> reduxBaseElem (async)', () => {
   afterEach(() => {
     nock.cleanAll();
   });
@@ -208,7 +208,7 @@ describe(`actions -> ${nameSpace} (async)`, () => {
 });
 
 
-describe('actions -> reduxActions', () => {
+describe('actions -> reduxBaseElem', () => {
   it('fetchBusy', () => {
     const expectedAction = {
       type: 'websites/FETCH_BUSY',

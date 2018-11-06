@@ -7,7 +7,7 @@ import {
 
 const nameSpace = 'posts';
 
-describe(`selectors -> state -> ${nameSpace}`, () => {
+describe('selectors -> reduxBaseElem', () => {
   it('getStateElems()', () => {
     const state = {
       posts: {

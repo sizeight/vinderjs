@@ -1,14 +1,12 @@
 import AppIconFontAwesome from './components/AppIconFontAwesome';
 import Loading from './components/Loading';
 
-import reduxActions from './reduxActions';
-import reduxSelectors from './reduxSelectors';
+import reduxBaseElem from './reduxBaseElem';
 import * as utils from './utils';
 
 export {
   AppIconFontAwesome,
   Loading,
-  reduxActions,
-  reduxSelectors,
+  reduxBaseElem,
   utils,
 };
