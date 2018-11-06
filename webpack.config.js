@@ -21,7 +21,7 @@ const plugins = [
   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 ];
 
-if (isProduction) {
+if (process.env.ANALYSE === 'true') {
   plugins.push(new BundleAnalyzerPlugin());
 }
 

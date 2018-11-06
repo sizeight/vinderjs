@@ -5,6 +5,7 @@
   "license": "MIT",
   "repository": "sizeight/vinderjs",
   "main": "lib/index.js",
+  "module": "lib/index.js",
   "keywords": [
     "react",
     "redux",
@@ -16,7 +17,8 @@
   "author": "Herman Pretorius (https://github.com/sizeight)",
   "scripts": {
     "webpack-dev": "webpack --watch --progress --color",
-    "webpack-prod": "NODE_ENV=production webpack --watch --progress --color",
+    "webpack-prod-analyse": "NODE_ENV=production ANALYSE=true webpack --watch --progress --color",
+    "webpack-prod": "NODE_ENV=production webpack --progress --color",
     "build": "yarn webpack-prod",
     "prepublishOnly": "yarn build"
   },
