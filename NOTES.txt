@@ -1,0 +1,16 @@
+Notes on NPMJS
+
+- First tutorial followed
+How to make a beautiful, tiny npm package and publish it
+https://medium.freecodecamp.org/how-to-make-a-beautiful-tiny-npm-package-and-publish-it-2881d4307f78
+
+- Found out I was missing output { libraryTarget: 'commonjs2' } in webpack config
+- Read about 'yarn link' to locally test package...
+Publish Your Own React Component as Npm Package Under 5 Minutes
+https://medium.com/quick-code/publish-your-own-react-component-as-npm-package-under-5-minutes-8a47f0cb92b9
+
+- React as peerDependency
+For reusable components:
+ - Put a react dependency in both peerDependencies and devDependencies.
+ -  Never put a react dependency in dependencies.
+https://stackoverflow.com/questions/30451556/what-is-the-correct-way-of-adding-a-dependency-to-react-in-your-package-json-for
