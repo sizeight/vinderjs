@@ -1,3 +1,4 @@
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -15,6 +16,18 @@ const plugins = [
       NODE_ENV: JSON.stringify(nodeEnv),
       API_URL: isProduction ?
         JSON.stringify('') : JSON.stringify('http://127.0.0.1:8000'),
+    },
+  }),
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      postcss: [
+        autoprefixer({
+          browsers: [
+            'last 1 version',
+            '> 10%',
+          ],
+        }),
+      ],
     },
   }),
   // Ignore all locale files of moment.js
