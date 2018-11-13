@@ -76,8 +76,8 @@ class CustomFormInputDateTime extends React.Component {
         showTimeSelect: true,
         timeFormat: 'HH:mm',
         timeIntervals: 15,
-        dateFormat: 'LLL',
         timeCaption: 'time',
+        dateFormat: 'DD MMM YYYY',
       } : null;
 
     return (
