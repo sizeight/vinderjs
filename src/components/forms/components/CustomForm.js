@@ -20,6 +20,9 @@ const CustomForm = (props) => {
       initialValues={props.initialValues}
       validationSchema={props.validationSchema}
       onSubmit={props.onSubmit}
+
+      validateOnBlur={false}
+      validateOnChange={false}
     >
       {props.children}
     </Formik>
