@@ -25,6 +25,7 @@ const DatePickerWrapper = styled.div`
 
 
 const propTypes = {
+  type: PropTypes.oneOf(['datetime', 'date']).isRequired,
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
   value: PropTypes.string,
@@ -36,6 +37,9 @@ const defaultProps = {
   required: false,
 };
 
+/*
+ * Render a datetime or a date only input field the react-datepicker.
+ */
 class CustomFormInputDateTime extends React.Component {
   /*
    * If a valid moment object is available, set the state to the string representation, otherwise
@@ -64,12 +68,24 @@ class CustomFormInputDateTime extends React.Component {
   }
 
   render() {
-    const { name, required, value } = this.props;
+    const { type, name, required, value } = this.props;
+
+    // datetime field needs extra props to display time picker
+    const showTime = type === 'datetime' ?
+      {
+        showTimeSelect: true,
+        timeFormat: 'HH:mm',
+        timeIntervals: 15,
+        dateFormat: 'LLL',
+        timeCaption: 'time',
+      } : null;
 
     return (
       <DatePickerWrapper>
         <DatePicker
-          type="datetime"
+          className="form-control-sm form-control" // Bootstrap 4
+
+          type={type}
           name={name}
           id={`id-${name}`}
           required={required}
@@ -78,18 +94,12 @@ class CustomFormInputDateTime extends React.Component {
           onChange={this.handleChange}
           onChangeRaw={this.handleRawChange}
 
-          showTimeSelect
-          timeFormat="HH:mm"
-          timeIntervals={15}
-          dateFormat="LLL"
-          timeCaption="time"
+          autoComplete="off"
+          todayButton="Today"
           isClearable
           clearButtonTitle="Clear"
           shouldCloseOnSelect
-
-          className="form-control-sm form-control"
-          autoComplete="off"
-          todayButton="Today"
+          {...showTime}
         />
       </DatePickerWrapper>
     );

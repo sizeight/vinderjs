@@ -142,7 +142,7 @@ const FormInputField = (props) => {
           label={value}
         />}
 
-      {type === 'datetime' &&
+      {(type === 'datetime' || type === 'date') &&
         <CustomFormInputDateTime
           {...props}
           value={value}
