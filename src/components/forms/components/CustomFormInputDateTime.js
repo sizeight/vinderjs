@@ -88,7 +88,7 @@ class CustomFormInputDateTime extends React.Component {
           shouldCloseOnSelect
 
           className="form-control-sm form-control"
-          autocomplete="off"
+          autoComplete="off"
           todayButton="Today"
         />
       </DatePickerWrapper>
