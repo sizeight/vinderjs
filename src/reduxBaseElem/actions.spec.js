@@ -100,6 +100,28 @@ describe('actions -> reduxBaseElem (async)', () => {
   });
 
 
+  it('fetchElems() -> camelCase nameSPace should be changes to lowercase in API call', () => {
+    const camelCaseNameSpace = 'subscriptionTerms';
+    const response = [
+      { id: 15 },
+      { id: 18 },
+    ];
+    nock(process.env.API_URL)
+      .get('/api/v1/subscriptionterms/')
+      .reply(200, response);
+
+    const expectedActions = [
+      { type: 'subscriptionTerms/FETCH_BUSY' },
+      { type: 'subscriptionTerms/FETCH_SUCCESS', elems: response },
+    ];
+    const store = mockStore({});
+    return store.dispatch(fetchElems(camelCaseNameSpace))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
+
   it('createUpdateElem() -> CREATE Success', () => {
     const data = { title: 'New website' };
     nock(process.env.API_URL)
@@ -172,6 +194,28 @@ describe('actions -> reduxBaseElem (async)', () => {
   });
 
 
+  it('createUpdateElem() -> camelCase nameSPace should be changes to lowercase in API call', () => {
+    const camelCaseNameSpace = 'subscriptionTerms';
+    const data = { title: 'New term' };
+    nock(process.env.API_URL)
+      .post('/api/v1/subscriptionterms/', data)
+      .reply(201, { id: 16 });
+
+    const expectedActions = [
+      {
+        type: 'subscriptionTerms/UPDATE_SUCCESS',
+        id: -1,
+        elem: { id: 16 },
+      },
+    ];
+    const store = mockStore({});
+    return store.dispatch(createUpdateElem(camelCaseNameSpace, data))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
+
   it('deleteElem() -> DELETE Success', () => {
     const id = 15;
     nock(process.env.API_URL)
@@ -201,6 +245,28 @@ describe('actions -> reduxBaseElem (async)', () => {
     const expectedActions = [];
     const store = mockStore({});
     return store.dispatch(deleteElem(nameSpace, 15))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+  });
+
+
+  it('deleteElem() -> camelCase nameSPace should be changes to lowercase in API call', () => {
+    const camelCaseNameSpace = 'subscriptionTerms';
+    const id = 15;
+    nock(process.env.API_URL)
+      .delete(`/api/v1/subscriptionterms/${id}/`)
+      .reply(204);
+
+    const expectedActions = [
+      {
+        type: 'subscriptionTerms/UPDATE_SUCCESS',
+        id: 15,
+        elem: undefined,
+      },
+    ];
+    const store = mockStore({});
+    return store.dispatch(deleteElem(camelCaseNameSpace, 15))
       .then(() => {
         expect(store.getActions()).toEqual(expectedActions);
       });

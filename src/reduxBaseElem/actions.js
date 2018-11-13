@@ -24,7 +24,7 @@ export const fetchFailure = nameSpace => ({
  * qeuryParams = e.g. ?page=12&slug=extra_content
  */
 export const fetchElems = (nameSpace, queryParams = '') => {
-  const apiURL = `${process.env.API_URL}/api/v1/${nameSpace}/${queryParams}`;
+  const apiURL = `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/${queryParams}`;
 
   return (dispatch) => {
     dispatch(fetchBusy(nameSpace));
@@ -65,8 +65,8 @@ export const updateSuccess = (nameSpace, id, jsonResponse) => ({
 
 export const createUpdateElem = (nameSpace, data, id = -1) => {
   const apiURL = id === -1 ?
-    `${process.env.API_URL}/api/v1/${nameSpace}/` :
-    `${process.env.API_URL}/api/v1/${nameSpace}/${id}/`;
+    `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/` :
+    `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/${id}/`;
   const method = id === -1 ? 'POST' : 'PATCH';
   const body = JSON.stringify(data);
 
@@ -96,7 +96,7 @@ export const createUpdateElem = (nameSpace, data, id = -1) => {
 };
 
 export const deleteElem = (nameSpace, id) => {
-  const apiURL = `${process.env.API_URL}/api/v1/${nameSpace}/${id}/`;
+  const apiURL = `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/${id}/`;
 
   return (dispatch) => {
     return fetch(apiURL, {
