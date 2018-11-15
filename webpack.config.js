@@ -96,21 +96,6 @@ module.exports = {
           limit: 8192,
         },
       }, // inline base64 URLs for <=8k images, direct URLs for the rest
-      /*
-      Font Awesome 4 uses the rest
-      */
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          minetype: 'application/font-woff',
-        },
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader',
-      },
     ],
   },
   plugins,
@@ -121,4 +106,46 @@ module.exports = {
       path.resolve(__dirname, './node_modules'),
     ],
   },
+  externals: [
+    {
+      'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: 'react-dom',
+        commonjs: 'react-dom',
+        amd: 'react-dom',
+      },
+    },
+    {
+      react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react',
+      },
+    },
+    {
+      'prop-types': {
+        root: 'prop-types',
+        commonjs2: 'prop-types',
+        commonjs: 'prop-types',
+        amd: 'prop-types',
+      },
+    },
+    {
+      moment: {
+        root: 'moment',
+        commonjs2: 'moment',
+        commonjs: 'moment',
+        amd: 'moment',
+      },
+    },
+    {
+      'isomorphic-fetch': {
+        root: 'isomorphic-fetch',
+        commonjs2: 'isomorphic-fetch',
+        commonjs: 'isomorphic-fetch',
+        amd: 'isomorphic-fetch',
+      },
+    },
+  ],
 };
