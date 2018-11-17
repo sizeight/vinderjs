@@ -5,6 +5,7 @@ export const initialState = {
   didInvalidate: false,
   lastUpdated: undefined,
   elems: [], // array of state objects
+  filterOnFields: [], // array of fields reducer should lowercase concat for each elem to filter on
 
   updateId: -1, // id for which to show update form
   filterValue: '',
@@ -22,7 +23,12 @@ export const elems = (nameSpace, state = initialState, action) => {
         isFetching: false,
         didInvalidate: false,
         lastUpdated: Date.now(),
-        elems: action.elems,
+        elems: action.elems.map((elem) => {
+          const filterString = state.filterOnFields.map(x => elem[x].toLowerCase()).join(' ');
+          return Object.assign({}, elem, {
+            filterString,
+          });
+        }),
       });
     case `${nameSpace}${t.FETCH_FAILURE}`:
       return Object.assign({}, state, {

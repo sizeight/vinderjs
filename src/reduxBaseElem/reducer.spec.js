@@ -15,6 +15,7 @@ describe('reducer -> reduxBaseElem', () => {
       didInvalidate: false,
       lastUpdated: undefined,
       elems: [],
+      filterOnFields: [],
       updateId: -1,
       filterValue: '',
     };
@@ -41,26 +42,42 @@ describe('reducer -> reduxBaseElem', () => {
       elems: [
         {
           id: 1,
+          title: 'Alpha',
+          sub_title: 'Charlie',
         },
         {
           id: 2,
+          title: 'Bravo',
+          sub_title: 'Delta',
         },
       ],
     };
     const stateBefore = {
       isFetching: true,
       didInvalidate: true,
+      lastUpdated: undefined,
+      filterOnFields: ['title', 'sub_title'],
     };
     const stateAfter = {
       isFetching: false,
       didInvalidate: false,
       lastUpdated: expect.any(Number), // Date.now(),
+      filterOnFields: [
+        'title',
+        'sub_title',
+      ],
       elems: [
         {
           id: 1,
+          title: 'Alpha',
+          sub_title: 'Charlie',
+          filterString: 'alpha charlie',
         },
         {
           id: 2,
+          title: 'Bravo',
+          sub_title: 'Delta',
+          filterString: 'bravo delta',
         },
       ],
     };
