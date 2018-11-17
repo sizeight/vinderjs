@@ -6,6 +6,7 @@ import { upToDate } from '../utils';
 
 export const getStateElems = (nameSpace, state) => state[nameSpace];
 export const getUpdateElemId = (nameSpace, state) => state[nameSpace].updateId;
+export const getFilterValue = (nameSpace, state) => state[nameSpace].filterValue;
 
 export const getElems = (stateElems) => {
   let elems = [];
