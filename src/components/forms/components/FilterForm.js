@@ -31,7 +31,7 @@ class FilterForm extends React.Component {
     const { value, placeHolderText } = this.props;
 
     return (
-      <form className="form-inline float-right">
+      <form className="form-inline flex-row-reverse">
         <div className="input-group mb-3">
           <input
             type="text"
