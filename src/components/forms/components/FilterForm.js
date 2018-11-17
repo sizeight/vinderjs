@@ -35,7 +35,7 @@ class FilterForm extends React.Component {
         <div className="input-group mb-3">
           <input
             type="text"
-            className="form-control"
+            className="form-control form-control-sm"
             value={value}
             placeholder={placeHolderText}
             onChange={this.handleChange}
@@ -44,8 +44,9 @@ class FilterForm extends React.Component {
             <Button
               outline={value === ''}
               color={value === '' ? 'secondary' : 'primary'}
-              onClick={this.handleClear}
               disabled={value === ''}
+              size="sm"
+              onClick={this.handleClear}
             >
               <AppIconFontAwesome
                 icon={['fal', 'times']}
