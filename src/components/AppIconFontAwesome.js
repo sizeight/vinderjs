@@ -365,10 +365,10 @@ import { faPlane as faPlaneSolid } from '@fortawesome/pro-solid-svg-icons/faPlan
 library.add(faPlaneLight, faPlane, faPlaneSolid);
 
 // plus
-import { faPlusCircle as falPlusCircle } from '@fortawesome/pro-light-svg-icons/faPlusCircle';
-import { faPlusCircle as farPlusCircle } from '@fortawesome/pro-regular-svg-icons/faPlusCircle';
-import { faPlusCircle as fasPlusCircle } from '@fortawesome/pro-solid-svg-icons/faPlusCircle';
-library.add(falPlusCircle, farPlusCircle, fasPlusCircle);
+import { faPlus as falPlus } from '@fortawesome/pro-light-svg-icons/faPlus';
+import { faPlus as farPlus } from '@fortawesome/pro-regular-svg-icons/faPlus';
+import { faPlus as fasPlus } from '@fortawesome/pro-solid-svg-icons/faPlus';
+library.add(falPlus, farPlus, fasPlus);
 
 // plus-circle
 import { faPlusCircle as faPlusCircleLight } from '@fortawesome/pro-light-svg-icons/faPlusCircle';
