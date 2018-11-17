@@ -364,6 +364,12 @@ import { faPlane } from '@fortawesome/pro-regular-svg-icons/faPlane';
 import { faPlane as faPlaneSolid } from '@fortawesome/pro-solid-svg-icons/faPlane';
 library.add(faPlaneLight, faPlane, faPlaneSolid);
 
+// plus
+import { faPlusCircle as falPlusCircle } from '@fortawesome/pro-light-svg-icons/faPlusCircle';
+import { faPlusCircle as farPlusCircle } from '@fortawesome/pro-regular-svg-icons/faPlusCircle';
+import { faPlusCircle as fasPlusCircle } from '@fortawesome/pro-solid-svg-icons/faPlusCircle';
+library.add(falPlusCircle, farPlusCircle, fasPlusCircle);
+
 // plus-circle
 import { faPlusCircle as faPlusCircleLight } from '@fortawesome/pro-light-svg-icons/faPlusCircle';
 import { faPlusCircle } from '@fortawesome/pro-regular-svg-icons/faPlusCircle';
