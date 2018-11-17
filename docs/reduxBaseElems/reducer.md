@@ -4,7 +4,7 @@ A reusable redux reducer for an array of objects.
 
 ## Usage example
 
-```
+```javascript
 import { reduxBaseElem } from '@vinder/vinderjs';
 
 const { initialState, elems } = reduxBaseElem.reducer;
