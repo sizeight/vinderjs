@@ -7,6 +7,7 @@ export const initialState = {
   elems: [], // array of state objects
 
   updateId: -1, // id for which to show update form
+  filterValue: '',
 };
 
 export const elems = (nameSpace, state = initialState, action) => {
@@ -62,6 +63,13 @@ export const elems = (nameSpace, state = initialState, action) => {
           action.elem,
           ...state.elems.slice(idx + 1),
         ],
+      });
+    }
+
+    case `${nameSpace}${t.SET_FILTER_VALUE}`: {
+      return Object.assign({}, state, {
+        ...state,
+        filterValue: action.value,
       });
     }
     default:

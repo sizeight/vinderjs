@@ -120,3 +120,10 @@ export const deleteElem = (nameSpace, id) => {
       );
   };
 };
+
+
+// Filtering
+export const setFilterValue = (nameSpace, value = '') => ({
+  type: `${nameSpace}${t.SET_FILTER_VALUE}`,
+  value,
+});

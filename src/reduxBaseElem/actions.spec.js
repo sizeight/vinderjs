@@ -6,7 +6,7 @@ import nock from 'nock';
 
 import {
   fetchBusy, fetchSuccess, fetchFailure, fetchElems,
-  setUpdateId, updateSuccess, createUpdateElem, deleteElem,
+  setUpdateId, updateSuccess, createUpdateElem, deleteElem, setFilterValue,
 } from './actions';
 
 
@@ -346,5 +346,23 @@ describe('actions -> reduxBaseElem', () => {
       elem: undefined,
     };
     expect(updateSuccess(nameSpace, id)).toEqual(expectedAction);
+  });
+
+
+  it('setFilterValue() -> Lorem ipsum', () => {
+    const value = 'Lorem ipsum';
+    const expectedAction = {
+      type: 'websites/SET_FILTER_VALUE',
+      value,
+    };
+    expect(setFilterValue(nameSpace, value)).toEqual(expectedAction);
+  });
+
+  it('setFilterValue() -> Clear with no value specified', () => {
+    const expectedAction = {
+      type: 'websites/SET_FILTER_VALUE',
+      value: '',
+    };
+    expect(setFilterValue(nameSpace)).toEqual(expectedAction);
   });
 });

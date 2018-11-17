@@ -16,6 +16,7 @@ describe('reducer -> reduxBaseElem', () => {
       lastUpdated: undefined,
       elems: [],
       updateId: -1,
+      filterValue: '',
     };
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
   });
@@ -214,6 +215,22 @@ describe('reducer -> reduxBaseElem', () => {
           id: 14,
         },
       ],
+    };
+    deepFreeze(stateBefore);
+    expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
+  });
+
+
+  it(`should handle ${nameSpace}/SET_FILTER_VALUE -> Lorem ipsum`, () => {
+    const action = {
+      type: 'websites/SET_FILTER_VALUE',
+      value: 'Lorem ipsum',
+    };
+    const stateBefore = {
+      filterValue: 'Lorem ipsu',
+    };
+    const stateAfter = {
+      filterValue: 'Lorem ipsum',
     };
     deepFreeze(stateBefore);
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
