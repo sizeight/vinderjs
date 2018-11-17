@@ -79,7 +79,7 @@ describe('selectors -> reduxBaseElem', () => {
 
 
   it('getElems() -> fetching complete', () => {
-    const elems = {
+    const stateElems = {
       isFetching: false,
       didInvalidate: false,
       lastUpdated: Date.now(),
@@ -100,7 +100,7 @@ describe('selectors -> reduxBaseElem', () => {
         id: 2,
       },
     ];
-    expect(getElems(elems)).toEqual(derivedData);
+    expect(getElems(stateElems)).toEqual(derivedData);
   });
 
 
@@ -160,27 +160,25 @@ describe('selectors -> reduxBaseElem', () => {
 
 
   it('getFilteredElems() -> fetching complete, filterValue = "Ha"', () => {
-    const state = {
-      posts: {
-        isFetching: false,
-        didInvalidate: false,
-        lastUpdated: Date.now(),
-        filterValue: 'ha',
-        elems: [
-          {
-            id: 1,
-            filterString: 'alpha',
-          },
-          {
-            id: 2,
-            filterString: 'bravo',
-          },
-          {
-            id: 3,
-            filterString: 'charlie',
-          },
-        ],
-      },
+    const stateElems = {
+      isFetching: false,
+      didInvalidate: false,
+      lastUpdated: Date.now(),
+      filterValue: 'ha',
+      elems: [
+        {
+          id: 1,
+          filterString: 'alpha',
+        },
+        {
+          id: 2,
+          filterString: 'bravo',
+        },
+        {
+          id: 3,
+          filterString: 'charlie',
+        },
+      ],
     };
     const derivedData = [
       {
@@ -192,57 +190,53 @@ describe('selectors -> reduxBaseElem', () => {
         filterString: 'charlie',
       },
     ];
-    expect(getFilteredElems(nameSpace, state)).toEqual(derivedData);
+    expect(getFilteredElems(stateElems)).toEqual(derivedData);
   });
 
   it('getFilteredElems() -> fetching complete, filterValue = ""', () => {
-    const state = {
-      posts: {
-        isFetching: false,
-        didInvalidate: false,
-        lastUpdated: Date.now(),
-        filterValue: '',
-        elems: [
-          {
-            id: 1,
-            filterString: 'alpha',
-          },
-          {
-            id: 2,
-            filterString: 'bravo',
-          },
-          {
-            id: 3,
-            filterString: 'charlie',
-          },
-        ],
-      },
+    const stateElems = {
+      isFetching: false,
+      didInvalidate: false,
+      lastUpdated: Date.now(),
+      filterValue: '',
+      elems: [
+        {
+          id: 1,
+          filterString: 'alpha',
+        },
+        {
+          id: 2,
+          filterString: 'bravo',
+        },
+        {
+          id: 3,
+          filterString: 'charlie',
+        },
+      ],
     };
     const derivedData = [];
-    expect(getFilteredElems(nameSpace, state)).toEqual(derivedData);
+    expect(getFilteredElems(stateElems)).toEqual(derivedData);
   });
 
   it('getFilteredElems() -> fetching complete, No filterString fields in reducer', () => {
-    const state = {
-      posts: {
-        isFetching: false,
-        didInvalidate: false,
-        lastUpdated: Date.now(),
-        filterValue: 'ha',
-        elems: [
-          {
-            id: 1,
-          },
-          {
-            id: 2,
-          },
-          {
-            id: 3,
-          },
-        ],
-      },
+    const stateElems = {
+      isFetching: false,
+      didInvalidate: false,
+      lastUpdated: Date.now(),
+      filterValue: 'ha',
+      elems: [
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+      ],
     };
     const derivedData = [];
-    expect(getFilteredElems(nameSpace, state)).toEqual(derivedData);
+    expect(getFilteredElems(stateElems)).toEqual(derivedData);
   });
 });

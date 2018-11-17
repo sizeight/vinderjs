@@ -26,12 +26,11 @@ export const getElemToUpdate = (updateId, elems) => {
 };
 
 /*
- * Return the elemnts that match the filter value.
+ * Return the elements that match the filter value.
  */
-export const getFilteredElems = (nameSpace, state) => {
+export const getFilteredElems = (stateElems) => {
   let filteredElems = [];
-  const stateElems = state[nameSpace];
-  const filterValue = state[nameSpace].filterValue;
+  const filterValue = stateElems.filterValue;
   if (upToDate(stateElems) && filterValue !== '') {
     filteredElems = stateElems.elems.filter((elem) => {
       if (elem.filterString) {
