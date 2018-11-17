@@ -1,7 +1,7 @@
 import expect from 'expect';
 
 import {
-  getStateElems, getUpdateElemId, getFetchingComplete, getElems, getElemToUpdate,
+  getStateElems, getUpdateElemId, getFilterValue, getFetchingComplete, getElems, getElemToUpdate,
 } from './selectors';
 
 
@@ -51,6 +51,29 @@ describe('selectors -> reduxBaseElem', () => {
     };
     const derivedData = 2;
     expect(getUpdateElemId(nameSpace, state)).toEqual(derivedData);
+  });
+
+  it('getFilterValue()', () => {
+    const state = {
+      posts: {
+        isFetching: false,
+        didInvalidate: false,
+        lastUpdated: Date.now(),
+        posts: [],
+        updateId: 2,
+        filterValue: 'Some text',
+      },
+      websites: {
+        isFetching: false,
+        didInvalidate: false,
+        lastUpdated: Date.now(),
+        websites: [],
+        updateId: undefined,
+        filterValue: '',
+      },
+    };
+    const derivedData = 'Some text';
+    expect(getFilterValue(nameSpace, state)).toEqual(derivedData);
   });
 
 
