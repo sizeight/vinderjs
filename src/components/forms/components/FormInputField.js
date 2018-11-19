@@ -11,7 +11,7 @@ import CustomFormInputMultiCheckbox from './CustomFormInputMultiCheckbox';
 
 const propTypes = {
   type: PropTypes.oneOf([
-    'text', 'textarea', 'select', 'checkbox', 'file-image', 'datetime', 'multi-checkbox',
+    'text', 'textarea', 'select', 'checkbox', 'file-image', 'datetime', 'date', 'multi-checkbox',
   ]).isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired, // If no label given, we leave out label
