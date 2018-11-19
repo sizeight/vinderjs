@@ -132,6 +132,14 @@ module.exports = {
       },
     },
     {
+      reactstrap: {
+        root: 'reactstrap',
+        commonjs2: 'reactstrap',
+        commonjs: 'reactstrap',
+        amd: 'reactstrap',
+      },
+    },
+    {
       moment: {
         root: 'moment',
         commonjs2: 'moment',

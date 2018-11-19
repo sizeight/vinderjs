@@ -35,7 +35,7 @@
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.22.2",
     "prop-types": "^15.6.2",
-    "react-datepicker": "1.6.0",
+    "react-datepicker": "1.8.0",
     "reactstrap": "^6.5.0",
     "styled-components": "^4.1.1"
   },
