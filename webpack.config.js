@@ -103,7 +103,8 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     modules: [
       sourcePath,
-      path.resolve(__dirname, './node_modules'),
+      'node_modules',
+      // path.resolve(__dirname, './node_modules'),
     ],
   },
   externals: [
@@ -137,14 +138,6 @@ module.exports = {
         commonjs2: 'reactstrap',
         commonjs: 'reactstrap',
         amd: 'reactstrap',
-      },
-    },
-    {
-      moment: {
-        root: 'moment',
-        commonjs2: 'moment',
-        commonjs: 'moment',
-        amd: 'moment',
       },
     },
     {
