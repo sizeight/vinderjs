@@ -418,11 +418,29 @@ import { faSignOutAlt } from '@fortawesome/pro-regular-svg-icons/faSignOutAlt';
 import { faSignOutAlt as faSignOutAltSolid } from '@fortawesome/pro-solid-svg-icons/faSignOutAlt';
 library.add(faSignOutAltLight, faSignOutAlt, faSignOutAltSolid);
 
+// sort
+import { faSort as falSort } from '@fortawesome/pro-light-svg-icons/faSort';
+import { faSort as farSort } from '@fortawesome/pro-regular-svg-icons/faSort';
+import { faSort as fasSort } from '@fortawesome/pro-solid-svg-icons/faSort';
+library.add(falSort, farSort, fasSort);
+
 // sort-amount-down
 import { faSortAmountDown as faSortAmountDownLight } from '@fortawesome/pro-light-svg-icons/faSortAmountDown';
 import { faSortAmountDown } from '@fortawesome/pro-regular-svg-icons/faSortAmountDown';
 import { faSortAmountDown as faSortAmountDownSolid } from '@fortawesome/pro-solid-svg-icons/faSortAmountDown';
 library.add(faSortAmountDownLight, faSortAmountDown, faSortAmountDownSolid);
+
+// sort-down
+import { faSortDown as falSortDown } from '@fortawesome/pro-light-svg-icons/faSortDown';
+import { faSortDown as farSortDown } from '@fortawesome/pro-regular-svg-icons/faSortDown';
+import { faSortDown as fasSortDown } from '@fortawesome/pro-solid-svg-icons/faSortDown';
+library.add(falSortDown, farSortDown, fasSortDown);
+
+// sort-up
+import { faSortUp as falSortUp } from '@fortawesome/pro-light-svg-icons/faSortUp';
+import { faSortUp as farSortUp } from '@fortawesome/pro-regular-svg-icons/faSortUp';
+import { faSortUp as fasSortUp } from '@fortawesome/pro-solid-svg-icons/faSortUp';
+library.add(falSortUp, farSortUp, fasSortUp);
 
 // spinner-third
 import { faSpinnerThird as faSpinnerThirdLight } from '@fortawesome/pro-light-svg-icons/faSpinnerThird';
