@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -42,15 +41,15 @@ const defaultProps = {
  */
 class CustomFormInputDateTime extends React.Component {
   /*
-   * If a valid moment object is available, set the state to the string representation, otherwise
+   * If a valid Date object is available, set the state to the string representation, otherwise
    * set to null.
    */
   handleChange = (date) => {
     const { name, onChange } = this.props;
 
     let newValue = null;
-    if (moment.isMoment(date)) {
-      newValue = date.format();
+    if (date instanceof Date) {
+      newValue = date.toString();
     }
     onChange(name, newValue);
   }
@@ -77,9 +76,9 @@ class CustomFormInputDateTime extends React.Component {
         timeFormat: 'HH:mm',
         timeIntervals: 15,
         timeCaption: 'time',
-        dateFormat: 'DD MMM YYYY HH:mm',
+        dateFormat: 'dd MMMM YYYY HH:mm',
       } : {
-        dateFormat: 'DD MMM YYYY',
+        dateFormat: 'dd MMMM YYYY',
       };
 
     return (
@@ -92,7 +91,7 @@ class CustomFormInputDateTime extends React.Component {
           id={`id-${name}`}
           required={required}
 
-          selected={value ? moment(value) : null}
+          selected={value ? new Date(value) : null}
           onChange={this.handleChange}
           onChangeRaw={this.handleRawChange}
 
