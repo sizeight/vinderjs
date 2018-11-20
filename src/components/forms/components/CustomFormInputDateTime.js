@@ -49,8 +49,6 @@ class CustomFormInputDateTime extends React.Component {
 
     let newValue = null;
     if (date instanceof Date) {
-      // monent date.format() -> 2013-02-04T10:35:24-08:00
-      // Date .toISOString()  -> 2011-10-05T14:48:00.000Z
       newValue = date.toISOString();
     }
     onChange(name, newValue);
@@ -63,8 +61,28 @@ class CustomFormInputDateTime extends React.Component {
     onChange(name, newValue);
   }
 
-  handleBlur = () => {
-    const { name, onBlur } = this.props;
+  handleBlur = (e) => {
+    const { name, onChange, onBlur } = this.props;
+
+    let date;
+    try {
+      date = new Date(e.target.value);
+      // console.log('date: ', date);
+      // console.log('instaceof: ', date instanceof Date);
+      // console.log('isNaN', !Number.isNaN(date));
+      // console.log('isNaN(date.getTime())', Number.isNaN(date.getTime()));
+      // console.log('isNaN(date.valueOf())', Number.isNaN(date.valueOf()));
+      // console.log('object', Object.prototype.toString.call(date) === '[object Date]');
+      let newValue = null;
+      if (Object.prototype.toString.call(date) === '[object Date]' && !Number.isNaN(date.valueOf())) {
+        // Valid date
+        newValue = date.toISOString();
+      }
+      onChange(name, newValue);
+    } catch (errors) {
+      // Do nothing
+    }
+
     onBlur(name, true);
   }
 
@@ -78,9 +96,9 @@ class CustomFormInputDateTime extends React.Component {
         timeFormat: 'HH:mm',
         timeIntervals: 15,
         timeCaption: 'time',
-        dateFormat: 'dd MMMM YYYY HH:mm',
+        dateFormat: 'dd MMMM yyyy HH:mm',
       } : {
-        dateFormat: 'dd MMMM YYYY',
+        dateFormat: 'dd MMMM yyyy',
       };
 
     return (
@@ -96,6 +114,7 @@ class CustomFormInputDateTime extends React.Component {
           selected={value ? new Date(value) : null}
           onChange={this.handleChange}
           onChangeRaw={this.handleRawChange}
+          onBlur={this.handleBlur}
 
           autoComplete="off"
           todayButton="Today"
