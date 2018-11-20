@@ -2,67 +2,49 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-/*
-import brands from '@fortawesome/fontawesome-free-brands';
-import light from '@fortawesome/pro-light-svg-icons'; // includes free-light
-import regular from '@fortawesome/pro-regular-svg-icons'; // includes free-regular
-import solid from '@fortawesome/pro-solid-svg-icons'; // includes free-solid
-
-library.add(brands, light, regular, solid);
-*/
-
-/*
-
-import * as faLight from '@fortawesome/pro-light-svg-icons/fa';
-import { fa from '@fortawesome/pro-regular-svg-icons/fa';
-import * as faSolid from '@fortawesome/pro-solid-svg-icons/fa';
-library.add(faLight, fa, faSolid);
-
-*/
-
 /* eslint-disable */
 
 // angle-double-down
-import { faAngleDoubleDown as faAngleDoubleDownLight } from '@fortawesome/pro-light-svg-icons/faAngleDoubleDown';
-import { faAngleDoubleDown } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleDown';
-import { faAngleDoubleDown as faAngleDoubleDownSolid } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleDown';
-library.add(faAngleDoubleDownLight, faAngleDoubleDown, faAngleDoubleDownSolid);
+import { faAngleDoubleDown as falAngleDoubleDown } from '@fortawesome/pro-light-svg-icons/faAngleDoubleDown';
+import { faAngleDoubleDown as farAngleDoubleDown } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleDown';
+import { faAngleDoubleDown as fasAngleDoubleDown } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleDown';
+library.add(falAngleDoubleDown, farAngleDoubleDown, fasAngleDoubleDown);
 
 // angle-double-right
-import { faAngleDoubleRight as faAngleDoubleRightLight } from '@fortawesome/pro-light-svg-icons/faAngleDoubleRight';
-import { faAngleDoubleRight } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleRight';
-import { faAngleDoubleRight as faAngleDoubleRightSolid } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleRight';
-library.add(faAngleDoubleRightLight, faAngleDoubleRight, faAngleDoubleRightSolid);
+import { faAngleDoubleRight as falAngleDoubleRight } from '@fortawesome/pro-light-svg-icons/faAngleDoubleRight';
+import { faAngleDoubleRight as farAngleDoubleRight } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleRight';
+import { faAngleDoubleRight as fasAngleDoubleRight } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleRight';
+library.add(falAngleDoubleRight, farAngleDoubleRight, fasAngleDoubleRight);
 
 // angle-double-up
-import { faAngleDoubleUp as faAngleDoubleUpLight } from '@fortawesome/pro-light-svg-icons/faAngleDoubleUp';
-import { faAngleDoubleUp } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleUp';
-import { faAngleDoubleUp as faAngleDoubleUpSolid } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleUp';
-library.add(faAngleDoubleUpLight, faAngleDoubleUp, faAngleDoubleUpSolid);
+import { faAngleDoubleUp as falAngleDoubleUp } from '@fortawesome/pro-light-svg-icons/faAngleDoubleUp';
+import { faAngleDoubleUp as farAngleDoubleUp } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleUp';
+import { faAngleDoubleUp as fasAngleDoubleUp } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleUp';
+library.add(falAngleDoubleUp, farAngleDoubleUp, fasAngleDoubleUp);
 
 // angle-down
-import { faAngleDown as faAngleDownLight } from '@fortawesome/pro-light-svg-icons/faAngleDown';
-import { faAngleDown } from '@fortawesome/pro-regular-svg-icons/faAngleDown';
-import { faAngleDown as faAngleDownSolid } from '@fortawesome/pro-solid-svg-icons/faAngleDown';
-library.add(faAngleDownLight, faAngleDown, faAngleDownSolid);
+import { faAngleDown as falAngleDown } from '@fortawesome/pro-light-svg-icons/faAngleDown';
+import { faAngleDown as farAngleDown } from '@fortawesome/pro-regular-svg-icons/faAngleDown';
+import { faAngleDown as fasAngleDown } from '@fortawesome/pro-solid-svg-icons/faAngleDown';
+library.add(falAngleDown, farAngleDown, fasAngleDown);
 
 // angle-right
-import { faAngleRight as faAngleRightLight } from '@fortawesome/pro-light-svg-icons/faAngleRight';
-import { faAngleRight } from '@fortawesome/pro-regular-svg-icons/faAngleRight';
-import { faAngleRight as faAngleRightSolid } from '@fortawesome/pro-solid-svg-icons/faAngleRight';
-library.add(faAngleRightLight, faAngleRight, faAngleRightSolid);
+import { faAngleRight as falAngleRight } from '@fortawesome/pro-light-svg-icons/faAngleRight';
+import { faAngleRight as farAngleRight } from '@fortawesome/pro-regular-svg-icons/faAngleRight';
+import { faAngleRight as fasAngleRight } from '@fortawesome/pro-solid-svg-icons/faAngleRight';
+library.add(falAngleRight, farAngleRight, fasAngleRight);
 
 // arrow-left
-import { faArrowLeft as faArrowLeftLight } from '@fortawesome/pro-light-svg-icons/faArrowLeft';
-import { faArrowLeft } from '@fortawesome/pro-regular-svg-icons/faArrowLeft';
-import { faArrowLeft as faArrowLeftSolid } from '@fortawesome/pro-solid-svg-icons/faArrowLeft';
-library.add(faArrowLeftLight, faArrowLeft, faArrowLeftSolid);
+import { faArrowLeft as falArrowLeft } from '@fortawesome/pro-light-svg-icons/faArrowLeft';
+import { faArrowLeft as farArrowLeft } from '@fortawesome/pro-regular-svg-icons/faArrowLeft';
+import { faArrowLeft as fasArrowLeft } from '@fortawesome/pro-solid-svg-icons/faArrowLeft';
+library.add(falArrowLeft, farArrowLeft, fasArrowLeft);
 
 // ban
-import { faBan as faBanLight } from '@fortawesome/pro-light-svg-icons/faBan';
-import { faBan } from '@fortawesome/pro-regular-svg-icons/faBan';
-import { faBan as faBanSolid } from '@fortawesome/pro-solid-svg-icons/faBan';
-library.add(faBanLight, faBan, faBanSolid);
+import { faBan as falBan } from '@fortawesome/pro-light-svg-icons/faBan';
+import { faBan as farBan } from '@fortawesome/pro-regular-svg-icons/faBan';
+import { faBan as fasBan } from '@fortawesome/pro-solid-svg-icons/faBan';
+library.add(falBan, farBan, fasBan);
 
 // bars
 import { faBars as faBarsLight } from '@fortawesome/pro-light-svg-icons/faBars';
