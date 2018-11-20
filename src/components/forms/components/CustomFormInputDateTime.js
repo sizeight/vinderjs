@@ -49,7 +49,9 @@ class CustomFormInputDateTime extends React.Component {
 
     let newValue = null;
     if (date instanceof Date) {
-      newValue = date.toString();
+      // monent date.format() -> 2013-02-04T10:35:24-08:00
+      // Date .toISOString()  -> 2011-10-05T14:48:00.000Z
+      newValue = date.toISOString();
     }
     onChange(name, newValue);
   }
