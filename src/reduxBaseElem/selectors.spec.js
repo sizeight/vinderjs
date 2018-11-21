@@ -1,10 +1,15 @@
 import expect from 'expect';
+import rewire from 'rewire';
 
 import {
   getStateElems, getUpdateElemId, getFilterValue, getFetchingComplete, getElems, getElemToUpdate,
-  getFilteredElems, getSortedElems, getSortKey, getSortDirection,
+  getSortKey, getSortDirection,
 } from './selectors';
 
+// Selector functions not exported need to be rewired to test
+const selectors = rewire('./selectors');
+const getFilteredElems = selectors.__get__('getFilteredElems'); /* eslint-disable-line no-underscore-dangle */
+const getSortedElems = selectors.__get__('getSortedElems'); /* eslint-disable-line no-underscore-dangle */
 
 const nameSpace = 'posts';
 

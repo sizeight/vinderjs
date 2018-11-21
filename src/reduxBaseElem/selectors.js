@@ -10,10 +10,10 @@ export const getFilterValue = (nameSpace, state) => state[nameSpace].filterValue
 export const getSortKey = (nameSpace, state) => state[nameSpace].sortKey;
 export const getSortDirection = (nameSpace, state) => state[nameSpace].sortDirection;
 
-/* Private function, only exported to test
+/*
  * Return the elements that match the filter value else return all elements.
  */
-export const getFilteredElems = (elems, filterValue) => {
+const getFilteredElems = (elems, filterValue) => {
   let filteredElems = elems.slice();
   if (filterValue !== '') {
     filteredElems = filteredElems.filter((elem) => {
@@ -26,10 +26,10 @@ export const getFilteredElems = (elems, filterValue) => {
   return filteredElems;
 };
 
-/* Private function, only exported to test
+/*
  * If descending or ascending sort required, return sorted elements else just return elems.
  */
-export const getSortedElems = (elems, sortKey, sortDirection) => {
+const getSortedElems = (elems, sortKey, sortDirection) => {
   let sortedElems = elems.slice();
   if (sortKey !== null && sortDirection !== null) {
     sortedElems = sortedElems.sort((a, b) => {
