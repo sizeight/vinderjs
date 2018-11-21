@@ -6,7 +6,7 @@ import nock from 'nock';
 
 import {
   fetchBusy, fetchSuccess, fetchFailure, fetchElems,
-  setUpdateId, updateSuccess, createUpdateElem, deleteElem, setFilterValue,
+  setUpdateId, updateSuccess, createUpdateElem, deleteElem, setFilterValue, setSortKey,
 } from './actions';
 
 
@@ -364,5 +364,14 @@ describe('actions -> reduxBaseElem', () => {
       value: '',
     };
     expect(setFilterValue(nameSpace)).toEqual(expectedAction);
+  });
+
+  it('setSortKey() -> title', () => {
+    const sortKey = 'title';
+    const expectedAction = {
+      type: 'websites/SET_SORT_KEY',
+      sortKey,
+    };
+    expect(setSortKey(nameSpace, sortKey)).toEqual(expectedAction);
   });
 });

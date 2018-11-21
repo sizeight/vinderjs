@@ -127,3 +127,9 @@ export const setFilterValue = (nameSpace, value = '') => ({
   type: `${nameSpace}${t.SET_FILTER_VALUE}`,
   value,
 });
+
+// Sorting
+export const setSortKey = (nameSpace, sortKey) => ({
+  type: `${nameSpace}${t.SET_SORT_KEY}`,
+  sortKey,
+});

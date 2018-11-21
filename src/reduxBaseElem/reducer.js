@@ -9,6 +9,8 @@ export const initialState = {
 
   updateId: -1, // id for which to show update form
   filterValue: '',
+  sortKey: null,
+  sortDirection: null,
 };
 
 export const elems = (nameSpace, state = initialState, action) => {
@@ -76,6 +78,29 @@ export const elems = (nameSpace, state = initialState, action) => {
       return Object.assign({}, state, {
         ...state,
         filterValue: action.value,
+      });
+    }
+
+    case `${nameSpace}${t.SET_SORT_KEY}`: {
+      let newSortKey = action.sortKey;
+      let newSortDirection = 'desc';
+      if (state.sortKey === action.sortKey) {
+        if (!state.sortDirection) {
+          newSortKey = action.sortKey;
+          newSortDirection = 'desc';
+        } else if (state.sortDirection === 'desc') {
+          newSortKey = action.sortKey;
+          newSortDirection = 'asc';
+        } else if (state.sortDirection === 'asc') {
+          newSortKey = null;
+          newSortDirection = null;
+        }
+      }
+
+      return Object.assign({}, state, {
+        ...state,
+        sortKey: newSortKey,
+        sortDirection: newSortDirection,
       });
     }
     default:
