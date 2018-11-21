@@ -523,35 +523,54 @@ describe('selectors -> reduxBaseElem', () => {
 
 
   it('getElemToUpdate() -> UPDATE', () => {
-    const updateId = 2;
-    const elems = [
-      {
-        id: 1,
-      },
-      {
-        id: 2,
-      },
-      {
-        id: 3,
-      },
-    ];
+    const stateElems = {
+      isFetching: false,
+      didInvalidate: false,
+      lastUpdated: Date.now(),
+      updateId: 2,
+      elems: [
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+      ],
+      filterValue: '',
+      sortKey: null,
+      sortDirection: null,
+    };
     const derivedData = {
       id: 2,
     };
-    expect(getElemToUpdate(updateId, elems)).toEqual(derivedData);
+    expect(getElemToUpdate(stateElems)).toEqual(derivedData);
   });
 
   it('getElemToUpdate() -> CREATE (empty object)', () => {
-    const updateId = -1;
-    const elems = [
-      {
-        id: 1,
-      },
-      {
-        id: 2,
-      },
-    ];
+    const stateElems = {
+      isFetching: false,
+      didInvalidate: false,
+      lastUpdated: Date.now(),
+      updateId: -1,
+      elems: [
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+      ],
+      filterValue: '',
+      sortKey: null,
+      sortDirection: null,
+    };
     const derivedData = {};
-    expect(getElemToUpdate(updateId, elems)).toEqual(derivedData);
+    expect(getElemToUpdate(stateElems)).toEqual(derivedData);
   });
 });

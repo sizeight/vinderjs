@@ -88,7 +88,12 @@ export const getFetchingComplete = (stateElems) => {
   return upToDate(stateElems);
 };
 
-export const getElemToUpdate = (updateId, elems) => {
-  const elemToUpdate = elems.find(obj => obj.id === updateId);
+export const getElemToUpdate = (stateElems) => {
+  let elemToUpdate = {};
+  if (upToDate(stateElems)) {
+    const elems = stateElems.elems.slice();
+    const updateId = stateElems.updateId;
+    elemToUpdate = elems.find(obj => obj.id === updateId);
+  }
   return elemToUpdate || {};
 };
