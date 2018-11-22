@@ -2,7 +2,7 @@
 
 Reusable Redux actions for an array of objects.
 
-## Example usage
+## Usage example
 Hook up your actions to the reusable reduxBaseElem actions.
 
 ```javascript
