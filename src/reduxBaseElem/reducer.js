@@ -83,15 +83,15 @@ export const elems = (nameSpace, state = initialState, action) => {
 
     case `${nameSpace}${t.SET_SORT_KEY}`: {
       let newSortKey = action.sortKey;
-      let newSortDirection = 'desc';
+      let newSortDirection = 'asc';
       if (state.sortKey === action.sortKey) {
         if (!state.sortDirection) {
           newSortKey = action.sortKey;
-          newSortDirection = 'desc';
-        } else if (state.sortDirection === 'desc') {
-          newSortKey = action.sortKey;
           newSortDirection = 'asc';
         } else if (state.sortDirection === 'asc') {
+          newSortKey = action.sortKey;
+          newSortDirection = 'desc';
+        } else if (state.sortDirection === 'desc') {
           newSortKey = null;
           newSortDirection = null;
         }

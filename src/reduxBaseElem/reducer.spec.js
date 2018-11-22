@@ -256,7 +256,7 @@ describe('reducer -> reduxBaseElem', () => {
   });
 
 
-  it(`should handle ${nameSpace}/SET_FILTER_VALUE -> null => title, null => desc`, () => {
+  it(`should handle ${nameSpace}/SET_SORT_KEY -> null => title, null => asc`, () => {
     const action = {
       type: 'websites/SET_SORT_KEY',
       sortKey: 'title',
@@ -267,37 +267,37 @@ describe('reducer -> reduxBaseElem', () => {
     };
     const stateAfter = {
       sortKey: 'title',
-      sortDirection: 'desc',
+      sortDirection: 'asc',
     };
     deepFreeze(stateBefore);
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
   });
 
-  it(`should handle ${nameSpace}/SET_FILTER_VALUE -> title => title, desc => asc`, () => {
+  it(`should handle ${nameSpace}/SET_SORT_KEY -> title => title, asc => desc`, () => {
     const action = {
       type: 'websites/SET_SORT_KEY',
       sortKey: 'title',
     };
     const stateBefore = {
       sortKey: 'title',
-      sortDirection: 'desc',
+      sortDirection: 'asc',
     };
     const stateAfter = {
       sortKey: 'title',
-      sortDirection: 'asc',
+      sortDirection: 'desc',
     };
     deepFreeze(stateBefore);
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
   });
 
-  it(`should handle ${nameSpace}/SET_FILTER_VALUE -> title => null, asc => null`, () => {
+  it(`should handle ${nameSpace}/SET_SORT_KEY -> title => null, desc => null`, () => {
     const action = {
       type: 'websites/SET_SORT_KEY',
       sortKey: 'title',
     };
     const stateBefore = {
       sortKey: 'title',
-      sortDirection: 'asc',
+      sortDirection: 'desc',
     };
     const stateAfter = {
       sortKey: null,
@@ -307,18 +307,18 @@ describe('reducer -> reduxBaseElem', () => {
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
   });
 
-  it(`should handle ${nameSpace}/SET_FILTER_VALUE -> title => number, asc => desc`, () => {
+  it(`should handle ${nameSpace}/SET_SORT_KEY -> title => number, desc => asc`, () => {
     const action = {
       type: 'websites/SET_SORT_KEY',
       sortKey: 'number',
     };
     const stateBefore = {
       sortKey: 'title',
-      sortDirection: 'asc',
+      sortDirection: 'desc',
     };
     const stateAfter = {
       sortKey: 'number',
-      sortDirection: 'desc',
+      sortDirection: 'asc',
     };
     deepFreeze(stateBefore);
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
