@@ -44,6 +44,9 @@ export const getPageToUpdate = createSelector(
   },
 );
 
+// CUSTOM SELECTORS
+// Add any custom selectors here...
+
 ```
 
 ## Reference
