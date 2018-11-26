@@ -11,7 +11,8 @@ import CustomFormInputMultiCheckbox from './CustomFormInputMultiCheckbox';
 
 const propTypes = {
   type: PropTypes.oneOf([
-    'text', 'textarea', 'select', 'checkbox', 'file-image', 'datetime', 'date', 'multi-checkbox',
+    'text', 'textarea', 'select', 'checkbox', 'radio', 'file-image', 'datetime', 'date',
+    'multi-checkbox',
   ]).isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired, // If no label given, we leave out label
@@ -131,6 +132,26 @@ const FormInputField = (props) => {
           onBlur={onBlur}
           invalid={hasError}
         />}
+
+      {type === 'radio' &&
+        <React.Fragment>
+          {options.map(option =>
+            <CustomInput
+              type="radio"
+              name={name}
+              id={`id-${name}-${option.value}`}
+
+              label={option.label}
+              value={option.value}
+              key={option.value}
+
+              required={required}
+              checked={value === option.value}
+              onChange={onChange}
+              onBlur={onBlur}
+              invalid={hasError}
+            />)}
+        </React.Fragment>}
 
       {type === 'file-image' &&
         <CustomInput
