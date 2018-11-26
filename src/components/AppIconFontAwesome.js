@@ -11,6 +11,12 @@ import { faAngleDoubleDown as farAngleDoubleDown } from '@fortawesome/pro-regula
 import { faAngleDoubleDown as fasAngleDoubleDown } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleDown';
 library.add(falAngleDoubleDown, farAngleDoubleDown, fasAngleDoubleDown);
 
+// angle-double-left
+import { faAngleDoubleLeft as falAngleDoubleLeft } from '@fortawesome/pro-light-svg-icons/faAngleDoubleLeft';
+import { faAngleDoubleLeft as farAngleDoubleLeft } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleLeft';
+import { faAngleDoubleLeft as fasAngleDoubleLeft } from '@fortawesome/pro-solid-svg-icons/faAngleDoubleLeft';
+library.add(falAngleDoubleLeft, farAngleDoubleLeft, fasAngleDoubleLeft);
+
 // angle-double-right
 import { faAngleDoubleRight as falAngleDoubleRight } from '@fortawesome/pro-light-svg-icons/faAngleDoubleRight';
 import { faAngleDoubleRight as farAngleDoubleRight } from '@fortawesome/pro-regular-svg-icons/faAngleDoubleRight';
