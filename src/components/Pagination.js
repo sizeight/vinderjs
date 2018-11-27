@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import AppIconFontAwesome from './AppIconFontAwesome';
+
 const propTypes = {
   pagination: PropTypes.shape({
     count: PropTypes.number,
@@ -14,10 +16,12 @@ const propTypes = {
 
 const Pagination = (props) => {
   const { pagination, onPaginate } = props;
-  const { previous, page, next } = pagination;
+  const { count, previous, page, next } = pagination;
+
+  const totalPages = Math.ceil(count / pagination.page_size);
 
   return (
-    <nav style={{ marginBottom: '-50px' }}>
+    <nav>
       <ul className="pagination justify-content-end">
         {previous &&
           <li className="page-item">
@@ -27,11 +31,15 @@ const Pagination = (props) => {
               tabIndex={-1}
               onClick={() => onPaginate(previous)}
             >
-              Previous
+              <AppIconFontAwesome
+                icon={['fal', 'angle-double-left']}
+                fixedWidth
+              />
             </a>
           </li>}
 
-        {previous &&
+        {/*
+        previous &&
           <li className="page-item">
             <a
               className="page-link"
@@ -41,8 +49,20 @@ const Pagination = (props) => {
             >
               {previous}
             </a>
-          </li>}
+          </li>
+        */}
 
+        <li className="page-item active">
+          <a
+            className="page-link"
+            role="button"
+            tabIndex={-1}
+          >
+            Page {page} of {totalPages}
+          </a>
+        </li>
+
+        {/*
         <li className="page-item active">
           <a
             className="page-link"
@@ -64,6 +84,7 @@ const Pagination = (props) => {
               {next}
             </a>
           </li>}
+        */}
 
         {next &&
           <li className="page-item">
@@ -73,7 +94,10 @@ const Pagination = (props) => {
               tabIndex={-1}
               onClick={() => onPaginate(next)}
             >
-              Next
+              <AppIconFontAwesome
+                icon={['fal', 'angle-double-right']}
+                fixedWidth
+              />
             </a>
           </li>}
       </ul>
