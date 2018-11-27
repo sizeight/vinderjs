@@ -9,6 +9,7 @@ export const getUpdateElemId = (nameSpace, state) => state[nameSpace].updateId;
 export const getFilterValue = (nameSpace, state) => state[nameSpace].filterValue;
 export const getSortKey = (nameSpace, state) => state[nameSpace].sortKey;
 export const getSortDirection = (nameSpace, state) => state[nameSpace].sortDirection;
+export const getPagination = (nameSpace, state) => state[nameSpace].pagination;
 
 /*
  * Return the elements that match the filter value else return all elements.

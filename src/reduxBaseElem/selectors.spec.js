@@ -3,7 +3,7 @@ import rewire from 'rewire';
 
 import {
   getStateElems, getUpdateElemId, getFilterValue, getFetchingComplete, getElems, getElemToUpdate,
-  getSortKey, getSortDirection,
+  getSortKey, getSortDirection, getPagination,
 } from './selectors';
 
 // Selector functions not exported need to be rewired to test
@@ -134,6 +134,36 @@ describe('selectors -> reduxBaseElem', () => {
     };
     const derivedData = 'asc';
     expect(getSortDirection(nameSpace, state)).toEqual(derivedData);
+  });
+
+  it('getPagination()', () => {
+    const state = {
+      posts: {
+        isFetching: false,
+        didInvalidate: false,
+        lastUpdated: Date.now(),
+        elems: [],
+        pagination: {
+          count: 115,
+          previous: null,
+          page: 1,
+          next: 2,
+        },
+      },
+      websites: {
+        isFetching: false,
+        didInvalidate: false,
+        lastUpdated: Date.now(),
+        elems: [],
+      },
+    };
+    const derivedData = {
+      count: 115,
+      previous: null,
+      page: 1,
+      next: 2,
+    };
+    expect(getPagination(nameSpace, state)).toEqual(derivedData);
   });
 
 
