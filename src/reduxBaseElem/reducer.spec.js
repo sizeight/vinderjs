@@ -20,6 +20,7 @@ describe('reducer -> reduxBaseElem', () => {
       filterValue: '',
       sortKey: null,
       sortDirection: null,
+      pagination: {},
     };
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
   });
@@ -59,15 +60,13 @@ describe('reducer -> reduxBaseElem', () => {
       didInvalidate: true,
       lastUpdated: undefined,
       filterOnFields: ['title', 'sub_title'],
+      pagination: {},
     };
     const stateAfter = {
       isFetching: false,
       didInvalidate: false,
       lastUpdated: expect.any(Number), // Date.now(),
-      filterOnFields: [
-        'title',
-        'sub_title',
-      ],
+      filterOnFields: ['title', 'sub_title'],
       elems: [
         {
           id: 1,
@@ -82,6 +81,68 @@ describe('reducer -> reduxBaseElem', () => {
           filterString: 'bravo delta',
         },
       ],
+      pagination: {},
+    };
+    deepFreeze(stateBefore);
+    expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);
+  });
+
+  it(`should handle ${nameSpace}/FETCH_SUCCESS -> with pagination`, () => {
+    const action = {
+      type: 'websites/FETCH_SUCCESS',
+      elems: {
+        count: 115,
+        page_size: 10,
+        previous: null,
+        page: 1,
+        next: 2,
+        results: [
+          {
+            id: 1,
+            title: 'Alpha',
+            sub_title: 'Charlie',
+          },
+          {
+            id: 2,
+            title: 'Bravo',
+            sub_title: 'Delta',
+          },
+        ],
+      },
+    };
+    const stateBefore = {
+      isFetching: true,
+      didInvalidate: true,
+      lastUpdated: undefined,
+      filterOnFields: ['title', 'sub_title'],
+      pagination: {},
+    };
+    const stateAfter = {
+      isFetching: false,
+      didInvalidate: false,
+      lastUpdated: expect.any(Number), // Date.now(),
+      filterOnFields: ['title', 'sub_title'],
+      elems: [
+        {
+          id: 1,
+          title: 'Alpha',
+          sub_title: 'Charlie',
+          filterString: 'alpha charlie',
+        },
+        {
+          id: 2,
+          title: 'Bravo',
+          sub_title: 'Delta',
+          filterString: 'bravo delta',
+        },
+      ],
+      pagination: {
+        count: 115, // Number of results
+        page_size: 10,
+        previous: null,
+        page: 1,
+        next: 2,
+      },
     };
     deepFreeze(stateBefore);
     expect(reducer(nameSpace, stateBefore, action)).toEqual(stateAfter);

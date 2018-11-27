@@ -11,6 +11,8 @@ export const initialState = {
   filterValue: '',
   sortKey: null,
   sortDirection: null,
+
+  pagination: {},
 };
 
 export const elems = (nameSpace, state = initialState, action) => {
@@ -20,18 +22,37 @@ export const elems = (nameSpace, state = initialState, action) => {
         ...state,
         isFetching: true,
       });
-    case `${nameSpace}${t.FETCH_SUCCESS}`:
+    case `${nameSpace}${t.FETCH_SUCCESS}`: {
+      // if paginated response, the response json is different
+      let responseElems = [];
+      let pagination = {};
+      if (Array.isArray(action.elems)) {
+        responseElems = action.elems.slice();
+      } else if (action.elems.results) {
+        responseElems = action.elems.results.slice();
+        pagination = {
+          count: action.elems.count,
+          page_size: action.elems.page_size,
+          page: action.elems.page,
+          next: action.elems.next,
+          previous: action.elems.previous,
+        };
+      }
+
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
         lastUpdated: Date.now(),
-        elems: action.elems.map((elem) => {
+        elems: responseElems.map((elem) => {
           const filterString = state.filterOnFields.map(x => elem[x].toLowerCase()).join(' ');
           return Object.assign({}, elem, {
             filterString,
           });
         }),
+        pagination,
       });
+    }
+
     case `${nameSpace}${t.FETCH_FAILURE}`:
       return Object.assign({}, state, {
         isFetching: false,
