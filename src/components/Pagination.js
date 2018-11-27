@@ -23,8 +23,8 @@ const Pagination = (props) => {
 
   const alignmentClass = {
     left: null,
-    center: 'justify-content-center',
-    right: 'justify-content-end',
+    center: ' justify-content-center',
+    right: ' justify-content-end',
   };
 
   return (
