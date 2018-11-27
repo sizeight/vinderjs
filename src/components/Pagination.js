@@ -11,7 +11,7 @@ const propTypes = {
     next: PropTypes.number,
     previous: PropTypes.number,
   }).isRequired,
-  alignment: PropTypes.oneOf[('left', 'center', 'right')],
+  alignment: PropTypes.oneOf(['left', 'center', 'right']),
   onPaginate: PropTypes.func.isRequired,
 };
 
