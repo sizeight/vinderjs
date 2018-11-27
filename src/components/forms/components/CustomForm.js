@@ -6,7 +6,7 @@ import { Formik } from 'formik';
 
 const propTypes = {
   initialValues: PropTypes.object.isRequired,
-  validationSchema: PropTypes.object.isRequired,
+  validationSchema: PropTypes.object,
   onSubmit: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
