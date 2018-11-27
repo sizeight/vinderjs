@@ -11,18 +11,25 @@ const propTypes = {
     next: PropTypes.number,
     previous: PropTypes.number,
   }).isRequired,
+  alignment: PropTypes.oneOf[('left', 'center', 'right')],
   onPaginate: PropTypes.func.isRequired,
 };
 
 const Pagination = (props) => {
-  const { pagination, onPaginate } = props;
+  const { pagination, alignment, onPaginate } = props;
   const { count, previous, page, next } = pagination;
 
   const totalPages = Math.ceil(count / pagination.page_size);
 
+  const alignmentClass = {
+    left: null,
+    center: 'justify-content-center',
+    end: 'justify-content-end',
+  };
+
   return (
     <nav>
-      <ul className="pagination justify-content-end">
+      <ul className={`pagination${alignmentClass[alignment]}`}>
         {previous &&
           <li className="page-item">
             <a
