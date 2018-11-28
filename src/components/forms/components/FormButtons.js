@@ -6,16 +6,17 @@ import { Button } from 'reactstrap';
 import { connect, getIn } from 'formik';
 
 const propTypes = {
+  submitButtonText: PropTypes.string,
   onCancel: PropTypes.func,
 };
 
-const defaultProps = {};
+const defaultProps = {
+  submitButtonText: 'Submit',
+};
 
 
 const FormButtons = (props) => {
-  const {
-    onCancel,
-  } = props;
+  const { onCancel, submitButtonText } = props;
 
   /*
    * Hook into Formik's context so we do not have to explicitly pass in these props. Now my
@@ -42,7 +43,7 @@ const FormButtons = (props) => {
         onClick={onSubmit}
         disabled={isSubmitting}
       >
-        Save
+        {submitButtonText}
       </Button>
     </div>
   );

@@ -25,6 +25,7 @@ const propTypes = {
   validationSchema: PropTypes.object,
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
+  submitButtonText: PropTypes.string,
   children: PropTypes.node,
 };
 
@@ -32,7 +33,10 @@ const propTypes = {
  * Custom Formik wrapper.
  */
 const CustomForm = (props) => {
-  const { definition, initialValues, validationSchema, onSubmit, onCancel, children } = props;
+  const {
+    definition, initialValues, validationSchema, onSubmit, onCancel, submitButtonText, children,
+  } = props;
+
   return (
     <Formik
       initialValues={initialValues}
@@ -54,7 +58,10 @@ const CustomForm = (props) => {
                 key={field.name}
               />)}
           </div>)}
-        <FormButtons onCancel={onCancel} />
+        <FormButtons
+          submitButtonText={submitButtonText}
+          onCancel={onCancel}
+        />
 
         {children}
       </React.Fragment>
