@@ -7,16 +7,18 @@ import { connect, getIn } from 'formik';
 
 const propTypes = {
   submitButtonText: PropTypes.string,
+  buttonPosition: PropTypes.oneOf(['left', 'center', 'right']),
   onCancel: PropTypes.func,
 };
 
 const defaultProps = {
   submitButtonText: 'Submit',
+  buttonPosition: 'left',
 };
 
 
 const FormButtons = (props) => {
-  const { onCancel, submitButtonText } = props;
+  const { submitButtonText, buttonPosition, onCancel } = props;
 
   /*
    * Hook into Formik's context so we do not have to explicitly pass in these props. Now my
@@ -26,7 +28,7 @@ const FormButtons = (props) => {
   const isSubmitting = getIn(props.formik.isSubmitting); // eslint-disable-line react/prop-types
 
   return (
-    <div className="text-right mb-2">
+    <div className={`text-${buttonPosition} mb-2`}>
       {onCancel &&
         <Button
           className="mr-2"

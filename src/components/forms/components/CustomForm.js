@@ -26,6 +26,7 @@ const propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   submitButtonText: PropTypes.string,
+  buttonPosition: PropTypes.string,
   children: PropTypes.node,
 };
 
@@ -34,7 +35,8 @@ const propTypes = {
  */
 const CustomForm = (props) => {
   const {
-    definition, initialValues, validationSchema, onSubmit, onCancel, submitButtonText, children,
+    definition, initialValues, validationSchema, onSubmit, onCancel, submitButtonText,
+    buttonPosition, children,
   } = props;
 
   return (
@@ -60,6 +62,7 @@ const CustomForm = (props) => {
           </div>)}
         <FormButtons
           submitButtonText={submitButtonText}
+          buttonPosition={buttonPosition}
           onCancel={onCancel}
         />
 
