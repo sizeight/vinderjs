@@ -7,6 +7,9 @@ import { connect, getIn } from 'formik';
 
 import CustomFormInputDateTime from './CustomFormInputDateTime';
 import CustomFormInputMultiCheckbox from './CustomFormInputMultiCheckbox';
+import countries from './Constants';
+
+const countryOptions = countries;
 
 
 const propTypes = {
@@ -55,6 +58,11 @@ const FormInputField = (props) => {
 
   // Has this field been touched and does it have an error?
   const hasError = error && touched;
+
+  let selectOptions = options;
+  if (name === 'country') {
+    selectOptions = countryOptions;
+  }
 
   return (
     <FormGroup
@@ -114,7 +122,7 @@ const FormInputField = (props) => {
           onBlur={onBlur}
           invalid={hasError}
         >
-          {options.map(option =>
+          {selectOptions.map(option =>
             <option
               value={option.value}
               key={option.value}
