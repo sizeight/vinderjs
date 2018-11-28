@@ -24,7 +24,7 @@ const propTypes = {
   initialValues: PropTypes.object.isRequired,
   validationSchema: PropTypes.object,
   onSubmit: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
+  onCancel: PropTypes.func,
   children: PropTypes.node,
 };
 

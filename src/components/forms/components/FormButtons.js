@@ -6,7 +6,7 @@ import { Button } from 'reactstrap';
 import { connect, getIn } from 'formik';
 
 const propTypes = {
-  onCancel: PropTypes.func.isRequired,
+  onCancel: PropTypes.func,
 };
 
 const defaultProps = {};
@@ -26,15 +26,16 @@ const FormButtons = (props) => {
 
   return (
     <div className="text-right mb-2">
-      <Button
-        className="mr-2"
-        color="secondary"
-        size="sm"
-        onClick={onCancel}
-        disabled={isSubmitting}
-      >
-        Cancel
-      </Button>
+      {onCancel &&
+        <Button
+          className="mr-2"
+          color="secondary"
+          size="sm"
+          onClick={onCancel}
+          disabled={isSubmitting}
+        >
+          Cancel
+        </Button>}
       <Button
         color="primary"
         size="sm"
