@@ -14,7 +14,7 @@ const countryOptions = countries;
 
 const propTypes = {
   type: PropTypes.oneOf([
-    'text', 'textarea', 'select', 'checkbox', 'radio', 'file-image', 'datetime', 'date',
+    'text', 'textarea', 'select', 'checkbox', 'radio', 'email', 'file-image', 'datetime', 'date',
     'multi-checkbox',
   ]).isRequired,
   name: PropTypes.string.isRequired,
@@ -78,9 +78,9 @@ const FormInputField = (props) => {
         </Label>}
 
 
-      {type === 'text' &&
+      {(type === 'text' || type === 'email') &&
         <Input
-          type="text"
+          type={type}
           name={name}
           id={`id-${name}`}
 
