@@ -1,7 +1,7 @@
 const countries = [
   {
     label: '--',
-    value: '--',
+    value: '',
   },
   {
     label: 'Afghanistan',
