@@ -28,7 +28,6 @@ const propTypes = {
     ),
   ).isRequired,
   initialValues: PropTypes.object.isRequired,
-  validationSchema: PropTypes.object,
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   submitButtonText: PropTypes.string,
@@ -41,7 +40,7 @@ const propTypes = {
  */
 const CustomForm = (props) => {
   const {
-    definition, initialValues, /* validationSchema, */ onSubmit, onCancel, submitButtonText,
+    definition, initialValues, onSubmit, onCancel, submitButtonText,
     buttonPosition, children,
   } = props;
 
@@ -64,32 +63,44 @@ const CustomForm = (props) => {
   const validationSchemaShape = {};
   flatDefinition.forEach((obj) => {
     if (obj.validation) {
-      let schema = Yup.string();
-      if (obj.validation.required) {
-        schema = schema.concat(Yup.string().required('Required'));
+      if (obj.type === 'multi-checkbox') {
+        let schema = Yup.array();
+        if (obj.validation.required) {
+          schema = schema.concat(Yup.array().required('Select at least 1.'));
+        }
+        if (obj.validation.min) {
+          schema = schema.concat(Yup.array()
+            .min(obj.validation.min, `Select at least ${obj.validation.min}.`));
+        }
+        validationSchemaShape[obj.name] = schema;
+      } else {
+        let schema = Yup.string();
+        if (obj.validation.required) {
+          schema = schema.concat(Yup.string().required('Required'));
+        }
+        if (obj.validation.min) {
+          schema = schema.concat(Yup.string().min(obj.validation.min, `Should be at least ${obj.validation.min} characters.`));
+        }
+        if (obj.validation.max) {
+          schema = schema.concat(Yup.string().max(obj.validation.max, `Should be no longer than ${obj.validation.max} characters.`));
+        }
+        if (obj.validation.email) {
+          schema = schema.concat(Yup.string().email('Not a valid email address.'));
+        }
+        if (obj.validation.phone) {
+          schema = schema.concat(Yup.string().matches(/^[\+]?[0-9 ]{7,20}$/, 'Not a valid phone number.'));
+        }
+        validationSchemaShape[obj.name] = schema;
       }
-      if (obj.validation.min) {
-        schema = schema.concat(Yup.string().min(obj.validation.min, `Should be at least ${obj.validation.min} characters.`));
-      }
-      if (obj.validation.max) {
-        schema = schema.concat(Yup.string().max(obj.validation.max, `Should be no longer than ${obj.validation.max} characters.`));
-      }
-      if (obj.validation.email) {
-        schema = schema.concat(Yup.string().email('Not a valid email address.'));
-      }
-      if (obj.validation.phone) {
-        schema = schema.concat(Yup.string().matches(/^[\+]?[0-9 ]{7,20}$/, 'Not a valid phone number.'));
-      }
-      validationSchemaShape[obj.name] = schema;
     }
   });
-  const validationSchemaNew = Yup.object().shape(validationSchemaShape);
+  const validationSchema = Yup.object().shape(validationSchemaShape);
 
 
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchemaNew}
+      validationSchema={validationSchema}
       onSubmit={onSubmit}
 
       validateOnBlur={false}
