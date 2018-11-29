@@ -64,6 +64,7 @@ const CustomForm = (props) => {
   flatDefinition.forEach((obj) => {
     if (obj.validation) {
       if (obj.type === 'multi-checkbox') {
+        // Validate array
         let schema = Yup.array();
         if (obj.validation.required) {
           schema = schema.concat(Yup.array().required('Select at least 1.'));
@@ -73,22 +74,48 @@ const CustomForm = (props) => {
             .min(obj.validation.min, `Select at least ${obj.validation.min}.`));
         }
         validationSchemaShape[obj.name] = schema;
+      } else if (obj.validation.integer) {
+        // Validate number
+        let schema = Yup.number();
+        if (obj.validation.required) {
+          schema = schema.concat(Yup.number().required('Required'));
+        }
+        if (obj.validation.min) {
+          schema = schema.concat(Yup.number()
+            .min(obj.validation.min, `Should be greater than or equal to ${obj.validation.min}.`));
+        }
+        if (obj.validation.max) {
+          schema = schema.concat(Yup.number()
+            .max(obj.validation.max, `Should be less than or equal to ${obj.validation.max}.`));
+        }
+        validationSchemaShape[obj.name] = schema;
       } else {
+        // Validate string
         let schema = Yup.string();
         if (obj.validation.required) {
           schema = schema.concat(Yup.string().required('Required'));
         }
         if (obj.validation.min) {
-          schema = schema.concat(Yup.string().min(obj.validation.min, `Should be at least ${obj.validation.min} characters.`));
+          schema = schema.concat(Yup.string()
+            .min(obj.validation.min, `Should be at least ${obj.validation.min} characters.`));
         }
         if (obj.validation.max) {
-          schema = schema.concat(Yup.string().max(obj.validation.max, `Should be no longer than ${obj.validation.max} characters.`));
+          schema = schema.concat(Yup.string()
+            .max(obj.validation.max, `Should be no longer than ${obj.validation.max} characters.`));
+        }
+        if (obj.validation.uppercase) {
+          schema = schema.concat(Yup.string().strict().uppercase('Should be UPPERCASE.'));
+        }
+        if (obj.validation.lowercase) {
+          schema = schema.concat(Yup.string().strict().lowercase('Should be lowercase.'));
         }
         if (obj.validation.email) {
-          schema = schema.concat(Yup.string().email('Not a valid email address.'));
+          schema = schema.concat(Yup.string()
+            .email('Not a valid email address.'));
         }
         if (obj.validation.phone) {
-          schema = schema.concat(Yup.string().matches(/^[\+]?[0-9 ]{7,20}$/, 'Not a valid phone number.'));
+          schema = schema.concat(Yup.string()
+            .matches(/^[\+]?[0-9 ]{7,20}$/, 'Not a valid phone number.'));
         }
         validationSchemaShape[obj.name] = schema;
       }
