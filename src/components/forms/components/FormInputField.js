@@ -14,8 +14,9 @@ const countryOptions = countries;
 
 const propTypes = {
   type: PropTypes.oneOf([
-    'text', 'textarea', 'select', 'checkbox', 'radio', 'email', 'file-image', 'datetime', 'date',
-    'multi-checkbox',
+    'text', 'textarea', 'checkbox', 'email', 'datetime', 'date', 'file-image',
+    'select', 'radio', // select one from multiple optons
+    'multi-checkbox', // select many from multiple options
   ]).isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired, // If no label given, we leave out label
