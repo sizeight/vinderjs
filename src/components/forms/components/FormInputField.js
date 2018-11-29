@@ -19,10 +19,9 @@ const propTypes = {
     'multi-checkbox', // select many from multiple options
   ]).isRequired,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired, // If no label given, we leave out label
+  label: PropTypes.string.isRequired,
   hideLabel: PropTypes.bool,
   placeholder: PropTypes.string, // If no placeholder given, we leave out placeholder
-  required: PropTypes.bool,
   helpText: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.shape({ // Optional, only for select, multi-checkbox
     value: PropTypes.oneOfType([
@@ -31,18 +30,22 @@ const propTypes = {
     ]),
     label: PropTypes.string,
   })),
-
+  validation: PropTypes.shape({
+    required: PropTypes.bool,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    email: PropTypes.bool,
+  }),
   width: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
 };
 
 const defaultProps = {
-  required: false,
   hideLabel: false,
 };
 
 const FormInputField = (props) => {
   const {
-    type, name, label, hideLabel, placeholder, required, helpText, options,
+    type, name, label, hideLabel, placeholder, validation, helpText, options,
   } = props;
 
   /*
@@ -59,6 +62,8 @@ const FormInputField = (props) => {
 
   // Has this field been touched and does it have an error?
   const hasError = error && touched;
+
+  const required = validation ? (validation.required) : false;
 
   let selectOptions = options;
   if (name === 'country') {
