@@ -7,7 +7,7 @@ import { connect, getIn } from 'formik';
 
 import CustomFormInputDateTime from './CustomFormInputDateTime';
 import CustomFormInputMultiCheckbox from './CustomFormInputMultiCheckbox';
-import countries from './Constants';
+import countries from '../constants';
 
 const countryOptions = countries;
 
