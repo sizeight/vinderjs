@@ -77,6 +77,9 @@ const CustomForm = (props) => {
       if (obj.validation.email) {
         schema = schema.concat(Yup.string().email('Not a valid email address.'));
       }
+      if (obj.validation.phone) {
+        schema = schema.concat(Yup.string().matches(/^[\+]?[0-9 ]{7,20}$/, 'Not a valid phone number.'));
+      }
       validationSchemaShape[obj.name] = schema;
     }
   });
