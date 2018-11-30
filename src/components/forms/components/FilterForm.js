@@ -31,7 +31,10 @@ class FilterForm extends React.Component {
     const { value, placeHolderText } = this.props;
 
     return (
-      <form className="form-inline flex-row-reverse">
+      <form
+        className="form-inline flex-row-reverse"
+        onSubmit={e => e.preventDefault()}
+      >
         <div className="input-group mb-3">
           <input
             type="text"
