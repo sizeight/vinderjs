@@ -15,6 +15,7 @@ const propTypes = {
         type: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
+        initialValue: PropTypes.any.isRequired,
         hideLabel: PropTypes.bool,
         placeholder: PropTypes.string,
         validation: PropTypes.shape({
@@ -27,7 +28,6 @@ const propTypes = {
       }),
     ),
   ).isRequired,
-  initialValues: PropTypes.object.isRequired,
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   submitButtonText: PropTypes.string,
@@ -40,20 +40,18 @@ const propTypes = {
  */
 const CustomForm = (props) => {
   const {
-    definition, initialValues, onSubmit, onCancel, submitButtonText,
+    definition, onSubmit, onCancel, submitButtonText,
     buttonPosition, children,
   } = props;
 
 
   /*
    * Initial values
-   * If not all initial valeus are provided set them up here to blank strings
    */
   const flatDefinition = definition.flat();
+  const initialValues = {};
   flatDefinition.forEach((obj) => {
-    if (!initialValues[obj.name]) {
-      initialValues[obj.name] = '';
-    }
+    initialValues[obj.name] = obj.initialValue;
   });
 
 
