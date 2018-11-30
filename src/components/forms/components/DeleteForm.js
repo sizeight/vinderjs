@@ -5,8 +5,18 @@ import { Button, Modal, ModalBody } from 'reactstrap';
 
 
 const propTypes = {
-  elemType: PropTypes.string.isRequired, // Used in the delete message below
+  // For delete message.
+  elemType: PropTypes.string.isRequired,
+  // Delete button color
+  color: PropTypes.oneOf(['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link']),
+  // Delete button size
+  size: PropTypes.oneOf(['lg', 'sm']),
   onDelete: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+  color: 'link',
+  size: 'sm',
 };
 
 /*
@@ -28,19 +38,17 @@ class DeleteForm extends React.Component {
     this.setState({ isSubmitting: true });
     this.toggleModal();
     onDelete();
-    // .then(() => {
-    //  this.setState({ isSubmitting: false });
-    // });
   }
 
   render() {
-    const { elemType } = this.props;
+    const { elemType, color, size } = this.props;
     const { showModal, isSubmitting } = this.state;
 
     return (
       <div>
         <Button
-          color="link"
+          color={color}
+          size={size}
           disabled={isSubmitting}
           onClick={this.toggleModal}
         >
@@ -81,5 +89,6 @@ class DeleteForm extends React.Component {
 }
 
 DeleteForm.propTypes = propTypes;
+DeleteForm.defaultProps = defaultProps;
 
 export default DeleteForm;
