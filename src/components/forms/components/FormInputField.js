@@ -112,6 +112,8 @@ const FormInputField = (props) => {
           onChange={onChange}
           onBlur={onBlur}
           invalid={hasError}
+
+          rows="10"
         />}
 
       {type === 'select' &&
