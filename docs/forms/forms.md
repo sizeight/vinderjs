@@ -7,12 +7,12 @@ Reusable forms with initial values and validation.
 A form is created by setting up a form definition object. The form defeinition specifies the form fields, layout, validations and initial values. A form definition can be defined server side with JSON and then changed to an object client side and given to the form. See example below for a form definition.
 
 Supported form fields:
-```
+```es6
 [
   'text', 'textarea', 'checkbox', 'email', 'datetime', 'date', 'file-image',
   'select', 'radio', // select only one from multiple options
   'multi-checkbox', // Select 0 or more from multiple options
- ]
+]
 ```
 ## Example
 An example showing showing how to create/update a page.
