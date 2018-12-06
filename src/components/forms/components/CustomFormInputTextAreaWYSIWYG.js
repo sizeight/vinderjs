@@ -130,8 +130,7 @@ class CustomFormInputTextAreaWYSIWYG extends React.Component {
     }
   }
 
-  togglePreview = (e) => {
-    e.preventDefault();
+  togglePreview = () => {
     const { preview } = this.state;
     this.setState({ preview: !preview }, this.focus);
   }
