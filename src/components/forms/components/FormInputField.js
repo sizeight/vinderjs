@@ -7,6 +7,7 @@ import { connect, getIn } from 'formik';
 
 import CustomFormInputDateTime from './CustomFormInputDateTime';
 import CustomFormInputMultiCheckbox from './CustomFormInputMultiCheckbox';
+import CustomFormInputTextAreaWYSIWYG from './CustomFormInputTextAreaWYSIWYG';
 import countries from '../constants';
 
 const countryOptions = countries;
@@ -15,6 +16,7 @@ const countryOptions = countries;
 const propTypes = {
   type: PropTypes.oneOf([
     'text', 'textarea', 'checkbox', 'email', 'datetime', 'date', 'file-image',
+    'textarea-wysiwyg',
     'select', 'radio', // select one from multiple optons
     'multi-checkbox', // select many from multiple options
   ]).isRequired,
@@ -194,6 +196,15 @@ const FormInputField = (props) => {
 
       {type === 'multi-checkbox' &&
         <CustomFormInputMultiCheckbox
+          {...props}
+          value={value}
+          onChange={setFieldValue}
+          onBlur={setFieldTouched}
+        />}
+
+
+      {type === 'textarea-wysiwyg' &&
+        <CustomFormInputTextAreaWYSIWYG
           {...props}
           value={value}
           onChange={setFieldValue}

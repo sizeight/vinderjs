@@ -1,0 +1,83 @@
+.RichEditor-root {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: .2rem;
+}
+
+.RichEditor-editor {
+  overflow: hidden;
+}
+
+.RichEditor-editor .public-DraftEditor-content {
+  min-height: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+
+  padding: 10px;
+}
+
+.MarkupEditor-editor {
+  overflow: hidden;
+}
+.RichEditor-editor.noshow,
+.MarkupEditor-editor.noshow {
+  display: none;
+}
+.MarkupEditor-editor > textarea {
+  background: #2F333D;
+  color: #FEFCFD;
+  display: block;
+  height: 200px;
+  max-height: 200px;
+  min-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  resize: none;
+  width: 100%;
+}
+
+
+.RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+.RichEditor-editor .public-DraftEditorPlaceholder-root {
+  color: #9197a3;
+  margin: 0;
+  padding: 9px;
+  position: absolute;
+  z-index: 0;
+}
+
+.RichEditor-editor .RichEditor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: 'Hoefler Text', 'Georgia', serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+
+.RichEditor-editor .public-DraftStyleDefault-pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.RichEditor-controls {
+  border-bottom: 1px solid #ddd;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 90%;
+  user-select: none;
+}
+
+.RichEditor-styleButton {
+  border-right: 1px solid #eee;
+  cursor: pointer;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.RichEditor-disabledButton {
+  color: #ddd;
+}
