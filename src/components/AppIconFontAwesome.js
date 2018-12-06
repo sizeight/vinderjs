@@ -59,6 +59,12 @@ import { faBars as farBars } from '@fortawesome/pro-regular-svg-icons/faBars';
 import { faBars as fasBars } from '@fortawesome/pro-solid-svg-icons/faBars';
 library.add(falBars, farBars, fasBars);
 
+// bold
+import { faBold as falBold } from '@fortawesome/pro-light-svg-icons/faBold';
+import { faBold as farBold } from '@fortawesome/pro-regular-svg-icons/faBold';
+import { faBold as fasBold } from '@fortawesome/pro-solid-svg-icons/faBold';
+library.add(falBold, farBold, fasBold);
+
 // bookmark
 import { faBookmark as falBookmark } from '@fortawesome/pro-light-svg-icons/faBookmark';
 import { faBookmark as farBookmark } from '@fortawesome/pro-regular-svg-icons/faBookmark';
@@ -160,6 +166,12 @@ import { faClipboard as falClipboard } from '@fortawesome/pro-light-svg-icons/fa
 import { faClipboard as farClipboard } from '@fortawesome/pro-regular-svg-icons/faClipboard';
 import { faClipboard as fasClipboard } from '@fortawesome/pro-solid-svg-icons/faClipboard';
 library.add(falClipboard, farClipboard, fasClipboard);
+
+// code
+import { faCode as falCode } from '@fortawesome/pro-light-svg-icons/faCode';
+import { faCode as farCode } from '@fortawesome/pro-regular-svg-icons/faCode';
+import { faCode as fasCode } from '@fortawesome/pro-solid-svg-icons/faCode';
+library.add(falCode, farCode, fasCode);
 
 // cogs
 import { faCogs as falCogs } from '@fortawesome/pro-light-svg-icons/faCogs';
@@ -299,11 +311,23 @@ import { faInfoCircle as farInfoCircle } from '@fortawesome/pro-regular-svg-icon
 import { faInfoCircle as fasInfoCircle } from '@fortawesome/pro-solid-svg-icons/faInfoCircle';
 library.add(falInfoCircle, farInfoCircle, fasInfoCircle);
 
+// italic
+import { faItalic as falItalic } from '@fortawesome/pro-light-svg-icons/faItalic';
+import { faItalic as farItalic } from '@fortawesome/pro-regular-svg-icons/faItalic';
+import { faItalic as fasItalic } from '@fortawesome/pro-solid-svg-icons/faItalic';
+library.add(falItalic, farItalic, fasItalic);
+
 // list
 import { faList as falList } from '@fortawesome/pro-light-svg-icons/faList';
 import { faList as farList } from '@fortawesome/pro-regular-svg-icons/faList';
 import { faList as fasList } from '@fortawesome/pro-solid-svg-icons/faList';
 library.add(falList, farList, fasList);
+
+// list-ol
+import { faListOl as falListOl } from '@fortawesome/pro-light-svg-icons/faListOl';
+import { faListOl as farListOl } from '@fortawesome/pro-regular-svg-icons/faListOl';
+import { faListOl as fasListOl } from '@fortawesome/pro-solid-svg-icons/faListOl';
+library.add(falListOl, farListOl, fasListOl);
 
 // lock
 import { faLock as falLock } from '@fortawesome/pro-light-svg-icons/faLock';
@@ -376,6 +400,12 @@ import { faQuestionCircle as falQuestionCircle } from '@fortawesome/pro-light-sv
 import { faQuestionCircle as farQuestionCircle } from '@fortawesome/pro-regular-svg-icons/faQuestionCircle';
 import { faQuestionCircle as fasQuestionCircle } from '@fortawesome/pro-solid-svg-icons/faQuestionCircle';
 library.add(falQuestionCircle, farQuestionCircle, fasQuestionCircle);
+
+// quote-right
+import { faQuoteRight as falQuoteRight } from '@fortawesome/pro-light-svg-icons/faQuoteRight';
+import { faQuoteRight as farQuoteRight } from '@fortawesome/pro-regular-svg-icons/faQuoteRight';
+import { faQuoteRight as fasQuoteRight } from '@fortawesome/pro-solid-svg-icons/faQuoteRight';
+library.add(falQuoteRight, farQuoteRight, fasQuoteRight);
 
 // redo-alt
 import { faRedoAlt as falRedoAlt } from '@fortawesome/pro-light-svg-icons/faRedoAlt';
@@ -467,6 +497,12 @@ import { faStar as farStar } from '@fortawesome/pro-regular-svg-icons/faStar';
 import { faStar as fasStar } from '@fortawesome/pro-solid-svg-icons/faStar';
 library.add(falStar, farStar, fasStar);
 
+// terminal
+import { faTerminal as falTerminal } from '@fortawesome/pro-light-svg-icons/faTerminal';
+import { faTerminal as farTerminal } from '@fortawesome/pro-regular-svg-icons/faTerminal';
+import { faTerminal as fasTerminal } from '@fortawesome/pro-solid-svg-icons/faTerminal';
+library.add(falTerminal, farTerminal, fasTerminal);
+
 // th
 import { faTh as falTh } from '@fortawesome/pro-light-svg-icons/faTh';
 import { faTh as farTh } from '@fortawesome/pro-regular-svg-icons/faTh';
@@ -508,6 +544,12 @@ import { faTruck as falTruck } from '@fortawesome/pro-light-svg-icons/faTruck';
 import { faTruck as farTruck } from '@fortawesome/pro-regular-svg-icons/faTruck';
 import { faTruck as fasTruck } from '@fortawesome/pro-solid-svg-icons/faTruck';
 library.add(falTruck, farTruck, fasTruck);
+
+// underline
+import { faUnderline as falUnderline } from '@fortawesome/pro-light-svg-icons/faUnderline';
+import { faUnderline as farUnderline } from '@fortawesome/pro-regular-svg-icons/faUnderline';
+import { faUnderline as fasUnderline } from '@fortawesome/pro-solid-svg-icons/faUnderline';
+library.add(falUnderline, farUnderline, fasUnderline);
 
 // undo-alt
 import { faUndoAlt as falUndoAlt } from '@fortawesome/pro-light-svg-icons/faUndoAlt';
