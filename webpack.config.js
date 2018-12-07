@@ -6,7 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const nodeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 const isProduction = nodeEnv === 'production';
 
-const sourcePath = path.join(__dirname, './src');
+const sourcePath = path.join(__dirname, './src/');
 const buildPath = path.join(__dirname, './lib/');
 
 // Common plugins
@@ -42,10 +42,12 @@ module.exports = {
   mode: nodeEnv,
   devtool: isProduction ? false : 'source-map',
   context: sourcePath,
-  entry: 'index.js',
+  entry: {
+    vinderjs: 'index.js',
+  },
   output: {
     path: buildPath,
-    filename: isProduction ? 'vinderjs.min.js' : 'vinderjs.js',
+    filename: isProduction ? '[name].min.js' : '[name].js',
     libraryTarget: 'commonjs2',
   },
   module: {
