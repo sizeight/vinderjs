@@ -77,7 +77,52 @@
   padding: 8px 12px;
   display: inline-block;
 }
-
+.RichEditor-activeButton {
+  color: #007bff;
+}
 .RichEditor-disabledButton {
   color: #ddd;
+}
+
+.RichEditor-previewIcon {
+  font-weight: 600;
+}
+.RichEditor-boldIcon {
+  font-weight: 600;
+}
+.RichEditor-italicIcon {
+  font-style: italic;
+  font-weight: 600;
+}
+.RichEditor-underlineIcon {
+  font-weight: 600;
+  text-decoration: underline;
+}
+.RichEditor-codeblockIcon {
+  font-weight: 600;
+}
+.RichEditor-blockquoteIcon:before {
+  content: '\0201D';
+  font-weight: 600;
+}
+.RichEditor-ulIcon:before {
+  content: '\022EE';
+  font-weight: 600;
+}
+.RichEditor-olIcon:before {
+  font-weight: 600;
+}
+.RichEditor-undoIcon:before {
+  content: '\0293A';
+  font-weight: 600;
+}
+.RichEditor-redoIcon:before {
+  content: '\0293A';
+  display: inline-block;
+  font-weight: 600;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }

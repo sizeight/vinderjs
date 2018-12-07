@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import { Button } from 'reactstrap';
 
-import AppIconFontAwesome from 'components/AppIconFontAwesome';
-
 
 const propTypes = {
   value: PropTypes.string.isRequired,
@@ -51,9 +49,7 @@ class FilterForm extends React.Component {
               size="sm"
               onClick={this.handleClear}
             >
-              <AppIconFontAwesome
-                icon={['fal', 'times']}
-              />
+              &#215;
             </Button>
           </div>
         </div>

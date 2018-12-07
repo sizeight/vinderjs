@@ -7,7 +7,6 @@ import { stateToHTML } from 'draft-js-export-html';
 
 import '../RichEditor.css';
 
-import AppIconFontAwesome from 'components/AppIconFontAwesome';
 
 const propTypes = {
   type: PropTypes.oneOf(['textarea-wysiwyg']).isRequired,
@@ -229,7 +228,7 @@ class StyleButton extends React.Component { /* eslint-disable-line */
   };
 
   render() {
-    const { label, icon, active } = this.props;
+    const { label, iconClass, active } = this.props;
     let className = 'RichEditor-styleButton';
 
     if (active) {
@@ -243,12 +242,9 @@ class StyleButton extends React.Component { /* eslint-disable-line */
         tabIndex={-1}
         onMouseDown={this.onToggle}
       >
-        {icon.length !== 2 ?
-          label :
-          <AppIconFontAwesome
-            icon={icon}
-            fixedWidth
-          />}
+        <div className={`RichEditor-${iconClass}`}>
+          {label}
+        </div>
       </span>
     );
   }
@@ -256,7 +252,7 @@ class StyleButton extends React.Component { /* eslint-disable-line */
 
 StyleButton.propTypes = {
   label: PropTypes.string.isRequired,
-  icon: PropTypes.arrayOf(PropTypes.string).isRequired,
+  iconClass: PropTypes.string,
   active: PropTypes.bool.isRequired,
   style: PropTypes.string.isRequired,
   onToggle: PropTypes.func.isRequired,
@@ -279,10 +275,9 @@ const PreviewControl = (props) => {
         onTogglePreview();
       }}
     >
-      <AppIconFontAwesome
-        icon={control.icon}
-        fixedWidth
-      />
+      <div className={`RichEditor-${control.iconClass}`}>
+        {'>_'}
+      </div>
     </span>
   );
 };
@@ -310,7 +305,7 @@ const BlockStyleControl = (props) => {
     <StyleButton
       active={control.style === blockType}
       label={control.label}
-      icon={control.icon}
+      iconClass={control.iconClass}
       onToggle={onToggleBlockType}
       style={control.style}
     />
@@ -335,7 +330,7 @@ const InlineStyleControl = (props) => {
     <StyleButton
       active={currentStyle.has(control.style)}
       label={control.label}
-      icon={control.icon}
+      iconClass={control.iconClass}
       onToggle={onToggleInlineStyle}
       style={control.style}
     />
@@ -354,7 +349,7 @@ InlineStyleControl.propTypes = {
 const UndoRedoControl = (props) => {
   const { control, editorState, onToggleUndo, onToggleRedo } = props;
 
-  const disabled = control.label === 'Undo' ?
+  const disabled = control.id === 'undo' ?
     editorState.getUndoStack().count() === 0 : editorState.getRedoStack().count() === 0;
 
   return (
@@ -364,17 +359,14 @@ const UndoRedoControl = (props) => {
       tabIndex={-1}
       onMouseDown={(e) => {
         e.preventDefault();
-        if (control.label === 'Undo') {
+        if (control.id === 'undo') {
           onToggleUndo();
-        } else if (control.label === 'Redo') {
+        } else if (control.id === 'redo') {
           onToggleRedo();
         }
       }}
     >
-      <AppIconFontAwesome
-        icon={control.icon}
-        fixedWidth
-      />
+      <div className={`RichEditor-${control.iconClass}`} />
     </span>
   );
 };
@@ -388,28 +380,29 @@ UndoRedoControl.propTypes = {
 
 
 const CONTROLS = [
-  { type: 'PREVIEW', label: 'Preview', icon: ['far', 'terminal'] },
-  { type: 'BLOCK', label: 'H1', icon: [], style: 'header-one' },
-  { type: 'BLOCK', label: 'H2', icon: [], style: 'header-two' },
-  { type: 'BLOCK', label: 'H3', icon: [], style: 'header-three' },
-  { type: 'BLOCK', label: 'H4', icon: [], style: 'header-four' },
-  { type: 'INLINE', label: 'Bold', icon: ['far', 'bold'], style: 'BOLD' },
-  { type: 'INLINE', label: 'Italic', icon: ['far', 'italic'], style: 'ITALIC' },
-  { type: 'INLINE', label: 'Underline', icon: ['far', 'underline'], style: 'UNDERLINE' },
-  { type: 'BLOCK', label: 'Blockquote', icon: ['fas', 'quote-right'], style: 'blockquote' },
-  { type: 'BLOCK', label: 'Code Block', icon: ['far', 'code'], style: 'code-block' },
-  { type: 'BLOCK', label: 'UL', icon: ['far', 'list'], style: 'unordered-list-item' },
-  { type: 'BLOCK', label: 'OL', icon: ['far', 'list-ol'], style: 'ordered-list-item' },
-  { type: 'INLINE', label: 'Monospace', icon: [], style: 'CODE' },
-  { type: 'UNDOREDO', label: 'Undo', icon: ['far', 'undo-alt'] },
-  { type: 'UNDOREDO', label: 'Redo', icon: ['far', 'redo-alt'] },
+  { type: 'PREVIEW', id: 'preview', label: 'Preview', iconClass: 'previewIcon' },
+  { type: 'BLOCK', id: 'h1', label: 'H1', style: 'header-one', iconClass: 'headingIcon' },
+  { type: 'BLOCK', id: 'h2', label: 'H2', style: 'header-two', iconClass: 'headingIcon' },
+  { type: 'BLOCK', id: 'h3', label: 'H3', style: 'header-three', iconClass: 'headingIcon' },
+  { type: 'BLOCK', id: 'h4', label: 'H4', style: 'header-four', iconClass: 'headingIcon' },
+  { type: 'INLINE', id: 'bold', label: 'B', style: 'BOLD', iconClass: 'boldIcon' },
+  { type: 'INLINE', id: 'italic', label: 'I', style: 'ITALIC', iconClass: 'italicIcon' },
+  { type: 'INLINE', id: 'underline', label: 'U', style: 'UNDERLINE', iconClass: 'underlineIcon' },
+  { type: 'BLOCK', id: 'blocquote', label: '', style: 'blockquote', iconClass: 'blockquoteIcon' },
+  { type: 'BLOCK', id: 'codeblock', label: '</>', style: 'code-block', iconClass: 'codeblockIcon' },
+  { type: 'BLOCK', id: 'ul', label: '', style: 'unordered-list-item', iconClass: 'ulIcon' },
+  { type: 'BLOCK', id: 'ol', label: '1.', style: 'ordered-list-item', iconClass: 'olIcon' },
+  // { type: 'INLINE', id: 'monospace', label: 'Monospace', icon: [], style: 'CODE',
+  // iconClass: 'monospaceIcon' },
+  { type: 'UNDOREDO', id: 'undo', label: '', iconClass: 'undoIcon' },
+  { type: 'UNDOREDO', id: 'redo', label: '', iconClass: 'redoIcon' },
 ];
 
 const StyleControls = (props) => {
   return (
     <React.Fragment>
       {CONTROLS.map(control =>
-        <React.Fragment key={control.label}>
+        <React.Fragment key={control.id}>
           {control.type === 'PREVIEW' &&
             <PreviewControl
               {...props}
