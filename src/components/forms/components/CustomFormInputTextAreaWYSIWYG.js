@@ -5,8 +5,6 @@ import { Editor, EditorState, RichUtils, getDefaultKeyBinding } from 'draft-js';
 import { stateFromHTML } from 'draft-js-import-html';
 import { stateToHTML } from 'draft-js-export-html';
 
-import '../RichEditor.css';
-
 
 const propTypes = {
   type: PropTypes.oneOf(['textarea-wysiwyg']).isRequired,
@@ -222,16 +220,20 @@ export default CustomFormInputTextAreaWYSIWYG;
  */
 class StyleButton extends React.Component { /* eslint-disable-line */
   onToggle = (e) => {
-    const { style, onToggle } = this.props;
+    const { preview, style, onToggle } = this.props;
     e.preventDefault();
-    onToggle(style);
+    if (!preview) {
+      onToggle(style);
+    }
   };
 
   render() {
-    const { label, iconClass, active } = this.props;
+    const { label, iconClass, active, preview } = this.props;
     let className = 'RichEditor-styleButton';
 
-    if (active) {
+    if (preview) {
+      className += ' RichEditor-disabledButton';
+    } else if (active) {
       className += ' RichEditor-activeButton';
     }
 
@@ -251,9 +253,11 @@ class StyleButton extends React.Component { /* eslint-disable-line */
 }
 
 StyleButton.propTypes = {
+  editorState: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
   iconClass: PropTypes.string,
   active: PropTypes.bool.isRequired,
+  preview: PropTypes.bool.isRequired,
   style: PropTypes.string.isRequired,
   onToggle: PropTypes.func.isRequired,
 };
@@ -293,7 +297,7 @@ PreviewControl.propTypes = {
  * Block style control.
  */
 const BlockStyleControl = (props) => {
-  const { control, editorState, onToggleBlockType } = props;
+  const { control, preview, editorState, onToggleBlockType } = props;
 
   const selection = editorState.getSelection();
   const blockType = editorState
@@ -304,6 +308,7 @@ const BlockStyleControl = (props) => {
   return (
     <StyleButton
       active={control.style === blockType}
+      preview={preview}
       label={control.label}
       iconClass={control.iconClass}
       onToggle={onToggleBlockType}
@@ -314,6 +319,7 @@ const BlockStyleControl = (props) => {
 
 BlockStyleControl.propTypes = {
   control: PropTypes.object.isRequired,
+  preview: PropTypes.bool.isRequired,
   editorState: PropTypes.object.isRequired,
   onToggleBlockType: PropTypes.func.isRequired,
 };
@@ -323,12 +329,13 @@ BlockStyleControl.propTypes = {
  * Inline style control.
  */
 const InlineStyleControl = (props) => {
-  const { control, editorState, onToggleInlineStyle } = props;
+  const { control, preview, editorState, onToggleInlineStyle } = props;
   const currentStyle = editorState.getCurrentInlineStyle();
 
   return (
     <StyleButton
       active={currentStyle.has(control.style)}
+      preview={preview}
       label={control.label}
       iconClass={control.iconClass}
       onToggle={onToggleInlineStyle}
@@ -339,6 +346,7 @@ const InlineStyleControl = (props) => {
 
 InlineStyleControl.propTypes = {
   control: PropTypes.object.isRequired,
+  preview: PropTypes.bool.isRequired,
   editorState: PropTypes.object.isRequired,
   onToggleInlineStyle: PropTypes.func.isRequired,
 };

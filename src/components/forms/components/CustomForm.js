@@ -7,6 +7,8 @@ import * as Yup from 'yup';
 import FormInputField from './FormInputField';
 import FormButtons from './FormButtons';
 
+import '../base.css';
+
 
 const propTypes = {
   definition: PropTypes.arrayOf(
