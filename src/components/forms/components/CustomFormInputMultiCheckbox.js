@@ -19,7 +19,7 @@ const propTypes = {
       PropTypes.number,
     ]),
     label: PropTypes.string,
-  })),
+  })).isRequired,
 
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
@@ -34,9 +34,11 @@ const defaultProps = {
  */
 class CustomFormInputMultiCheckbox extends React.Component {
   handleChange = (e) => {
-    const { name, value, options, onChange } = this.props;
-    const target = e.target;
-    const checked = target.checked;
+    const {
+      name, value, options, onChange,
+    } = this.props;
+    const { target } = e;
+    const { checked } = target;
     const optionName = target.name;
     const optionsIndex = Number.parseInt(optionName.split(':')[1], 10);
     const optionValue = options[optionsIndex].value;
@@ -63,11 +65,13 @@ class CustomFormInputMultiCheckbox extends React.Component {
   }
 
   render() {
-    const { options, name, required, value } = this.props;
+    const {
+      options, name, required, value,
+    } = this.props;
 
     return (
       <div>
-        {options.map((option, i) =>
+        {options.map((option, i) => (
           <CustomInput
             type="checkbox"
             name={`${name}:${i}`} // e.g. tags:2
@@ -81,7 +85,7 @@ class CustomFormInputMultiCheckbox extends React.Component {
             label={option.label}
             inline
             key={option.value}
-          />)}
+          />))}
       </div>
     );
   }

@@ -23,11 +23,12 @@ class ShowFormToggler extends React.Component {
   }
 
   render() {
+    const { children } = this.props;
     const { showForm } = this.state;
 
     return (
       <div>
-        {this.props.children(showForm, this.toggleForm)}
+        {children(showForm, this.toggleForm)}
       </div>
     );
   }

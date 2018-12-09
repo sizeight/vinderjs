@@ -37,13 +37,19 @@ const propTypes = {
   children: PropTypes.node,
 };
 
+const defaultProps = {
+  onCancel: undefined,
+  submitButtonText: undefined,
+  buttonPosition: undefined,
+  children: null,
+};
+
 /*
  * Custom Formik wrapper.
  */
 const CustomForm = (props) => {
   const {
-    definition, onSubmit, onCancel, submitButtonText,
-    buttonPosition, children,
+    definition, onSubmit, onCancel, submitButtonText, buttonPosition, children,
   } = props;
 
 
@@ -134,17 +140,17 @@ const CustomForm = (props) => {
       validateOnChange={false}
     >
       <React.Fragment>
-        {definition.map((formRow, i) =>
+        {definition.map((formRow, i) => (
           <div
             className="form-row"
             key={i}
           >
-            {formRow.map(field =>
+            {formRow.map(field => (
               <FormInputField
                 {...field}
                 key={field.name}
-              />)}
-          </div>)}
+              />))}
+          </div>))}
         <FormButtons
           submitButtonText={submitButtonText}
           buttonPosition={buttonPosition}
@@ -158,5 +164,6 @@ const CustomForm = (props) => {
 };
 
 CustomForm.propTypes = propTypes;
+CustomForm.defaultProps = defaultProps;
 
 export default CustomForm;

@@ -55,14 +55,14 @@ class DeleteForm extends React.Component {
           Delete
         </Button>
 
-        {showModal &&
+        {showModal && (
           <Modal
             isOpen={showModal}
             toggle={this.toggleModal}
           >
             <ModalBody>
               <p className="mt-4 mb-4">
-                Are you sure you want to delete this{elemType ? ` ${elemType}` : ''}?
+                {`Are you sure you want to delete this${elemType ? ` ${elemType}` : ''}?`}
               </p>
               <div className="text-right mb-2">
                 <Button
@@ -82,7 +82,7 @@ class DeleteForm extends React.Component {
                 </Button>
               </div>
             </ModalBody>
-          </Modal>}
+          </Modal>)}
       </div>
     );
   }

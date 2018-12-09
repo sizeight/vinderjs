@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Editor, EditorState, RichUtils, getDefaultKeyBinding } from 'draft-js';
+import {
+  Editor, EditorState, RichUtils, getDefaultKeyBinding,
+} from 'draft-js';
 import { stateFromHTML } from 'draft-js-import-html';
 import { stateToHTML } from 'draft-js-export-html';
 
 
 const propTypes = {
-  type: PropTypes.oneOf(['textarea-wysiwyg']).isRequired,
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
   value: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+  required: false,
+  value: '',
+  placeholder: '',
 };
 
 // Custom overrides for "code" style.
@@ -34,10 +41,13 @@ function getBlockStyle(block) {
 }
 
 class CustomFormInputTextAreaWYSIWYG extends React.Component {
-  state = {
-    editorState: EditorState.createWithContent(stateFromHTML(this.props.value)),
-    markupState: this.props.value,
-    preview: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      editorState: EditorState.createWithContent(stateFromHTML(props.value)),
+      markupState: props.value,
+      preview: false,
+    };
   }
 
   handleEditorChange = (editorState) => {
@@ -72,13 +82,14 @@ class CustomFormInputTextAreaWYSIWYG extends React.Component {
   }
 
   mapKeyToEditorCommand = (e) => {
+    const { editorState } = this.state;
     if (e.keyCode === 9 /* TAB */) {
       const newEditorState = RichUtils.onTab(
         e,
-        this.state.editorState,
+        editorState,
         4, /* maxDepth */
       );
-      if (newEditorState !== this.state.editorState) {
+      if (newEditorState !== editorState) {
         this.handleEditorChange(newEditorState);
       }
       return;
@@ -211,6 +222,7 @@ class CustomFormInputTextAreaWYSIWYG extends React.Component {
 }
 
 CustomFormInputTextAreaWYSIWYG.propTypes = propTypes;
+CustomFormInputTextAreaWYSIWYG.defaultProps = defaultProps;
 
 export default CustomFormInputTextAreaWYSIWYG;
 
@@ -228,7 +240,9 @@ class StyleButton extends React.Component { /* eslint-disable-line */
   };
 
   render() {
-    const { label, iconClass, active, preview } = this.props;
+    const {
+      label, iconClass, active, preview,
+    } = this.props;
     let className = 'RichEditor-styleButton';
 
     if (preview) {
@@ -253,9 +267,8 @@ class StyleButton extends React.Component { /* eslint-disable-line */
 }
 
 StyleButton.propTypes = {
-  editorState: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
-  iconClass: PropTypes.string,
+  iconClass: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
   preview: PropTypes.bool.isRequired,
   style: PropTypes.string.isRequired,
@@ -297,7 +310,9 @@ PreviewControl.propTypes = {
  * Block style control.
  */
 const BlockStyleControl = (props) => {
-  const { control, preview, editorState, onToggleBlockType } = props;
+  const {
+    control, preview, editorState, onToggleBlockType,
+  } = props;
 
   const selection = editorState.getSelection();
   const blockType = editorState
@@ -329,7 +344,9 @@ BlockStyleControl.propTypes = {
  * Inline style control.
  */
 const InlineStyleControl = (props) => {
-  const { control, preview, editorState, onToggleInlineStyle } = props;
+  const {
+    control, preview, editorState, onToggleInlineStyle,
+  } = props;
   const currentStyle = editorState.getCurrentInlineStyle();
 
   return (
@@ -355,10 +372,12 @@ InlineStyleControl.propTypes = {
  * Inline style control.
  */
 const UndoRedoControl = (props) => {
-  const { control, editorState, onToggleUndo, onToggleRedo } = props;
+  const {
+    control, editorState, onToggleUndo, onToggleRedo,
+  } = props;
 
-  const disabled = control.id === 'undo' ?
-    editorState.getUndoStack().count() === 0 : editorState.getRedoStack().count() === 0;
+  const disabled = control.id === 'undo'
+    ? editorState.getUndoStack().count() === 0 : editorState.getRedoStack().count() === 0;
 
   return (
     <span
@@ -388,53 +407,81 @@ UndoRedoControl.propTypes = {
 
 
 const CONTROLS = [
-  { type: 'PREVIEW', id: 'preview', label: 'Preview', iconClass: 'previewIcon' },
-  { type: 'BLOCK', id: 'h1', label: 'H1', style: 'header-one', iconClass: 'headingIcon' },
-  { type: 'BLOCK', id: 'h2', label: 'H2', style: 'header-two', iconClass: 'headingIcon' },
-  { type: 'BLOCK', id: 'h3', label: 'H3', style: 'header-three', iconClass: 'headingIcon' },
-  { type: 'BLOCK', id: 'h4', label: 'H4', style: 'header-four', iconClass: 'headingIcon' },
-  { type: 'INLINE', id: 'bold', label: 'B', style: 'BOLD', iconClass: 'boldIcon' },
-  { type: 'INLINE', id: 'italic', label: 'I', style: 'ITALIC', iconClass: 'italicIcon' },
-  { type: 'INLINE', id: 'underline', label: 'U', style: 'UNDERLINE', iconClass: 'underlineIcon' },
-  { type: 'BLOCK', id: 'blocquote', label: '', style: 'blockquote', iconClass: 'blockquoteIcon' },
-  { type: 'BLOCK', id: 'codeblock', label: '</>', style: 'code-block', iconClass: 'codeblockIcon' },
-  { type: 'BLOCK', id: 'ul', label: '', style: 'unordered-list-item', iconClass: 'ulIcon' },
-  { type: 'BLOCK', id: 'ol', label: '1.', style: 'ordered-list-item', iconClass: 'olIcon' },
+  {
+    type: 'PREVIEW', id: 'preview', label: 'Preview', iconClass: 'previewIcon',
+  },
+  {
+    type: 'BLOCK', id: 'h1', label: 'H1', style: 'header-one', iconClass: 'headingIcon',
+  },
+  {
+    type: 'BLOCK', id: 'h2', label: 'H2', style: 'header-two', iconClass: 'headingIcon',
+  },
+  {
+    type: 'BLOCK', id: 'h3', label: 'H3', style: 'header-three', iconClass: 'headingIcon',
+  },
+  {
+    type: 'BLOCK', id: 'h4', label: 'H4', style: 'header-four', iconClass: 'headingIcon',
+  },
+  {
+    type: 'INLINE', id: 'bold', label: 'B', style: 'BOLD', iconClass: 'boldIcon',
+  },
+  {
+    type: 'INLINE', id: 'italic', label: 'I', style: 'ITALIC', iconClass: 'italicIcon',
+  },
+  {
+    type: 'INLINE', id: 'underline', label: 'U', style: 'UNDERLINE', iconClass: 'underlineIcon',
+  },
+  {
+    type: 'BLOCK', id: 'blocquote', label: '', style: 'blockquote', iconClass: 'blockquoteIcon',
+  },
+  {
+    type: 'BLOCK', id: 'codeblock', label: '</>', style: 'code-block', iconClass: 'codeblockIcon',
+  },
+  {
+    type: 'BLOCK', id: 'ul', label: '', style: 'unordered-list-item', iconClass: 'ulIcon',
+  },
+  {
+    type: 'BLOCK', id: 'ol', label: '1.', style: 'ordered-list-item', iconClass: 'olIcon',
+  },
   // { type: 'INLINE', id: 'monospace', label: 'Monospace', icon: [], style: 'CODE',
   // iconClass: 'monospaceIcon' },
-  { type: 'UNDOREDO', id: 'undo', label: '', iconClass: 'undoIcon' },
-  { type: 'UNDOREDO', id: 'redo', label: '', iconClass: 'redoIcon' },
+  {
+    type: 'UNDOREDO', id: 'undo', label: '', iconClass: 'undoIcon',
+  },
+  {
+    type: 'UNDOREDO', id: 'redo', label: '', iconClass: 'redoIcon',
+  },
 ];
 
 const StyleControls = (props) => {
   return (
     <React.Fragment>
-      {CONTROLS.map(control =>
+      {CONTROLS.map(control => (
         <React.Fragment key={control.id}>
-          {control.type === 'PREVIEW' &&
+          {control.type === 'PREVIEW' && (
             <PreviewControl
               {...props}
               control={control}
-            />}
+            />)}
 
-          {control.type === 'BLOCK' &&
+          {control.type === 'BLOCK' && (
             <BlockStyleControl
               {...props}
               control={control}
-            />}
+            />)}
 
-          {control.type === 'INLINE' &&
+          {control.type === 'INLINE' && (
             <InlineStyleControl
               {...props}
               control={control}
-            />}
+            />)}
 
-          {control.type === 'UNDOREDO' &&
+          {control.type === 'UNDOREDO' && (
             <UndoRedoControl
               {...props}
               control={control}
-            />}
-        </React.Fragment>)}
+            />)}
+        </React.Fragment>))}
     </React.Fragment>
   );
 };

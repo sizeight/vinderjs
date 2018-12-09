@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { FormGroup, Label, Input, CustomInput, FormText } from 'reactstrap';
+import {
+  FormGroup, Label, Input, CustomInput, FormText,
+} from 'reactstrap';
 
 import { connect, getIn } from 'formik';
 
@@ -43,24 +45,31 @@ const propTypes = {
 
 const defaultProps = {
   hideLabel: false,
+  placeholder: '',
+  helpText: '',
+  options: [],
+  validation: {},
+  width: undefined,
 };
 
 const FormInputField = (props) => {
   const {
-    type, name, label, hideLabel, placeholder, validation, helpText, options,
+    type, name, label, hideLabel, placeholder, validation, helpText, options, width,
   } = props;
+
+  const { formik } = props;
 
   /*
    * Hook into Formik's context so we do not have to explicitly pass in these props. Now my
    * component works in the same way as Formik's own <Field /> shortcut component.
    */
-  const value = getIn(props.formik.values, props.name);
-  const touched = getIn(props.formik.touched, props.name);
-  const error = getIn(props.formik.errors, props.name);
-  const onChange = getIn(props.formik.handleChange);
-  const onBlur = getIn(props.formik.handleBlur);
-  const setFieldValue = getIn(props.formik.setFieldValue);
-  const setFieldTouched = getIn(props.formik.setFieldTouched);
+  const value = getIn(formik.values, name);
+  const touched = getIn(formik.touched, name);
+  const error = getIn(formik.errors, name);
+  const onChange = getIn(formik.handleChange);
+  const onBlur = getIn(formik.handleBlur);
+  const setFieldValue = getIn(formik.setFieldValue);
+  const setFieldTouched = getIn(formik.setFieldTouched);
 
   // Has this field been touched and does it have an error?
   const hasError = error && touched;
@@ -75,18 +84,18 @@ const FormInputField = (props) => {
   return (
     <FormGroup
       key={name}
-      className={props.width ? `col-md-${props.width}` : 'col-md'}
+      className={width ? `col-md-${width}` : 'col-md'}
     >
-      {type !== 'checkbox' &&
+      {type !== 'checkbox' && (
         <Label
           className={hideLabel === true ? 'sr-only' : ''}
           for={`id-${name}`}
         >
-          {label} {required && '*'}
-        </Label>}
+          {`${label}${required && ' *'}`}
+        </Label>)}
 
 
-      {(type === 'text' || type === 'email') &&
+      {(type === 'text' || type === 'email') && (
         <Input
           type={type}
           name={name}
@@ -100,9 +109,9 @@ const FormInputField = (props) => {
           onChange={onChange}
           onBlur={onBlur}
           invalid={hasError}
-        />}
+        />)}
 
-      {type === 'textarea' &&
+      {type === 'textarea' && (
         <Input
           type="textarea"
           name={name}
@@ -116,9 +125,9 @@ const FormInputField = (props) => {
           invalid={hasError}
 
           rows="10"
-        />}
+        />)}
 
-      {type === 'select' &&
+      {type === 'select' && (
         <Input
           type="select"
           name={name}
@@ -132,16 +141,16 @@ const FormInputField = (props) => {
           onBlur={onBlur}
           invalid={hasError}
         >
-          {selectOptions.map(option =>
+          {selectOptions.map(option => (
             <option
               value={option.value}
               key={option.value}
             >
               {option.label}
-            </option>)}
-        </Input>}
+            </option>))}
+        </Input>)}
 
-      {type === 'checkbox' &&
+      {type === 'checkbox' && (
         <CustomInput
           type="checkbox"
           name={name}
@@ -154,11 +163,11 @@ const FormInputField = (props) => {
           onChange={onChange}
           onBlur={onBlur}
           invalid={hasError}
-        />}
+        />)}
 
-      {type === 'radio' &&
+      {type === 'radio' && (
         <React.Fragment>
-          {options.map(option =>
+          {options.map(option => (
             <CustomInput
               type="radio"
               name={name}
@@ -173,10 +182,10 @@ const FormInputField = (props) => {
               onChange={onChange}
               onBlur={onBlur}
               invalid={hasError}
-            />)}
-        </React.Fragment>}
+            />))}
+        </React.Fragment>)}
 
-      {type === 'file-image' &&
+      {type === 'file-image' && (
         <CustomInput
           type="file"
           name={name}
@@ -184,38 +193,38 @@ const FormInputField = (props) => {
           bsSize="sm"
 
           label={value}
-        />}
+        />)}
 
-      {(type === 'datetime' || type === 'date') &&
+      {(type === 'datetime' || type === 'date') && (
         <CustomFormInputDateTime
           {...props}
           value={value}
           onChange={setFieldValue}
           onBlur={setFieldTouched}
-        />}
+        />)}
 
-      {type === 'multi-checkbox' &&
+      {type === 'multi-checkbox' && (
         <CustomFormInputMultiCheckbox
           {...props}
           value={value}
           onChange={setFieldValue}
           onBlur={setFieldTouched}
-        />}
+        />)}
 
 
-      {type === 'textarea-wysiwyg' &&
+      {type === 'textarea-wysiwyg' && (
         <CustomFormInputTextAreaWYSIWYG
           {...props}
           value={value}
           onChange={setFieldValue}
           onBlur={setFieldTouched}
-        />}
+        />)}
 
 
-      {hasError &&
+      {hasError && (
         <div className="text-danger">
           <small>{error}</small>
-        </div>}
+        </div>)}
 
       {/*
       hasError &&
@@ -223,10 +232,10 @@ const FormInputField = (props) => {
       */}
 
 
-      {helpText &&
+      {helpText && (
         <FormText color="muted">
           {helpText}
-        </FormText>}
+        </FormText>)}
     </FormGroup>
   );
 };

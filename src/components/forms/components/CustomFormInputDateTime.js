@@ -34,6 +34,7 @@ const propTypes = {
 
 const defaultProps = {
   required: false,
+  value: undefined,
 };
 
 /*
@@ -87,11 +88,13 @@ class CustomFormInputDateTime extends React.Component {
   }
 
   render() {
-    const { type, name, required, value } = this.props;
+    const {
+      type, name, required, value,
+    } = this.props;
 
     // datetime field needs extra props to display time picker
-    const showTime = type === 'datetime' ?
-      {
+    const showTime = type === 'datetime'
+      ? {
         showTimeSelect: true,
         timeFormat: 'HH:mm',
         timeIntervals: 15,
