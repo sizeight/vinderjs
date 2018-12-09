@@ -40,7 +40,9 @@ const getSortedElems = (elems, sortKey, sortDirection) => {
       if (typeof valA === 'number' && typeof valB === 'number') {
         // Sort integers
         return sortDirection === 'asc' ? (valA - valB) : (valB - valA);
-      } else if (typeof valA === 'string' && typeof valB === 'string') {
+      }
+
+      if (typeof valA === 'string' && typeof valB === 'string') {
         // Sort strings
         valA = valA.toUpperCase(); // ignore upper and lowercase
         valB = valB.toUpperCase(); // ignore upper and lowercase
@@ -55,12 +57,6 @@ const getSortedElems = (elems, sortKey, sortDirection) => {
       } else if (valB === undefined || valB === null) {
         return sortDirection === 'asc' ? 1 : -1;
       }
-      /*
-      else if () {
-        // Sort mixed types
-
-      }
-      */
 
       // case where values are equal
       return 0;
@@ -75,11 +71,10 @@ export const getElems = (stateElems) => {
   if (upToDate(stateElems)) {
     elems = stateElems.elems.slice();
 
-    const filterValue = stateElems.filterValue;
+    const { filterValue } = stateElems;
     elems = getFilteredElems(elems, filterValue);
 
-    const sortKey = stateElems.sortKey;
-    const sortDirection = stateElems.sortDirection;
+    const { sortKey, sortDirection } = stateElems;
     elems = getSortedElems(elems, sortKey, sortDirection);
   }
   return elems;
@@ -93,7 +88,7 @@ export const getElemToUpdate = (stateElems) => {
   let elemToUpdate = {};
   if (upToDate(stateElems)) {
     const elems = stateElems.elems.slice();
-    const updateId = stateElems.updateId;
+    const { updateId } = stateElems;
     elemToUpdate = elems.find(obj => obj.id === updateId);
   }
   return elemToUpdate || {};

@@ -64,9 +64,9 @@ export const updateSuccess = (nameSpace, id, jsonResponse) => ({
 });
 
 export const createUpdateElem = (nameSpace, data, id = -1) => {
-  const apiURL = id === -1 ?
-    `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/` :
-    `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/${id}/`;
+  const apiURL = id === -1
+    ? `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/`
+    : `${process.env.API_URL}/api/v1/${nameSpace.toLowerCase()}/${id}/`;
   const method = id === -1 ? 'POST' : 'PATCH';
   const body = JSON.stringify(data);
 
