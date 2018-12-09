@@ -14,6 +14,13 @@ const propTypes = {
   onSetSortKey: PropTypes.func,
 };
 
+const defaultProps = {
+  columnKey: null,
+  sortKey: null,
+  sortDirection: null,
+  onSetSortKey: null,
+};
+
 class TableHeadingWithSort extends React.Component {
   onClick = () => {
     const { columnKey, onSetSortKey } = this.props;
@@ -24,7 +31,10 @@ class TableHeadingWithSort extends React.Component {
   }
 
   render() {
-    const { heading, columnKey, sortKey, sortDirection } = this.props;
+    const {
+      heading, columnKey, sortKey, sortDirection,
+    } = this.props;
+
     return (
       <th
         style={{ cursor: 'pointer' }}
@@ -41,20 +51,20 @@ class TableHeadingWithSort extends React.Component {
             className="flex-grow-1"
             style={{ color: columnKey !== sortKey ? '#e8e7e6' : null }}
           >
-            {columnKey !== sortKey &&
+            {columnKey !== sortKey && (
               <AppIconFontAwesome
                 icon="sort"
-              />}
+              />)}
 
-            {columnKey === sortKey && sortDirection === 'asc' &&
+            {columnKey === sortKey && sortDirection === 'asc' && (
               <AppIconFontAwesome
                 icon="sort-up"
-              />}
+              />)}
 
-            {columnKey === sortKey && sortDirection === 'desc' &&
+            {columnKey === sortKey && sortDirection === 'desc' && (
               <AppIconFontAwesome
                 icon="sort-down"
-              />}
+              />)}
           </div>
         </div>
       </th>
@@ -63,5 +73,6 @@ class TableHeadingWithSort extends React.Component {
 }
 
 TableHeadingWithSort.propTypes = propTypes;
+TableHeadingWithSort.defaultProps = defaultProps;
 
 export default TableHeadingWithSort;
