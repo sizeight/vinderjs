@@ -15,9 +15,15 @@ const propTypes = {
   onPaginate: PropTypes.func.isRequired,
 };
 
+const defaultProps = {
+  alignment: 'left',
+};
+
 const Pagination = (props) => {
   const { pagination, alignment, onPaginate } = props;
-  const { count, previous, page, next } = pagination;
+  const {
+    count, previous, page, next,
+  } = pagination;
 
   const totalPages = Math.ceil(count / pagination.page_size);
 
@@ -30,7 +36,7 @@ const Pagination = (props) => {
   return (
     <nav>
       <ul className={`pagination${alignmentClass[alignment]}`}>
-        {previous &&
+        {previous && (
           <li className="page-item">
             <a
               className="page-link"
@@ -43,7 +49,7 @@ const Pagination = (props) => {
                 fixedWidth
               />
             </a>
-          </li>}
+          </li>)}
 
         {/*
         previous &&
@@ -65,7 +71,7 @@ const Pagination = (props) => {
             role="button"
             tabIndex={-1}
           >
-            Page {page} of {totalPages}
+            {`Page ${page} of ${totalPages}`}
           </a>
         </li>
 
@@ -93,7 +99,7 @@ const Pagination = (props) => {
           </li>}
         */}
 
-        {next &&
+        {next && (
           <li className="page-item">
             <a
               className="page-link"
@@ -106,12 +112,13 @@ const Pagination = (props) => {
                 fixedWidth
               />
             </a>
-          </li>}
+          </li>)}
       </ul>
     </nav>
   );
 };
 
 Pagination.propTypes = propTypes;
+Pagination.defaultProps = defaultProps;
 
 export default Pagination;
