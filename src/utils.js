@@ -76,8 +76,7 @@ export function parseJSON(response) {
  */
 export function upToDate(obj) {
   // TODO: check the age of object is fresh
-  return obj && !obj.isFetching && !obj.didInvalidate &&
-    obj.lastUpdated !== undefined;
+  return obj && !obj.isFetching && !obj.didInvalidate && obj.lastUpdated !== undefined;
 }
 
 /* TODO: Test
