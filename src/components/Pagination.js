@@ -38,80 +38,39 @@ const Pagination = (props) => {
       <ul className={`pagination${alignmentClass[alignment]}`}>
         {previous && (
           <li className="page-item">
-            <a
+            <button
               className="page-link"
-              role="button"
-              tabIndex={-1}
+              type="button"
               onClick={() => onPaginate(previous)}
             >
               <AppIconFontAwesome
                 icon={['fal', 'angle-double-left']}
                 fixedWidth
               />
-            </a>
+            </button>
           </li>)}
 
-        {/*
-        previous &&
-          <li className="page-item">
-            <a
-              className="page-link"
-              role="button"
-              tabIndex={-1}
-              onClick={() => onPaginate(previous)}
-            >
-              {previous}
-            </a>
-          </li>
-        */}
-
         <li className="page-item active">
-          <a
+          <button
             className="page-link"
-            role="button"
-            tabIndex={-1}
+            type="button"
           >
             {`Page ${page} of ${totalPages}`}
-          </a>
+          </button>
         </li>
-
-        {/*
-        <li className="page-item active">
-          <a
-            className="page-link"
-            role="button"
-            tabIndex={-1}
-          >
-            {page} <span className="sr-only">(current)</span>
-          </a>
-        </li>
-
-        {next &&
-          <li className="page-item">
-            <a
-              className="page-link"
-              role="button"
-              tabIndex={-1}
-              onClick={() => onPaginate(next)}
-            >
-              {next}
-            </a>
-          </li>}
-        */}
 
         {next && (
           <li className="page-item">
-            <a
+            <button
               className="page-link"
-              role="button"
-              tabIndex={-1}
+              type="button"
               onClick={() => onPaginate(next)}
             >
               <AppIconFontAwesome
                 icon={['fal', 'angle-double-right']}
                 fixedWidth
               />
-            </a>
+            </button>
           </li>)}
       </ul>
     </nav>

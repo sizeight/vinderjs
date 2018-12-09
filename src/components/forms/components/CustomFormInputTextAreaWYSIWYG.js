@@ -175,12 +175,7 @@ class CustomFormInputTextAreaWYSIWYG extends React.Component {
           </div>
 
 
-          <div
-            className={editorClassName}
-            role="button"
-            tabIndex={-1}
-            onClick={this.focusEditor}
-          >
+          <div className={editorClassName}>
             <Editor
               blockStyleFn={getBlockStyle}
               customStyleMap={styleMap}
