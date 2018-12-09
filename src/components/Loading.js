@@ -19,13 +19,16 @@ const Loading = (props) => {
 
   return (
     <span className="loading" style={{ padding: '10px 6px' }}>
-      {animate ?
-        <AppIconFontAwesome
-          icon={['fas', 'spinner-third']}
-          size={size}
-          pulse
-        /> :
-        <em>Loading&hellip;</em>}
+      {animate
+        ? (
+          <AppIconFontAwesome
+            icon={['fas', 'spinner-third']}
+            size={size}
+            pulse
+          />
+        ) : (
+          <em>Loading&hellip;</em>
+        )}
     </span>
   );
 };
