@@ -295,7 +295,12 @@ const PreviewControl = (props) => {
 };
 
 PreviewControl.propTypes = {
-  control: PropTypes.object.isRequired,
+  control: PropTypes.shape({
+    type: PropTypes.oneOf(['PREVIEW']),
+    id: PropTypes.string,
+    label: PropTypes.string,
+    iconClass: PropTypes.string,
+  }).isRequired,
   preview: PropTypes.bool.isRequired,
   onTogglePreview: PropTypes.func.isRequired,
 };
@@ -328,9 +333,14 @@ const BlockStyleControl = (props) => {
 };
 
 BlockStyleControl.propTypes = {
-  control: PropTypes.object.isRequired,
+  control: PropTypes.shape({
+    type: PropTypes.oneOf(['BLOCK']),
+    id: PropTypes.string,
+    label: PropTypes.string,
+    iconClass: PropTypes.string,
+  }).isRequired,
   preview: PropTypes.bool.isRequired,
-  editorState: PropTypes.object.isRequired,
+  editorState: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
   onToggleBlockType: PropTypes.func.isRequired,
 };
 
@@ -357,9 +367,14 @@ const InlineStyleControl = (props) => {
 };
 
 InlineStyleControl.propTypes = {
-  control: PropTypes.object.isRequired,
+  control: PropTypes.shape({
+    type: PropTypes.oneOf(['INLINE']),
+    id: PropTypes.string,
+    label: PropTypes.string,
+    iconClass: PropTypes.string,
+  }).isRequired,
   preview: PropTypes.bool.isRequired,
-  editorState: PropTypes.object.isRequired,
+  editorState: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
   onToggleInlineStyle: PropTypes.func.isRequired,
 };
 
@@ -394,8 +409,13 @@ const UndoRedoControl = (props) => {
 };
 
 UndoRedoControl.propTypes = {
-  control: PropTypes.object.isRequired,
-  editorState: PropTypes.object.isRequired,
+  control: PropTypes.shape({
+    type: PropTypes.oneOf(['UNDOREDO']),
+    id: PropTypes.string,
+    label: PropTypes.string,
+    iconClass: PropTypes.string,
+  }).isRequired,
+  editorState: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
   onToggleUndo: PropTypes.func.isRequired,
   onToggleRedo: PropTypes.func.isRequired,
 };
@@ -496,7 +516,7 @@ const StyleControls = (props) => {
 
 StyleControls.propTypes = {
   preview: PropTypes.bool.isRequired,
-  editorState: PropTypes.object.isRequired,
+  editorState: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
   onTogglePreview: PropTypes.func.isRequired,
   onToggleBlockType: PropTypes.func.isRequired,
   onToggleInlineStyle: PropTypes.func.isRequired,

@@ -10,7 +10,7 @@ const propTypes = {
   buttonPosition: PropTypes.oneOf(['left', 'center', 'right']),
   onCancel: PropTypes.func,
 
-  formik: PropTypes.object.isRequired,
+  formik: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
 };
 
 const defaultProps = {

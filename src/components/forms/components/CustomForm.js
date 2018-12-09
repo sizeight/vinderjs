@@ -143,7 +143,7 @@ const CustomForm = (props) => {
         {definition.map((formRow, i) => (
           <div
             className="form-row"
-            key={i}
+            key={i} /* eslint-disable-line react/no-array-index-key */
           >
             {formRow.map(field => (
               <FormInputField
