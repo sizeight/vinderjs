@@ -585,15 +585,17 @@ library.add(faWindows);
  * We want to limit the FontAwesome imports to this file so that we can limit our bundle size.
  */
 const AppIconFontAwesome = (props) => {
-  const { style, includeMarginLeft, includeMarginRight, ...otherProps } = props;
+  const {
+    style, includeMarginLeft, includeMarginRight, ...otherProps
+  } = props;
 
   return (
     <FontAwesomeIcon
       {...otherProps}
       style={{
         ...style,
-        marginLeft: props.includeMarginLeft && '6px',
-        marginRight: props.includeMarginRight && '6px',
+        marginLeft: includeMarginLeft && '6px',
+        marginRight: includeMarginRight && '6px',
       }}
     />
   );
