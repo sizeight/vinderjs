@@ -10,7 +10,7 @@ import { stateToHTML } from 'draft-js-export-html';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
-  required: PropTypes.bool,
+  // required: PropTypes.bool,
   value: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
@@ -18,7 +18,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  required: false,
+  // required: false,
   value: '',
   placeholder: '',
 };
@@ -454,32 +454,45 @@ const CONTROLS = [
 ];
 
 const StyleControls = (props) => {
+  const {
+    preview, editorState, onTogglePreview, onToggleBlockType, onToggleInlineStyle, onToggleUndo,
+    onToggleRedo,
+  } = props;
+
   return (
     <React.Fragment>
       {CONTROLS.map(control => (
         <React.Fragment key={control.id}>
           {control.type === 'PREVIEW' && (
             <PreviewControl
-              {...props}
               control={control}
+              preview={preview}
+              onTogglePreview={onTogglePreview}
             />)}
 
           {control.type === 'BLOCK' && (
             <BlockStyleControl
-              {...props}
               control={control}
+              preview={preview}
+              editorState={editorState}
+              onToggleBlockType={onToggleBlockType}
             />)}
 
           {control.type === 'INLINE' && (
             <InlineStyleControl
-              {...props}
               control={control}
+              preview={preview}
+              editorState={editorState}
+              onToggleInlineStyle={onToggleInlineStyle}
             />)}
 
           {control.type === 'UNDOREDO' && (
             <UndoRedoControl
-              {...props}
               control={control}
+              preview={preview}
+              editorState={editorState}
+              onToggleUndo={onToggleUndo}
+              onToggleRedo={onToggleRedo}
             />)}
         </React.Fragment>))}
     </React.Fragment>

@@ -85,11 +85,3 @@ export function upToDate(obj) {
 export const upToDateButFetching = (obj) => {
   return obj && !obj.didInvalidate && obj.lastUpdated !== undefined;
 };
-
-/*
- * Return true if passed value is valid email adress syntax.
- */
-export const validateEmail = (email) => {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-};
