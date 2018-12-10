@@ -1,7 +1,7 @@
 /*
  * Reusable selector functions
  */
-import { upToDate } from '../utils';
+import { upToDate } from './utils';
 
 
 export const getStateElems = (nameSpace, state) => state[nameSpace];

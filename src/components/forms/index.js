@@ -5,7 +5,7 @@ import FormButtons from './components/FormButtons';
 import FormInputField from './components/FormInputField';
 import ShowFormToggler from './components/ShowFormToggler';
 
-export default {
+export {
   CustomForm,
   DeleteForm,
   FilterForm,

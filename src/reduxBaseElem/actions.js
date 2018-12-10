@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-import { getCSRFToken, checkStatus, parseJSON } from '../utils';
+import { getCSRFToken, checkStatus, parseJSON } from './utils';
 
 import * as t from './actionTypes';
 
