@@ -42,8 +42,6 @@ module.exports = {
   context: sourcePath,
   entry: {
     vinderjs: `${sourcePath}index.js`,
-    'react-vorms': `${sourcePath}components/forms/index.js`,
-    'redux-base-element': `${sourcePath}reduxBaseElem/index.js`,
   },
   output: {
     path: buildPath,

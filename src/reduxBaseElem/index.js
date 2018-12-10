@@ -3,6 +3,6 @@ import * as reducer from './reducer';
 import * as selectors from './selectors';
 import * as utils from './utils';
 
-export {
+export default {
   actions, reducer, selectors, utils,
 };
