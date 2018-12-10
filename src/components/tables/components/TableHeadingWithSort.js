@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AppIconFontAwesome from 'components/AppIconFontAwesome';
+import AppIconFontAwesome from '../../AppIconFontAwesome';
 
 
 const propTypes = {
