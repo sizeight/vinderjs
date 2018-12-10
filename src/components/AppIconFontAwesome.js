@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 /* eslint-disable import/first */
 /* eslint-disable import/newline-after-import */
@@ -853,17 +853,6 @@ library.add(
   faFacebookF, faFacebookSquare, faGithub, faGoogle, faGooglePlusG, faInstagram, faLinkedin,
   faPinterest, faSoundcloud, faTwitter, faTwitterSquare, faWindows, faYoutube, faYoutubeSquare,
 );
-
-
-/*
- * https://github.com/FortAwesome/Font-Awesome/blob/master/UPGRADING.md
- * Kicks off the process of finding <i> tags and replacing with <svg>
- * Call this function to render icons in HTML.
- */
-const domWatch = () => {
-  dom.watch();
-}
-
 
 /*
  * Render a FontAwesomeIcon.
