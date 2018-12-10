@@ -1,7 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const nodeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 const isProduction = nodeEnv === 'production';
@@ -14,8 +14,8 @@ const plugins = [
   new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify(nodeEnv),
-      API_URL: isProduction ?
-        JSON.stringify('') : JSON.stringify('http://127.0.0.1:8000'),
+      API_URL: isProduction
+        ? JSON.stringify('') : JSON.stringify('http://127.0.0.1:8000'),
     },
   }),
   new webpack.LoaderOptionsPlugin({
@@ -30,8 +30,6 @@ const plugins = [
       ],
     },
   }),
-  // Ignore all locale files of moment.js
-  new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 ];
 
 if (process.env.ANALYSE === 'true') {
@@ -43,7 +41,9 @@ module.exports = {
   devtool: isProduction ? false : 'source-map',
   context: sourcePath,
   entry: {
-    vinderjs: 'index.js',
+    vinderjs: `${sourcePath}index.js`,
+    'react-vorms': `${sourcePath}components/forms/index.js`,
+    'redux-base-element': `${sourcePath}reduxBaseElem/index.js`,
   },
   output: {
     path: buildPath,
@@ -66,24 +66,6 @@ module.exports = {
         ],
       },
       {
-        test: /\.less$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'less-loader',
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
-      },
-      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -91,24 +73,9 @@ module.exports = {
           'postcss-loader',
         ],
       },
-      {
-        test: /\.(png|gif|jpg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 8192,
-        },
-      }, // inline base64 URLs for <=8k images, direct URLs for the rest
     ],
   },
   plugins,
-  resolve: {
-    extensions: ['.js', '.jsx'],
-    modules: [
-      sourcePath,
-      'node_modules',
-      // path.resolve(__dirname, './node_modules'),
-    ],
-  },
   externals: [
     {
       'react-dom': {
