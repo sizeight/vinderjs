@@ -1,59 +1,19 @@
 {
-  "parser": "babel-eslint",
-  "extends": "airbnb",
   "env": {
     "browser": true,
     "mocha": true,
-    "node": true,
+    "node": true
   },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "arrow-body-style": 0,
-    "new-cap": 0,
-    "operator-linebreak": ["error", "after"],
-    "implicit-arrow-linebreak": 0, // ["error", "below"],
-    "no-else-return": 0, // TODO: remove this rule and fix code
-    "no-useless-escape": 0, // TODO: remove this rule and fix code
-
-    /* Disable prefer default export rule */
-    "import/prefer-default-export": 0,
-
-    /* Allow JSX syntax in *.js files */
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/no-array-index-key": 0, // Override -> Prevent usage of Array index in keys
-    "react/no-unused-prop-types": 0,
-    "react/require-default-props": 0,
-    "react/jsx-wrap-multilines": [1, "arrow": false], // Disable for arrow functions
-    "react/forbid-prop-types": [1, { "forbid": ["array", "any"] }], // Enable PropType.object
-    "react/no-did-update-set-state": 0,
-
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2,
-
-    "react/jsx-one-expression-per-line": 0, // TODO: remove this rule and fix code
-    "react/destructuring-assignment": 0, // TODO: remove this rule and fix code
-
-    /* Do not complain in tests about importing devDependencies */
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-
-
-    /* New linting rules to sort out after updating packages */
-    /* react-router <Link> components, interpret to as equal to href */
-    /*
-    "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
-      "specialLink": [ "to" ],
-    }],
-    */
-    "jsx-a11y/anchor-is-valid": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "prefer-destructuring": 0, /*"prefer-destructuring": ["error", {"object": true, "array": false}],*/
-    "object-curly-newline": 0,
+    "react/jsx-filename-extension": 0
   },
-  "plugins": [
-    "react",
-  ],
   "settings": {
-    "import/resolver": "webpack",
-  },
+    "import/resolver": "webpack"
+  }
 }
