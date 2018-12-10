@@ -854,9 +854,16 @@ library.add(
   faPinterest, faSoundcloud, faTwitter, faTwitterSquare, faWindows, faYoutube, faYoutubeSquare,
 );
 
-// https://github.com/FortAwesome/Font-Awesome/blob/master/UPGRADING.md
-// Kicks off the process of finding <i> tags and replacing with <svg>
-dom.watch();
+
+/*
+ * https://github.com/FortAwesome/Font-Awesome/blob/master/UPGRADING.md
+ * Kicks off the process of finding <i> tags and replacing with <svg>
+ * Call this function to render icons in HTML.
+ */
+const domWatch = () => {
+  dom.watch();
+}
+
 
 /*
  * Render a FontAwesomeIcon.
