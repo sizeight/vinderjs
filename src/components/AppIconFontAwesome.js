@@ -857,14 +857,14 @@ library.add(
 
 const propTypes = {
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  includeMarginLeft: PropTypes.string,
-  includeMarginRight: PropTypes.string,
+  includeMarginLeft: PropTypes.bool,
+  includeMarginRight: PropTypes.bool,
 };
 
 const defaultProps = {
   style: {},
-  includeMarginLeft: '0px',
-  includeMarginRight: '0px',
+  includeMarginLeft: false,
+  includeMarginRight: false,
 };
 
 /*
@@ -881,8 +881,8 @@ const AppIconFontAwesome = (props) => {
       {...otherProps}
       style={{
         ...style,
-        marginLeft: includeMarginLeft && '6px',
-        marginRight: includeMarginRight && '6px',
+        marginLeft: includeMarginLeft ? '6px' : '0',
+        marginRight: includeMarginRight ? '6px' : '0',
       }}
     />
   );
