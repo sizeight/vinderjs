@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -854,6 +855,18 @@ library.add(
   faPinterest, faSoundcloud, faTwitter, faTwitterSquare, faWindows, faYoutube, faYoutubeSquare,
 );
 
+const propTypes = {
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  includeMarginLeft: PropTypes.bool,
+  includeMarginRight: PropTypes.bool,
+};
+
+const defaultProps = {
+  style: {},
+  includeMarginLeft: 0,
+  includeMarginRight: 0,
+};
+
 /*
  * Render a FontAwesomeIcon.
  * We want to limit the FontAwesome imports to this file so that we can limit our bundle size.
@@ -874,5 +887,8 @@ const AppIconFontAwesome = (props) => {
     />
   );
 };
+
+AppIconFontAwesome.propTypes = propTypes;
+AppIconFontAwesome.defaultProps = defaultProps;
 
 export default AppIconFontAwesome;

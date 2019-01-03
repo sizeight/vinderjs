@@ -54,17 +54,20 @@ class TableHeadingWithSort extends React.Component {
             {columnKey !== sortKey && (
               <AppIconFontAwesome
                 icon="sort"
-              />)}
+              />
+            )}
 
             {columnKey === sortKey && sortDirection === 'asc' && (
               <AppIconFontAwesome
                 icon="sort-up"
-              />)}
+              />
+            )}
 
             {columnKey === sortKey && sortDirection === 'desc' && (
               <AppIconFontAwesome
                 icon="sort-down"
-              />)}
+              />
+            )}
           </div>
         </div>
       </th>

@@ -48,7 +48,8 @@ const Pagination = (props) => {
                 fixedWidth
               />
             </button>
-          </li>)}
+          </li>
+        )}
 
         <li className="page-item active">
           <button
@@ -71,7 +72,8 @@ const Pagination = (props) => {
                 fixedWidth
               />
             </button>
-          </li>)}
+          </li>
+        )}
       </ul>
     </nav>
   );
