@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
-import AppIconFontAwesome from './AppIconFontAwesome';
+import { faSpinnerThird as fasSpinnerThird } from '@fortawesome/pro-solid-svg-icons/faSpinnerThird';
+
+library.add(fasSpinnerThird);
 
 
 const propTypes = {
@@ -21,7 +25,7 @@ const Loading = (props) => {
     <span className="loading" style={{ padding: '10px 6px' }}>
       {animate
         ? (
-          <AppIconFontAwesome
+          <FontAwesomeIcon
             icon={['fas', 'spinner-third']}
             size={size}
             pulse
