@@ -857,14 +857,14 @@ library.add(
 
 const propTypes = {
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  includeMarginLeft: PropTypes.bool,
-  includeMarginRight: PropTypes.bool,
+  includeMarginLeft: PropTypes.string,
+  includeMarginRight: PropTypes.string,
 };
 
 const defaultProps = {
   style: {},
-  includeMarginLeft: 0,
-  includeMarginRight: 0,
+  includeMarginLeft: '0px',
+  includeMarginRight: '0px',
 };
 
 /*
