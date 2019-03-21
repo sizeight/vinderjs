@@ -7,6 +7,8 @@ import { dom } from '@fortawesome/fontawesome-svg-core';
  *
  * Call this function to render icons in HTML.
  */
-export const domWatch = () => { /* eslint-disable-line import/prefer-default-export */
+function domWatch() { /* eslint-disable-line import/prefer-default-export */
   dom.watch();
-};
+}
+
+export default domWatch;
