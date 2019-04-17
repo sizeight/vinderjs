@@ -6,10 +6,14 @@ import AppIconFontAwesome from './AppIconFontAwesome';
 const propTypes = {
   pagination: PropTypes.shape({
     count: PropTypes.number,
-    page_size: PropTypes.number,
-    page: PropTypes.number,
-    next: PropTypes.number,
-    previous: PropTypes.number,
+    pageSize: PropTypes.number,
+    pageCount: PropTypes.number,
+    pageNumber: PropTypes.number,
+    next: PropTypes.string,
+    nextParams: PropTypes.string,
+    previous: PropTypes.string,
+    previousParams: PropTypes.string,
+    pages: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
   alignment: PropTypes.oneOf(['left', 'center', 'right']),
   onPaginate: PropTypes.func.isRequired,
@@ -22,10 +26,8 @@ const defaultProps = {
 const Pagination = (props) => {
   const { pagination, alignment, onPaginate } = props;
   const {
-    count, previous, page, next,
+    previous, next, pageCount, pageNumber,
   } = pagination;
-
-  const totalPages = Math.ceil(count / pagination.page_size);
 
   const alignmentClass = {
     left: null,
@@ -41,7 +43,7 @@ const Pagination = (props) => {
             <button
               className="page-link"
               type="button"
-              onClick={() => onPaginate(previous)}
+              onClick={() => onPaginate('previous')}
             >
               <AppIconFontAwesome
                 icon={['fal', 'angle-double-left']}
@@ -56,7 +58,7 @@ const Pagination = (props) => {
             className="page-link"
             type="button"
           >
-            {`Page ${page} of ${totalPages}`}
+            {`Page ${pageNumber + 1} of ${pageCount || 1}`}
           </button>
         </li>
 
@@ -65,7 +67,7 @@ const Pagination = (props) => {
             <button
               className="page-link"
               type="button"
-              onClick={() => onPaginate(next)}
+              onClick={() => onPaginate('next')}
             >
               <AppIconFontAwesome
                 icon={['fal', 'angle-double-right']}
