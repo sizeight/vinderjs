@@ -5,15 +5,10 @@ import AppIconFontAwesome from './AppIconFontAwesome';
 
 const propTypes = {
   pagination: PropTypes.shape({
-    count: PropTypes.number,
-    pageSize: PropTypes.number,
     pageCount: PropTypes.number,
     pageNumber: PropTypes.number,
     next: PropTypes.string,
-    nextParams: PropTypes.string,
     previous: PropTypes.string,
-    previousParams: PropTypes.string,
-    pages: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
   alignment: PropTypes.oneOf(['left', 'center', 'right']),
   onPaginate: PropTypes.func.isRequired,
