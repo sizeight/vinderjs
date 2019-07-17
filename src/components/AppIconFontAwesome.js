@@ -426,6 +426,12 @@ import { faFileWord as farFileWord } from '@fortawesome/pro-regular-svg-icons/fa
 import { faFileWord as fasFileWord } from '@fortawesome/pro-solid-svg-icons/faFileWord';
 library.add(falFileWord, farFileWord, fasFileWord);
 
+// film
+import { faFilm as falFilm } from '@fortawesome/pro-light-svg-icons/faFilm';
+import { faFilm as farFilm } from '@fortawesome/pro-regular-svg-icons/faFilm';
+import { faFilm as fasFilm } from '@fortawesome/pro-solid-svg-icons/faFilm';
+library.add(falFilm, farFilm, fasFilm);
+
 // folder
 import { faFolder as falFolder } from '@fortawesome/pro-light-svg-icons/faFolder';
 import { faFolder as farFolder } from '@fortawesome/pro-regular-svg-icons/faFolder';
