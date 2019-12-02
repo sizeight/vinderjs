@@ -834,6 +834,24 @@ import { faUserCircle as farUserCircle } from '@fortawesome/pro-regular-svg-icon
 import { faUserCircle as fasUserCircle } from '@fortawesome/pro-solid-svg-icons/faUserCircle';
 library.add(falUserCircle, farUserCircle, fasUserCircle);
 
+// user-check
+import { faUserCheck as falUserCheck } from '@fortawesome/pro-light-svg-icons/faUserCheck';
+import { faUserCheck as farUserCheck } from '@fortawesome/pro-regular-svg-icons/faUserCheck';
+import { faUserCheck as fasUserCheck } from '@fortawesome/pro-solid-svg-icons/faUserCheck';
+library.add(falUserCheck, farUserCheck, fasUserCheck);
+
+// user-clock
+import { faUserClock as falUserClock } from '@fortawesome/pro-light-svg-icons/faUserClock';
+import { faUserClock as farUserClock } from '@fortawesome/pro-regular-svg-icons/faUserClock';
+import { faUserClock as fasUserClock } from '@fortawesome/pro-solid-svg-icons/faUserClock';
+library.add(falUserClock, farUserClock, fasUserClock);
+
+// user-slash
+import { faUserSlash as falUserSlash } from '@fortawesome/pro-light-svg-icons/faUserSlash';
+import { faUserSlash as farUserSlash } from '@fortawesome/pro-regular-svg-icons/faUserSlash';
+import { faUserSlash as fasUserSlash } from '@fortawesome/pro-solid-svg-icons/faUserSlash';
+library.add(falUserSlash, farUserSlash, fasUserSlash);
+
 // users
 import { faUsers as falUsers } from '@fortawesome/pro-light-svg-icons/faUsers';
 import { faUsers as farUsers } from '@fortawesome/pro-regular-svg-icons/faUsers';
