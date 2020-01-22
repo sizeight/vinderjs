@@ -264,6 +264,12 @@ import { faCircle as farCircle } from '@fortawesome/pro-regular-svg-icons/faCirc
 import { faCircle as fasCircle } from '@fortawesome/pro-solid-svg-icons/faCircle';
 library.add(falCircle, farCircle, fasCircle);
 
+// circle-check
+import { faCheckCircle as falCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
+import { faCheckCircle as farCheckCircle } from '@fortawesome/pro-regular-svg-icons/faCheckCircle';
+import { faCheckCircle as fasCheckCircle } from '@fortawesome/pro-solid-svg-icons/faCheckCircle';
+library.add(falCheckCircle, farCheckCircle, fasCheckCircle);
+
 // clipboard
 import { faClipboard as falClipboard } from '@fortawesome/pro-light-svg-icons/faClipboard';
 import { faClipboard as farClipboard } from '@fortawesome/pro-regular-svg-icons/faClipboard';
@@ -902,7 +908,7 @@ const AppIconFontAwesome = (props) => {
 
   return (
     <FontAwesomeIcon
-      {...otherProps}
+      {...otherProps} // eslint-disable-line
       style={{
         ...style,
         marginLeft: includeMarginLeft ? '6px' : '0',
