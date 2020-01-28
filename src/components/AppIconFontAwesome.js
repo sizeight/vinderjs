@@ -864,6 +864,18 @@ import { faUsers as farUsers } from '@fortawesome/pro-regular-svg-icons/faUsers'
 import { faUsers as fasUsers } from '@fortawesome/pro-solid-svg-icons/faUsers';
 library.add(falUsers, farUsers, fasUsers);
 
+// waveform-path
+import { faWaveformPath as falWaveformPath } from '@fortawesome/pro-light-svg-icons/faWaveformPath';
+import { faWaveformPath as farWaveformPath } from '@fortawesome/pro-regular-svg-icons/faWaveformPath';
+import { faWaveformPath as fasWaveformPath } from '@fortawesome/pro-solid-svg-icons/faWaveformPath';
+library.add(falWaveformPath, farWaveformPath, fasWaveformPath);
+
+// waveform
+import { faWaveform as falWaveform } from '@fortawesome/pro-light-svg-icons/faWaveform';
+import { faWaveform as farWaveform } from '@fortawesome/pro-regular-svg-icons/faWaveform';
+import { faWaveform as fasWaveform } from '@fortawesome/pro-solid-svg-icons/faWaveform';
+library.add(falWaveform, farWaveform, fasWaveform);
+
 // brands
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
