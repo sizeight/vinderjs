@@ -32,7 +32,7 @@ const Pagination = (props) => {
 
   return (
     <nav>
-      <ul className={`pagination${alignmentClass[alignment]}`}>
+      <ul className={`pagination${alignmentClass[alignment]} mb-0`}>
         {previous && (
           <li className="page-item">
             <button
