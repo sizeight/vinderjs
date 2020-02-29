@@ -30,8 +30,8 @@ const Pagination = (props) => {
 
   const alignmentClass = {
     left: null,
-    center: ' justify-content-center',
-    right: ' justify-content-end',
+    center: 'justify-content-center',
+    right: 'justify-content-end',
   };
 
   const sizeClass = {
@@ -42,7 +42,7 @@ const Pagination = (props) => {
 
   return (
     <nav>
-      <ul className={`pagination ${alignmentClass[alignment]} ${sizeClass[size]}mb-0`}>
+      <ul className={`pagination ${alignmentClass[alignment]} ${sizeClass[size]} mb-0`}>
         {previous && (
           <li className="page-item">
             <button
