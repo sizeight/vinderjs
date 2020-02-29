@@ -11,15 +11,19 @@ const propTypes = {
     previous: PropTypes.string,
   }).isRequired,
   alignment: PropTypes.oneOf(['left', 'center', 'right']),
+  size: PropTypes.oneOf(['sm', 'lg']),
   onPaginate: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   alignment: 'left',
+  size: 'md',
 };
 
 const Pagination = (props) => {
-  const { pagination, alignment, onPaginate } = props;
+  const {
+    pagination, alignment, size, onPaginate,
+  } = props;
   const {
     previous, next, pageCount, pageNumber,
   } = pagination;
@@ -30,9 +34,15 @@ const Pagination = (props) => {
     right: ' justify-content-end',
   };
 
+  const sizeClass = {
+    sm: 'pagination-sm',
+    md: null,
+    lg: 'pagination-lg',
+  };
+
   return (
     <nav>
-      <ul className={`pagination${alignmentClass[alignment]} mb-0`}>
+      <ul className={`pagination ${alignmentClass[alignment]} ${sizeClass[size]}mb-0`}>
         {previous && (
           <li className="page-item">
             <button
