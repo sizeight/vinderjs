@@ -60,6 +60,12 @@ import { faAngleRight as farAngleRight } from '@fortawesome/pro-regular-svg-icon
 import { faAngleRight as fasAngleRight } from '@fortawesome/pro-solid-svg-icons/faAngleRight';
 library.add(falAngleRight, farAngleRight, fasAngleRight);
 
+// angle-up
+import { faAngleUp as falAngleUp } from '@fortawesome/pro-light-svg-icons/faAngleUp';
+import { faAngleUp as farAngleUp } from '@fortawesome/pro-regular-svg-icons/faAngleUp';
+import { faAngleUp as fasAngleUp } from '@fortawesome/pro-solid-svg-icons/faAngleUp';
+library.add(falAngleUp, farAngleUp, fasAngleUp);
+
 // arrow-circle-left
 import { faArrowCircleLeft as falArrowCircleLeft } from '@fortawesome/pro-light-svg-icons/faArrowCircleLeft';
 import { faArrowCircleLeft as farArrowCircleLeft } from '@fortawesome/pro-regular-svg-icons/faArrowCircleLeft';
