@@ -246,6 +246,12 @@ import { faChevronDoubleUp as farChevronDoubleUp } from '@fortawesome/pro-regula
 import { faChevronDoubleUp as fasChevronDoubleUp } from '@fortawesome/pro-solid-svg-icons/faChevronDoubleUp';
 library.add(falChevronDoubleUp, farChevronDoubleUp, fasChevronDoubleUp);
 
+// chevron-down
+import { faChevronDown as falChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
+import { faChevronDown as farChevronDown } from '@fortawesome/pro-regular-svg-icons/faChevronDown';
+import { faChevronDown as fasChevronDown } from '@fortawesome/pro-solid-svg-icons/faChevronDown';
+library.add(falChevronDown, farChevronDown, fasChevronDown);
+
 // chevron-left
 import { faChevronLeft as falChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 import { faChevronLeft as farChevronLeft } from '@fortawesome/pro-regular-svg-icons/faChevronLeft';
@@ -257,6 +263,12 @@ import { faChevronRight as faChevronRightLight } from '@fortawesome/pro-light-sv
 import { faChevronRight } from '@fortawesome/pro-regular-svg-icons/faChevronRight';
 import { faChevronRight as faChevronRightSolid } from '@fortawesome/pro-solid-svg-icons/faChevronRight';
 library.add(faChevronRightLight, faChevronRight, faChevronRightSolid);
+
+// chevron-up
+import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
+import { faChevronUp as farChevronUp } from '@fortawesome/pro-regular-svg-icons/faChevronUp';
+import { faChevronUp as fasChevronUp } from '@fortawesome/pro-solid-svg-icons/faChevronUp';
+library.add(falChevronUp, farChevronUp, fasChevronUp);
 
 // child
 import { faChild as falChild } from '@fortawesome/pro-light-svg-icons/faChild';
