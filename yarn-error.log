@@ -1,5 +1,5 @@
 Arguments: 
-  /home/herman/.virtualenvs/vinder-venv/bin/node /usr/share/yarn/bin/yarn.js add @babel-core @babel/preset-env
+  /home/herman/.virtualenvs/vinder-venv/bin/node /usr/share/yarn/bin/yarn.js add @babel-core
 
 PATH: 
   /home/herman/.virtualenvs/vinder-venv/bin:/home/herman/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
