@@ -444,6 +444,12 @@ import { faFilePdf as farFilePdf } from '@fortawesome/pro-regular-svg-icons/faFi
 import { faFilePdf as fasFilePdf } from '@fortawesome/pro-solid-svg-icons/faFilePdf';
 library.add(falFilePdf, farFilePdf, fasFilePdf);
 
+// file-signature
+import { faFileSignature as falFileSignature } from '@fortawesome/pro-light-svg-icons/faFileSignature';
+import { faFileSignature as farFileSignature } from '@fortawesome/pro-regular-svg-icons/faFileSignature';
+import { faFileSignature as fasFileSignature } from '@fortawesome/pro-solid-svg-icons/faFileSignature';
+library.add(falFileSignature, farFileSignature, fasFileSignature);
+
 // file-word
 import { faFileWord as falFileWord } from '@fortawesome/pro-light-svg-icons/faFileWord';
 import { faFileWord as farFileWord } from '@fortawesome/pro-regular-svg-icons/faFileWord';
