@@ -11,7 +11,7 @@ const propTypes = {
     previous: PropTypes.string,
   }).isRequired,
   alignment: PropTypes.oneOf(['left', 'center', 'right']),
-  size: PropTypes.oneOf(['sm', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   onPaginate: PropTypes.func.isRequired,
 };
 
