@@ -7,7 +7,6 @@ import { faSpinnerThird as fasSpinnerThird } from '@fortawesome/pro-solid-svg-ic
 
 library.add(fasSpinnerThird);
 
-
 const propTypes = {
   animate: PropTypes.bool,
   size: PropTypes.oneOf(['1x', '2x', '3x']),

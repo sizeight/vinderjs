@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import AppIconFontAwesome from './AppIconFontAwesome';
 
-
 const propTypes = {
   heading: PropTypes.string.isRequired,
 
@@ -26,13 +25,11 @@ const TableHeadingWithSort = (props) => {
     heading, columnKey, sortKey, sortDirection, onSetSortKey,
   } = props;
 
-
   const onClick = () => {
     if (columnKey !== null && onSetSortKey !== null) {
       onSetSortKey(columnKey);
     }
   };
-
 
   return (
     <button
