@@ -5,7 +5,6 @@ const propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-
 const HeadingWrapper = (props) => {
   const { children } = props;
   return (
