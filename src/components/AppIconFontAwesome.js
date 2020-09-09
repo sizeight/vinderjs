@@ -480,6 +480,12 @@ import { faGlobe as farGlobe } from '@fortawesome/pro-regular-svg-icons/faGlobe'
 import { faGlobe as fasGlobe } from '@fortawesome/pro-solid-svg-icons/faGlobe';
 library.add(falGlobe, farGlobe, fasGlobe);
 
+// graduation-cap
+import { faGraduationCap as falGraduationCap } from '@fortawesome/pro-light-svg-icons/faGraduationCap';
+import { faGraduationCap as farGraduationCap } from '@fortawesome/pro-regular-svg-icons/faGraduationCap';
+import { faGraduationCap as fasGraduationCap } from '@fortawesome/pro-solid-svg-icons/faGraduationCap';
+library.add(falGraduationCap, farGraduationCap, fasGraduationCap);
+
 // heart
 import { faHeart as faHeartLight } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { faHeart } from '@fortawesome/pro-regular-svg-icons/faHeart';
@@ -539,6 +545,12 @@ import { faLaptop as faLaptopLight } from '@fortawesome/pro-light-svg-icons/faLa
 import { faLaptop } from '@fortawesome/pro-regular-svg-icons/faLaptop';
 import { faLaptop as faLaptopSolid } from '@fortawesome/pro-solid-svg-icons/faLaptop';
 library.add(faLaptopLight, faLaptop, faLaptopSolid);
+
+// landmark-alt
+import { faLandmarkAlt as faLandmarkAltLight } from '@fortawesome/pro-light-svg-icons/faLandmarkAlt';
+import { faLandmarkAlt } from '@fortawesome/pro-regular-svg-icons/faLandmarkAlt';
+import { faLandmarkAlt as faLandmarkAltSolid } from '@fortawesome/pro-solid-svg-icons/faLandmarkAlt';
+library.add(faLandmarkAltLight, faLandmarkAlt, faLandmarkAltSolid);
 
 // leaf
 import { faLeaf as faLeafLight } from '@fortawesome/pro-light-svg-icons/faLeaf';
