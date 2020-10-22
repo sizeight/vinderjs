@@ -10,6 +10,18 @@
     "FontAwesome"
   ],
   "author": "Herman Pretorius (https://github.com/sizeight)",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "ie >= 11",
+      "not dead"
+    ],
+    "development": [
+      ">0.2%",
+      "ie >= 11",
+      "not dead"
+    ]
+  },
   "scripts": {
     "webpack-dev": "webpack --watch --progress --color",
     "webpack-prod-analyse": "NODE_ENV=production ANALYSE=true webpack --watch --progress --color",
