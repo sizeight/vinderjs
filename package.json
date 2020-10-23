@@ -26,6 +26,7 @@
   "scripts": {
     "build:cjs": "NODE_ENV=cjs babel src --out-dir cjs",
     "build:es": "NODE_ENV=es babel src --out-dir es",
+    "build": "yarn build:cjs && yarn build:es",
     "prepare": "yarn build:cjs && yarn build:es"
   },
   "dependencies": {
