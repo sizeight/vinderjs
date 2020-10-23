@@ -1,4 +1,5 @@
 export AppIconFontAwesome from './components/AppIconFontAwesome';
+export FilterForm from './components/FilterForm';
 export HeadingWrapper from './components/HeadingWrapper';
 export Loading from './components/Loading';
 export Pagination from './components/Pagination';
