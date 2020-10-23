@@ -30,6 +30,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.12.1",
     "@fortawesome/fontawesome-pro": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
