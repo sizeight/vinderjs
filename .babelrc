@@ -6,29 +6,13 @@
 // "@babel/preset-stage-0" has been removed by Babel.
 // See -> https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets
 {
-  "env": {
-    "es": {
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "modules": false
-          }
-        ],
-        "@babel/preset-react"
-      ],
-      "plugins": [
-        "@babel/plugin-proposal-export-default-from"
-      ]
-    },
-    "cjs": {
-      "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-      ],
-      "plugins": [
-        "@babel/plugin-proposal-export-default-from"
-      ]
-    }
-  }
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties", { loose: false }],
+    "@babel/plugin-transform-object-assign",
+    "@babel/plugin-syntax-dynamic-import",
+  ]
 }

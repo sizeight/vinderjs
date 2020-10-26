@@ -1,14 +1,5 @@
-export AppIconFontAwesome from './components/AppIconFontAwesome';
-export FilterForm from './components/FilterForm';
-export HeadingWrapper from './components/HeadingWrapper';
-export Loading from './components/Loading';
-export Pagination from './components/Pagination';
-export TableHeadingWithSort from './components/TableHeadingWithSort';
-
-export domWatch from './utils';
-
-/*
 import AppIconFontAwesome from './components/AppIconFontAwesome';
+import FilterForm from './components/FilterForm';
 import HeadingWrapper from './components/HeadingWrapper';
 import Loading from './components/Loading';
 import Pagination from './components/Pagination';
@@ -18,10 +9,10 @@ import domWatch from './utils';
 
 export {
   AppIconFontAwesome,
+  FilterForm,
   HeadingWrapper,
   Loading,
   Pagination,
   TableHeadingWithSort,
   domWatch,
 };
-*/

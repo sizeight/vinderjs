@@ -1,11 +1,10 @@
 {
   "name": "@vinder/vinderjs",
-  "version": "1.6.9",
+  "version": "1.6.2",
   "description": "JS utilities used by Vinder Media Engineering",
   "license": "MIT",
   "repository": "sizeight/vinderjs",
-  "main": "cjs/index.js",
-  "module": "es/index.js",
+  "main": "lib/vinderjs.min.js",
   "keywords": [
     "react",
     "FontAwesome"
@@ -24,21 +23,13 @@
     ]
   },
   "scripts": {
-    "build:cjs": "NODE_ENV=cjs babel src --out-dir cjs",
-    "build:es": "NODE_ENV=es babel src --out-dir es",
-    "build": "yarn build:cjs && yarn build:es",
-    "prepare": "yarn build:cjs && yarn build:es"
+    "webpack-dev": "webpack --watch --progress --color",
+    "webpack-prod-analyse": "NODE_ENV=production ANALYSE=true webpack --watch --progress --color",
+    "webpack-prod": "NODE_ENV=production webpack --progress --color",
+    "build": "yarn webpack-prod",
+    "prepublishOnly": "yarn build"
   },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "dist",
-    "src",
-    "cjs",
-    "es"
-  ],
   "dependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.12.1",
     "@fortawesome/fontawesome-pro": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -50,7 +41,6 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
