@@ -41,13 +41,13 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
+    "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-object-assign": "^7.12.13",
-    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
-    "@babel/register": "^7.13.14",
+    "@babel/register": "^7.13.16",
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
