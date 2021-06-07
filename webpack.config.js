@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const nodeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'development';
@@ -17,6 +18,7 @@ const plugins = [
         ? JSON.stringify('') : JSON.stringify('http://127.0.0.1:8000'),
     },
   }),
+  new ESLintPlugin(),
 ];
 
 if (process.env.ANALYSE === 'true') {
@@ -37,13 +39,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        use: [
-          'eslint-loader',
-        ],
-      },
       {
         test: /\.js$/,
         use: [
