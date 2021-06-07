@@ -37,9 +37,7 @@
     "@fortawesome/pro-regular-svg-icons": "^5.15.3",
     "@fortawesome/pro-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prop-types": "^15.7.2",
-    "webpack-bundle-analyser": "^1.4.0"
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -59,6 +57,7 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-webpack-plugin": "^2.5.4",
     "file-loader": "^6.2.0",
     "postcss-loader": "^5.3.0",
