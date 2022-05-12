@@ -929,8 +929,20 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons/faYoutubeSquare';
 
 library.add(
-  faFacebookF, faFacebookSquare, faGithub, faGoogle, faGooglePlusG, faInstagram, faLinkedin,
-  faPinterest, faSoundcloud, faTwitter, faTwitterSquare, faWindows, faYoutube, faYoutubeSquare,
+  faFacebookF,
+  faFacebookSquare,
+  faGithub,
+  faGoogle,
+  faGooglePlusG,
+  faInstagram,
+  faLinkedin,
+  faPinterest,
+  faSoundcloud,
+  faTwitter,
+  faTwitterSquare,
+  faWindows,
+  faYoutube,
+  faYoutubeSquare,
 );
 
 const propTypes = {
