@@ -38,7 +38,7 @@ const TableHeadingWithSort = (props) => {
       type="button"
       onClick={onClick}
     >
-      <strong className="bs4 mr-2">
+      <strong className="bs4 me-2">
         {heading}
       </strong>
       <span
