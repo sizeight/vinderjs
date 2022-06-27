@@ -180,6 +180,12 @@ import { faCaretDown as farCaretDown } from '@fortawesome/pro-regular-svg-icons/
 import { faCaretDown as fasCaretDown } from '@fortawesome/pro-solid-svg-icons/faCaretDown';
 library.add(falCaretDown, farCaretDown, fasCaretDown);
 
+// caret-right
+import { faCaretRight as falCaretRight } from '@fortawesome/pro-light-svg-icons/faCaretRight';
+import { faCaretRight as farCaretRight } from '@fortawesome/pro-regular-svg-icons/faCaretRight';
+import { faCaretRight as fasCaretRight } from '@fortawesome/pro-solid-svg-icons/faCaretRight';
+library.add(falCaretRight, farCaretRight, fasCaretRight);
+
 // caret-up
 import { faCaretUp as falCaretUp } from '@fortawesome/pro-light-svg-icons/faCaretUp';
 import { faCaretUp as farCaretUp } from '@fortawesome/pro-regular-svg-icons/faCaretUp';
@@ -432,6 +438,12 @@ import { faFileExcel as farFileExcel } from '@fortawesome/pro-regular-svg-icons/
 import { faFileExcel as fasFileExcel } from '@fortawesome/pro-solid-svg-icons/faFileExcel';
 library.add(falFileExcel, farFileExcel, fasFileExcel);
 
+// file-invoice-dollar
+import { faFileInvoiceDollar as falFileInvoiceDollar } from '@fortawesome/pro-light-svg-icons/faFileInvoiceDollar';
+import { faFileInvoiceDollar as farFileInvoiceDollar } from '@fortawesome/pro-regular-svg-icons/faFileInvoiceDollar';
+import { faFileInvoiceDollar as fasFileInvoiceDollar } from '@fortawesome/pro-solid-svg-icons/faFileInvoiceDollar';
+library.add(falFileInvoiceDollar, farFileInvoiceDollar, fasFileInvoiceDollar);
+
 // file-powerpoint
 import { faFilePowerpoint as falFilePowerpoint } from '@fortawesome/pro-light-svg-icons/faFilePowerpoint';
 import { faFilePowerpoint as farFilePowerpoint } from '@fortawesome/pro-regular-svg-icons/faFilePowerpoint';
@@ -557,6 +569,12 @@ import { faLeaf as faLeafLight } from '@fortawesome/pro-light-svg-icons/faLeaf';
 import { faLeaf } from '@fortawesome/pro-regular-svg-icons/faLeaf';
 import { faLeaf as faLeafSolid } from '@fortawesome/pro-solid-svg-icons/faLeaf';
 library.add(faLeafLight, faLeaf, faLeafSolid);
+
+// link
+import { faLink as falLink } from '@fortawesome/pro-light-svg-icons/faLink';
+import { faLink as farLink } from '@fortawesome/pro-regular-svg-icons/faLink';
+import { faLink as fasLink } from '@fortawesome/pro-solid-svg-icons/faLink';
+library.add(falLink, farLink, fasLink);
 
 // list
 import { faList as falList } from '@fortawesome/pro-light-svg-icons/faList';
@@ -869,6 +887,12 @@ import { faUnlock as falUnlock } from '@fortawesome/pro-light-svg-icons/faUnlock
 import { faUnlock as farUnlock } from '@fortawesome/pro-regular-svg-icons/faUnlock';
 import { faUnlock as fasUnlock } from '@fortawesome/pro-solid-svg-icons/faUnlock';
 library.add(falUnlock, farUnlock, fasUnlock);
+
+// user
+import { faUser as falUser } from '@fortawesome/pro-light-svg-icons/faUser';
+import { faUser as farUser } from '@fortawesome/pro-regular-svg-icons/faUser';
+import { faUser as fasUser } from '@fortawesome/pro-solid-svg-icons/faUser';
+library.add(falUser, farUser, fasUser);
 
 // user-circle
 import { faUserCircle as falUserCircle } from '@fortawesome/pro-light-svg-icons/faUserCircle';
