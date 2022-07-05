@@ -33,7 +33,7 @@ const TableHeadingWithSort = (props) => {
 
   return (
     <button
-      className="bs4 btn shadow-none text-nowrap p-0"
+      className="bs4 btn border-0 shadow-none text-nowrap p-0"
       href="#"
       type="button"
       onClick={onClick}
