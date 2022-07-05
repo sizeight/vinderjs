@@ -444,6 +444,12 @@ import { faFileInvoiceDollar as farFileInvoiceDollar } from '@fortawesome/pro-re
 import { faFileInvoiceDollar as fasFileInvoiceDollar } from '@fortawesome/pro-solid-svg-icons/faFileInvoiceDollar';
 library.add(falFileInvoiceDollar, farFileInvoiceDollar, fasFileInvoiceDollar);
 
+// file-lines
+import { faFileLines as falFileLines } from '@fortawesome/pro-light-svg-icons/faFileLines';
+import { faFileLines as farFileLines } from '@fortawesome/pro-regular-svg-icons/faFileLines';
+import { faFileLines as fasFileLines } from '@fortawesome/pro-solid-svg-icons/faFileLines';
+library.add(falFileLines, farFileLines, fasFileLines);
+
 // file-powerpoint
 import { faFilePowerpoint as falFilePowerpoint } from '@fortawesome/pro-light-svg-icons/faFilePowerpoint';
 import { faFilePowerpoint as farFilePowerpoint } from '@fortawesome/pro-regular-svg-icons/faFilePowerpoint';
