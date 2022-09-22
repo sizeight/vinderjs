@@ -504,6 +504,18 @@ import { faGraduationCap as farGraduationCap } from '@fortawesome/pro-regular-sv
 import { faGraduationCap as fasGraduationCap } from '@fortawesome/pro-solid-svg-icons/faGraduationCap';
 library.add(falGraduationCap, farGraduationCap, fasGraduationCap);
 
+// grip-lines
+import { faGripLines as falGripLines } from '@fortawesome/pro-light-svg-icons/faGripLines';
+import { faGripLines as farGripLines } from '@fortawesome/pro-regular-svg-icons/faGripLines';
+import { faGripLines as fasGripLines } from '@fortawesome/pro-solid-svg-icons/faGripLines';
+library.add(falGripLines, farGripLines, fasGripLines);
+
+// grip-lines-vertical
+import { faGripLinesVertical as falGripLinesVertical } from '@fortawesome/pro-light-svg-icons/faGripLinesVertical';
+import { faGripLinesVertical as farGripLinesVertical } from '@fortawesome/pro-regular-svg-icons/faGripLinesVertical';
+import { faGripLinesVertical as fasGripLinesVertical } from '@fortawesome/pro-solid-svg-icons/faGripLinesVertical';
+library.add(falGripLinesVertical, farGripLinesVertical, fasGripLinesVertical);
+
 // heart
 import { faHeart as faHeartLight } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { faHeart } from '@fortawesome/pro-regular-svg-icons/faHeart';
