@@ -642,6 +642,12 @@ import { faMapMarkerAlt } from '@fortawesome/pro-regular-svg-icons/faMapMarkerAl
 import { faMapMarkerAlt as faMapMarkerAltSolid } from '@fortawesome/pro-solid-svg-icons/faMapMarkerAlt';
 library.add(faMapMarkerAltLight, faMapMarkerAlt, faMapMarkerAltSolid);
 
+// memo-pad
+import { faMemoPad as faMemoPadLight } from '@fortawesome/pro-light-svg-icons/faMemoPad';
+import { faMemoPad } from '@fortawesome/pro-regular-svg-icons/faMemoPad';
+import { faMemoPad as faMemoPadSolid } from '@fortawesome/pro-solid-svg-icons/faMemoPad';
+library.add(faMemoPadLight, faMemoPad, faMemoPadSolid);
+
 // minus
 import { faMinus as falMinus } from '@fortawesome/pro-light-svg-icons/faMinus';
 import { faMinus as farMinus } from '@fortawesome/pro-regular-svg-icons/faMinus';
