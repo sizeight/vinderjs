@@ -126,6 +126,12 @@ import { faBeer as farBeer } from '@fortawesome/pro-regular-svg-icons/faBeer';
 import { faBeer as fasBeer } from '@fortawesome/pro-solid-svg-icons/faBeer';
 library.add(falBeer, farBeer, fasBeer);
 
+// bench-tree
+import { faBenchTree as falBenchTree } from '@fortawesome/pro-light-svg-icons/faBenchTree';
+import { faBenchTree as farBenchTree } from '@fortawesome/pro-regular-svg-icons/faBenchTree';
+import { faBenchTree as fasBenchTree } from '@fortawesome/pro-solid-svg-icons/faBenchTree';
+library.add(falBenchTree, farBenchTree, fasBenchTree);
+
 // bold
 import { faBold as falBold } from '@fortawesome/pro-light-svg-icons/faBold';
 import { faBold as farBold } from '@fortawesome/pro-regular-svg-icons/faBold';
