@@ -16,7 +16,8 @@ library.add(falAlignJustify, farAlignJustify, fasAlignJustify);
 import { faAlignLeft as falAlignLeft } from '@fortawesome/pro-light-svg-icons/faAlignLeft';
 import { faAlignLeft as farAlignLeft } from '@fortawesome/pro-regular-svg-icons/faAlignLeft';
 import { faAlignLeft as fasAlignLeft } from '@fortawesome/pro-solid-svg-icons/faAlignLeft';
-library.add(falAlignLeft, farAlignLeft, fasAlignLeft);
+import { faAlignLeft as fadAlignLeft } from '@fortawesome/pro-duotone-svg-icons/faAlignLeft';
+library.add(falAlignLeft, farAlignLeft, fasAlignLeft, fadAlignLeft);
 
 // angle-double-down
 import { faAngleDoubleDown as falAngleDoubleDown } from '@fortawesome/pro-light-svg-icons/faAngleDoubleDown';
@@ -106,7 +107,8 @@ library.add(falArrowUp, farArrowUp, fasArrowUp);
 import { faAsterisk as falAsterisk } from '@fortawesome/pro-light-svg-icons/faAsterisk';
 import { faAsterisk as farAsterisk } from '@fortawesome/pro-regular-svg-icons/faAsterisk';
 import { faAsterisk as fasAsterisk } from '@fortawesome/pro-solid-svg-icons/faAsterisk';
-library.add(falAsterisk, farAsterisk, fasAsterisk);
+import { faAsterisk as fadAsterisk } from '@fortawesome/pro-duotone-svg-icons/faAsterisk';
+library.add(falAsterisk, farAsterisk, fasAsterisk, fadAsterisk);
 
 // ban
 import { faBan as falBan } from '@fortawesome/pro-light-svg-icons/faBan';
@@ -271,10 +273,10 @@ import { faChevronLeft as fasChevronLeft } from '@fortawesome/pro-solid-svg-icon
 library.add(falChevronLeft, farChevronLeft, fasChevronLeft);
 
 // chevron-right
-import { faChevronRight as faChevronRightLight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
-import { faChevronRight } from '@fortawesome/pro-regular-svg-icons/faChevronRight';
-import { faChevronRight as faChevronRightSolid } from '@fortawesome/pro-solid-svg-icons/faChevronRight';
-library.add(faChevronRightLight, faChevronRight, faChevronRightSolid);
+import { faChevronRight as falChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
+import { faChevronRight as farChevronRight } from '@fortawesome/pro-regular-svg-icons/faChevronRight';
+import { faChevronRight as fasChevronRight } from '@fortawesome/pro-solid-svg-icons/faChevronRight';
+library.add(falChevronRight, farChevronRight, fasChevronRight);
 
 // chevron-up
 import { faChevronUp as falChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
@@ -316,19 +318,20 @@ library.add(falClock, farClock, fasClock);
 import { faCode as falCode } from '@fortawesome/pro-light-svg-icons/faCode';
 import { faCode as farCode } from '@fortawesome/pro-regular-svg-icons/faCode';
 import { faCode as fasCode } from '@fortawesome/pro-solid-svg-icons/faCode';
-library.add(falCode, farCode, fasCode);
+import { faCode as fadCode } from '@fortawesome/pro-duotone-svg-icons/faCode';
+library.add(falCode, farCode, fasCode, fadCode);
 
 // coffee
-import { faCoffee as faCoffeeLight } from '@fortawesome/pro-light-svg-icons/faCoffee';
-import { faCoffee } from '@fortawesome/pro-regular-svg-icons/faCoffee';
-import { faCoffee as faCoffeeSolid } from '@fortawesome/pro-solid-svg-icons/faCoffee';
-library.add(faCoffeeLight, faCoffee, faCoffeeSolid);
+import { faCoffee as falCoffee } from '@fortawesome/pro-light-svg-icons/faCoffee';
+import { faCoffee as farCoffee } from '@fortawesome/pro-regular-svg-icons/faCoffee';
+import { faCoffee as fasCoffee } from '@fortawesome/pro-solid-svg-icons/faCoffee';
+library.add(falCoffee, farCoffee, fasCoffee);
 
 // cog
-import { faCog as faCogLight } from '@fortawesome/pro-light-svg-icons/faCog';
-import { faCog } from '@fortawesome/pro-regular-svg-icons/faCog';
-import { faCog as faCogSolid } from '@fortawesome/pro-solid-svg-icons/faCog';
-library.add(faCogLight, faCog, faCogSolid);
+import { faCog as falCog } from '@fortawesome/pro-light-svg-icons/faCog';
+import { faCog as farCog } from '@fortawesome/pro-regular-svg-icons/faCog';
+import { faCog as fasCog } from '@fortawesome/pro-solid-svg-icons/faCog';
+library.add(falCog, farCog, fasCog);
 
 // cogs
 import { faCogs as falCogs } from '@fortawesome/pro-light-svg-icons/faCogs';
@@ -373,10 +376,10 @@ import { faEllipsisH as fasEllipsisH } from '@fortawesome/pro-solid-svg-icons/fa
 library.add(falEllipsisH, farEllipsisH, fasEllipsisH);
 
 // envelope
-import { faEnvelope as faEnvelopeLight } from '@fortawesome/pro-light-svg-icons/faEnvelope';
-import { faEnvelope } from '@fortawesome/pro-regular-svg-icons/faEnvelope';
-import { faEnvelope as faEnvelopeSolid } from '@fortawesome/pro-solid-svg-icons/faEnvelope';
-library.add(faEnvelopeLight, faEnvelope, faEnvelopeSolid);
+import { faEnvelope as falEnvelope } from '@fortawesome/pro-light-svg-icons/faEnvelope';
+import { faEnvelope as farEnvelope } from '@fortawesome/pro-regular-svg-icons/faEnvelope';
+import { faEnvelope as fasEnvelope } from '@fortawesome/pro-solid-svg-icons/faEnvelope';
+library.add(falEnvelope, farEnvelope, fasEnvelope);
 
 // exchange-alt
 import { faExchangeAlt as falExchangeAlt } from '@fortawesome/pro-light-svg-icons/faExchangeAlt';
@@ -415,16 +418,17 @@ import { faEyeSlash as fasEyeSlash } from '@fortawesome/pro-solid-svg-icons/faEy
 library.add(falEyeSlash, farEyeSlash, fasEyeSlash);
 
 // fax
-import { faFax as faFaxLight } from '@fortawesome/pro-light-svg-icons/faFax';
-import { faFax } from '@fortawesome/pro-regular-svg-icons/faFax';
-import { faFax as faFaxSolid } from '@fortawesome/pro-solid-svg-icons/faFax';
-library.add(faFaxLight, faFax, faFaxSolid);
+import { faFax as falFax } from '@fortawesome/pro-light-svg-icons/faFax';
+import { faFax as farFax } from '@fortawesome/pro-regular-svg-icons/faFax';
+import { faFax as fasFax } from '@fortawesome/pro-solid-svg-icons/faFax';
+library.add(falFax, farFax, fasFax);
 
 // file
-import { faFile as faFileLight } from '@fortawesome/pro-light-svg-icons/faFile';
-import { faFile } from '@fortawesome/pro-regular-svg-icons/faFile';
-import { faFile as faFileSolid } from '@fortawesome/pro-solid-svg-icons/faFile';
-library.add(faFileLight, faFile, faFileSolid);
+import { faFile as falFile } from '@fortawesome/pro-light-svg-icons/faFile';
+import { faFile as farFile } from '@fortawesome/pro-regular-svg-icons/faFile';
+import { faFile as fasFile } from '@fortawesome/pro-solid-svg-icons/faFile';
+import { faFile as fadFile } from '@fortawesome/pro-duotone-svg-icons/faFile';
+library.add(falFile, farFile, fasFile, fadFile);
 
 // file-alt
 import { faFileAlt as falFileAlt } from '@fortawesome/pro-light-svg-icons/faFileAlt';
@@ -484,7 +488,8 @@ library.add(falFileWord, farFileWord, fasFileWord);
 import { faFilm as falFilm } from '@fortawesome/pro-light-svg-icons/faFilm';
 import { faFilm as farFilm } from '@fortawesome/pro-regular-svg-icons/faFilm';
 import { faFilm as fasFilm } from '@fortawesome/pro-solid-svg-icons/faFilm';
-library.add(falFilm, farFilm, fasFilm);
+import { faFilm as fadFilm } from '@fortawesome/pro-duotone-svg-icons/faFilm';
+library.add(falFilm, farFilm, fasFilm, fadFilm);
 
 // folder
 import { faFolder as falFolder } from '@fortawesome/pro-light-svg-icons/faFolder';
@@ -523,10 +528,10 @@ import { faGripLinesVertical as fasGripLinesVertical } from '@fortawesome/pro-so
 library.add(falGripLinesVertical, farGripLinesVertical, fasGripLinesVertical);
 
 // heart
-import { faHeart as faHeartLight } from '@fortawesome/pro-light-svg-icons/faHeart';
-import { faHeart } from '@fortawesome/pro-regular-svg-icons/faHeart';
-import { faHeart as faHeartSolid } from '@fortawesome/pro-solid-svg-icons/faHeart';
-library.add(faHeartLight, faHeart, faHeartSolid);
+import { faHeart as falHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
+import { faHeart as farHeart } from '@fortawesome/pro-regular-svg-icons/faHeart';
+import { faHeart as fasHeart } from '@fortawesome/pro-solid-svg-icons/faHeart';
+library.add(falHeart, farHeart, fasHeart);
 
 // home
 import { faHome as falHome } from '@fortawesome/pro-light-svg-icons/faHome';
@@ -560,10 +565,10 @@ import { faIndustryAlt as fasIndustryAlt } from '@fortawesome/pro-solid-svg-icon
 library.add(falIndustryAlt, farIndustryAlt, fasIndustryAlt);
 
 // info
-import { faInfo as faInfoLight } from '@fortawesome/pro-light-svg-icons/faInfo';
-import { faInfo } from '@fortawesome/pro-regular-svg-icons/faInfo';
-import { faInfo as faInfoSolid } from '@fortawesome/pro-solid-svg-icons/faInfo';
-library.add(faInfoLight, faInfo, faInfoSolid);
+import { faInfo as falInfo } from '@fortawesome/pro-light-svg-icons/faInfo';
+import { faInfo as farInfo } from '@fortawesome/pro-regular-svg-icons/faInfo';
+import { faInfo as fasInfo } from '@fortawesome/pro-solid-svg-icons/faInfo';
+library.add(falInfo, farInfo, fasInfo);
 
 // info-circle
 import { faInfoCircle as falInfoCircle } from '@fortawesome/pro-light-svg-icons/faInfoCircle';
@@ -578,28 +583,29 @@ import { faItalic as fasItalic } from '@fortawesome/pro-solid-svg-icons/faItalic
 library.add(falItalic, farItalic, fasItalic);
 
 // laptop
-import { faLaptop as faLaptopLight } from '@fortawesome/pro-light-svg-icons/faLaptop';
-import { faLaptop } from '@fortawesome/pro-regular-svg-icons/faLaptop';
-import { faLaptop as faLaptopSolid } from '@fortawesome/pro-solid-svg-icons/faLaptop';
-library.add(faLaptopLight, faLaptop, faLaptopSolid);
+import { faLaptop as falLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
+import { faLaptop as farLaptop } from '@fortawesome/pro-regular-svg-icons/faLaptop';
+import { faLaptop as fasLaptop } from '@fortawesome/pro-solid-svg-icons/faLaptop';
+library.add(falLaptop, farLaptop, fasLaptop);
 
 // landmark-alt
-import { faLandmarkAlt as faLandmarkAltLight } from '@fortawesome/pro-light-svg-icons/faLandmarkAlt';
-import { faLandmarkAlt } from '@fortawesome/pro-regular-svg-icons/faLandmarkAlt';
-import { faLandmarkAlt as faLandmarkAltSolid } from '@fortawesome/pro-solid-svg-icons/faLandmarkAlt';
-library.add(faLandmarkAltLight, faLandmarkAlt, faLandmarkAltSolid);
+import { faLandmarkAlt as falLandmarkAlt } from '@fortawesome/pro-light-svg-icons/faLandmarkAlt';
+import { faLandmarkAlt as farLandmarkAlt } from '@fortawesome/pro-regular-svg-icons/faLandmarkAlt';
+import { faLandmarkAlt as fasLandmarkAlt } from '@fortawesome/pro-solid-svg-icons/faLandmarkAlt';
+library.add(falLandmarkAlt, farLandmarkAlt, fasLandmarkAlt);
 
 // leaf
-import { faLeaf as faLeafLight } from '@fortawesome/pro-light-svg-icons/faLeaf';
-import { faLeaf } from '@fortawesome/pro-regular-svg-icons/faLeaf';
-import { faLeaf as faLeafSolid } from '@fortawesome/pro-solid-svg-icons/faLeaf';
-library.add(faLeafLight, faLeaf, faLeafSolid);
+import { faLeaf as falLeaf } from '@fortawesome/pro-light-svg-icons/faLeaf';
+import { faLeaf as farLeaf } from '@fortawesome/pro-regular-svg-icons/faLeaf';
+import { faLeaf as fasLeaf } from '@fortawesome/pro-solid-svg-icons/faLeaf';
+library.add(falLeaf, farLeaf, fasLeaf);
 
 // link
 import { faLink as falLink } from '@fortawesome/pro-light-svg-icons/faLink';
 import { faLink as farLink } from '@fortawesome/pro-regular-svg-icons/faLink';
 import { faLink as fasLink } from '@fortawesome/pro-solid-svg-icons/faLink';
-library.add(falLink, farLink, fasLink);
+import { faLink as fadLink } from '@fortawesome/pro-duotone-svg-icons/faLink';
+library.add(falLink, farLink, fasLink, fadLink);
 
 // list
 import { faList as falList } from '@fortawesome/pro-light-svg-icons/faList';
@@ -644,16 +650,16 @@ import { faLongArrowAltUp as fasLongArrowAltUp } from '@fortawesome/pro-solid-sv
 library.add(falLongArrowAltUp, farLongArrowAltUp, fasLongArrowAltUp);
 
 // map-marker-alt
-import { faMapMarkerAlt as faMapMarkerAltLight } from '@fortawesome/pro-light-svg-icons/faMapMarkerAlt';
-import { faMapMarkerAlt } from '@fortawesome/pro-regular-svg-icons/faMapMarkerAlt';
-import { faMapMarkerAlt as faMapMarkerAltSolid } from '@fortawesome/pro-solid-svg-icons/faMapMarkerAlt';
-library.add(faMapMarkerAltLight, faMapMarkerAlt, faMapMarkerAltSolid);
+import { faMapMarkerAlt as falMapMarkerAlt } from '@fortawesome/pro-light-svg-icons/faMapMarkerAlt';
+import { faMapMarkerAlt as farMapMarkerAlt } from '@fortawesome/pro-regular-svg-icons/faMapMarkerAlt';
+import { faMapMarkerAlt as fasMapMarkerAlt } from '@fortawesome/pro-solid-svg-icons/faMapMarkerAlt';
+library.add(falMapMarkerAlt, farMapMarkerAlt, fasMapMarkerAlt);
 
 // memo-pad
-import { faMemoPad as faMemoPadLight } from '@fortawesome/pro-light-svg-icons/faMemoPad';
-import { faMemoPad } from '@fortawesome/pro-regular-svg-icons/faMemoPad';
-import { faMemoPad as faMemoPadSolid } from '@fortawesome/pro-solid-svg-icons/faMemoPad';
-library.add(faMemoPadLight, faMemoPad, faMemoPadSolid);
+import { faMemoPad as falMemoPad } from '@fortawesome/pro-light-svg-icons/faMemoPad';
+import { faMemoPad as farMemoPad } from '@fortawesome/pro-regular-svg-icons/faMemoPad';
+import { faMemoPad as fasMemoPad } from '@fortawesome/pro-solid-svg-icons/faMemoPad';
+library.add(falMemoPad, farMemoPad, fasMemoPad);
 
 // minus
 import { faMinus as falMinus } from '@fortawesome/pro-light-svg-icons/faMinus';
@@ -680,10 +686,10 @@ import { faMoneyBillWave as fasMoneyBillWave } from '@fortawesome/pro-solid-svg-
 library.add(falMoneyBillWave, farMoneyBillWave, fasMoneyBillWave);
 
 // pen-square
-import { faPenSquare as faPenSquareLight } from '@fortawesome/pro-light-svg-icons/faPenSquare';
-import { faPenSquare } from '@fortawesome/pro-regular-svg-icons/faPenSquare';
-import { faPenSquare as faPenSquareSolid } from '@fortawesome/pro-solid-svg-icons/faPenSquare';
-library.add(faPenSquareLight, faPenSquare, faPenSquareSolid);
+import { faPenSquare as falPenSquare } from '@fortawesome/pro-light-svg-icons/faPenSquare';
+import { faPenSquare as farPenSquare } from '@fortawesome/pro-regular-svg-icons/faPenSquare';
+import { faPenSquare as fasPenSquare } from '@fortawesome/pro-solid-svg-icons/faPenSquare';
+library.add(falPenSquare, farPenSquare, fasPenSquare);
 
 // pencil
 import { faPencil as falPencil } from '@fortawesome/pro-light-svg-icons/faPencil';
@@ -692,16 +698,16 @@ import { faPencil as fasPencil } from '@fortawesome/pro-solid-svg-icons/faPencil
 library.add(falPencil, farPencil, fasPencil);
 
 // phone
-import { faPhone as faPhoneLight } from '@fortawesome/pro-light-svg-icons/faPhone';
-import { faPhone } from '@fortawesome/pro-regular-svg-icons/faPhone';
-import { faPhone as faPhoneSolid } from '@fortawesome/pro-solid-svg-icons/faPhone';
-library.add(faPhoneLight, faPhone, faPhoneSolid);
+import { faPhone as falPhone } from '@fortawesome/pro-light-svg-icons/faPhone';
+import { faPhone as farPhone } from '@fortawesome/pro-regular-svg-icons/faPhone';
+import { faPhone as fasPhone } from '@fortawesome/pro-solid-svg-icons/faPhone';
+library.add(falPhone, farPhone, fasPhone);
 
 // phone-square
-import { faPhoneSquare as faPhoneSquareLight } from '@fortawesome/pro-light-svg-icons/faPhoneSquare';
-import { faPhoneSquare } from '@fortawesome/pro-regular-svg-icons/faPhoneSquare';
-import { faPhoneSquare as faPhoneSquareSolid } from '@fortawesome/pro-solid-svg-icons/faPhoneSquare';
-library.add(faPhoneSquareLight, faPhoneSquare, faPhoneSquareSolid);
+import { faPhoneSquare as falPhoneSquare } from '@fortawesome/pro-light-svg-icons/faPhoneSquare';
+import { faPhoneSquare as farPhoneSquare } from '@fortawesome/pro-regular-svg-icons/faPhoneSquare';
+import { faPhoneSquare as fasPhoneSquare } from '@fortawesome/pro-solid-svg-icons/faPhoneSquare';
+library.add(falPhoneSquare, farPhoneSquare, fasPhoneSquare);
 
 // plane
 import { faPlane as falPlane } from '@fortawesome/pro-light-svg-icons/faPlane';
@@ -728,10 +734,10 @@ import { faPlusSquare as fasPlusSquare } from '@fortawesome/pro-solid-svg-icons/
 library.add(falPlusSquare, farPlusSquare, fasPlusSquare);
 
 // print
-import { faPrint as faPrintLight } from '@fortawesome/pro-light-svg-icons/faPrint';
-import { faPrint } from '@fortawesome/pro-regular-svg-icons/faPrint';
-import { faPrint as faPrintSolid } from '@fortawesome/pro-solid-svg-icons/faPrint';
-library.add(faPrintLight, faPrint, faPrintSolid);
+import { faPrint as falPrint } from '@fortawesome/pro-light-svg-icons/faPrint';
+import { faPrint as farPrint } from '@fortawesome/pro-regular-svg-icons/faPrint';
+import { faPrint as fasPrint } from '@fortawesome/pro-solid-svg-icons/faPrint';
+library.add(falPrint, farPrint, fasPrint);
 
 // question-circle
 import { faQuestionCircle as falQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';
@@ -866,10 +872,10 @@ import { faThumbtack as fasThumbtack } from '@fortawesome/pro-solid-svg-icons/fa
 library.add(falThumbtack, farThumbtack, fasThumbtack);
 
 // ticket
-import { faTicket as faTicketLight } from '@fortawesome/pro-light-svg-icons/faTicket';
-import { faTicket } from '@fortawesome/pro-regular-svg-icons/faTicket';
-import { faTicket as faTicketSolid } from '@fortawesome/pro-solid-svg-icons/faTicket';
-library.add(faTicketLight, faTicket, faTicketSolid);
+import { faTicket as falTicket } from '@fortawesome/pro-light-svg-icons/faTicket';
+import { faTicket as farTicket } from '@fortawesome/pro-regular-svg-icons/faTicket';
+import { faTicket as fasTicket } from '@fortawesome/pro-solid-svg-icons/faTicket';
+library.add(falTicket, farTicket, fasTicket);
 
 // times
 import { faTimes as falTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
