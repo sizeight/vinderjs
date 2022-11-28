@@ -1309,6 +1309,13 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.2.1"
 
+"@fortawesome/pro-duotone-svg-icons@^6.2.1":
+  version "6.2.1"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-duotone-svg-icons/-/6.2.1/pro-duotone-svg-icons-6.2.1.tgz#9628b42b43c1359adbd6d7c2723e4c4f3ec030d7"
+  integrity sha512-8kG2rcHxGdb8yGb2KLZN7Ht014Nf4lefvXP+pihJAE9Jy515g/xPwglkFMu3Ue6MBtcdrLPIYirV8664ubAVgA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
 "@fortawesome/pro-light-svg-icons@^6.2.1":
   version "6.2.1"
   resolved "https://npm.fontawesome.com/@fortawesome/pro-light-svg-icons/-/6.2.1/pro-light-svg-icons-6.2.1.tgz#8ba3d1f41a3638641fc46db52fb42dbdf30de18e"

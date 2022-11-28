@@ -544,7 +544,8 @@ library.add(falHourglassStart, farHourglassStart, fasHourglassStart);
 import { faImage as falImage } from '@fortawesome/pro-light-svg-icons/faImage';
 import { faImage as farImage } from '@fortawesome/pro-regular-svg-icons/faImage';
 import { faImage as fasImage } from '@fortawesome/pro-solid-svg-icons/faImage';
-library.add(falImage, farImage, fasImage);
+import { faImage as fadImage } from '@fortawesome/pro-duotone-svg-icons/faImage';
+library.add(falImage, farImage, fasImage, fadImage);
 
 // industry
 import { faIndustry as falIndustry } from '@fortawesome/pro-light-svg-icons/faIndustry';
@@ -665,6 +666,12 @@ import { faMinusSquare as falMinusSquare } from '@fortawesome/pro-light-svg-icon
 import { faMinusSquare as farMinusSquare } from '@fortawesome/pro-regular-svg-icons/faMinusSquare';
 import { faMinusSquare as fasMinusSquare } from '@fortawesome/pro-solid-svg-icons/faMinusSquare';
 library.add(falMinusSquare, farMinusSquare, fasMinusSquare);
+
+// mobile
+import { faMobile as falMobile } from '@fortawesome/pro-light-svg-icons/faMobile';
+import { faMobile as farMobile } from '@fortawesome/pro-regular-svg-icons/faMobile';
+import { faMobile as fasMobile } from '@fortawesome/pro-solid-svg-icons/faMobile';
+library.add(falMobile, farMobile, fasMobile);
 
 // money-bill-wave
 import { faMoneyBillWave as falMoneyBillWave } from '@fortawesome/pro-light-svg-icons/faMoneyBillWave';
