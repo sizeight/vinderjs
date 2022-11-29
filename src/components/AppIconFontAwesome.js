@@ -763,6 +763,12 @@ import { faQuoteRight as farQuoteRight } from '@fortawesome/pro-regular-svg-icon
 import { faQuoteRight as fasQuoteRight } from '@fortawesome/pro-solid-svg-icons/faQuoteRight';
 library.add(falQuoteRight, farQuoteRight, fasQuoteRight);
 
+// rectangle-vertical-history
+import { faRectangleVerticalHistory as falRectangleVerticalHistory } from '@fortawesome/pro-light-svg-icons/faRectangleVerticalHistory';
+import { faRectangleVerticalHistory as farRectangleVerticalHistory } from '@fortawesome/pro-regular-svg-icons/faRectangleVerticalHistory';
+import { faRectangleVerticalHistory as fasRectangleVerticalHistory } from '@fortawesome/pro-solid-svg-icons/faRectangleVerticalHistory';
+library.add(falRectangleVerticalHistory, farRectangleVerticalHistory, fasRectangleVerticalHistory);
+
 // redo-alt
 import { faRedoAlt as falRedoAlt } from '@fortawesome/pro-light-svg-icons/faRedoAlt';
 import { faRedoAlt as farRedoAlt } from '@fortawesome/pro-regular-svg-icons/faRedoAlt';
