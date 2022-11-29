@@ -867,6 +867,12 @@ import { faSquare as farSquare } from '@fortawesome/pro-regular-svg-icons/faSqua
 import { faSquare as fasSquare } from '@fortawesome/pro-solid-svg-icons/faSquare';
 library.add(falSquare, farSquare, fasSquare);
 
+// squar-small
+import { faSquareSmall as falSquareSmall } from '@fortawesome/pro-light-svg-icons/faSquareSmall';
+import { faSquareSmall as farSquareSmall } from '@fortawesome/pro-regular-svg-icons/faSquareSmall';
+import { faSquareSmall as fasSquareSmall } from '@fortawesome/pro-solid-svg-icons/faSquareSmall';
+library.add(falSquareSmall, farSquareSmall, fasSquareSmall);
+
 // star
 import { faStar as falStar } from '@fortawesome/pro-light-svg-icons/faStar';
 import { faStar as farStar } from '@fortawesome/pro-regular-svg-icons/faStar';
