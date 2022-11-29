@@ -224,6 +224,12 @@ import { faChartPie as farChartPie } from '@fortawesome/pro-regular-svg-icons/fa
 import { faChartPie as fasChartPie } from '@fortawesome/pro-solid-svg-icons/faChartPie';
 library.add(falChartPie, farChartPie, fasChartPie);
 
+// chart-tree-map
+import { faChartTreeMap as falChartTreeMap } from '@fortawesome/pro-light-svg-icons/faChartTreeMap';
+import { faChartTreeMap as farChartTreeMap } from '@fortawesome/pro-regular-svg-icons/faChartTreeMap';
+import { faChartTreeMap as fasChartTreeMap } from '@fortawesome/pro-solid-svg-icons/faChartTreeMap';
+library.add(falChartTreeMap, farChartTreeMap, fasChartTreeMap);
+
 // check
 import { faCheck as falCheck } from '@fortawesome/pro-light-svg-icons/faCheck';
 import { faCheck as farCheck } from '@fortawesome/pro-regular-svg-icons/faCheck';
@@ -684,6 +690,12 @@ import { faMoneyBillWave as falMoneyBillWave } from '@fortawesome/pro-light-svg-
 import { faMoneyBillWave as farMoneyBillWave } from '@fortawesome/pro-regular-svg-icons/faMoneyBillWave';
 import { faMoneyBillWave as fasMoneyBillWave } from '@fortawesome/pro-solid-svg-icons/faMoneyBillWave';
 library.add(falMoneyBillWave, farMoneyBillWave, fasMoneyBillWave);
+
+// objects-column
+import { faObjectsColumn as falObjectsColumn } from '@fortawesome/pro-light-svg-icons/faObjectsColumn';
+import { faObjectsColumn as farObjectsColumn } from '@fortawesome/pro-regular-svg-icons/faObjectsColumn';
+import { faObjectsColumn as fasObjectsColumn } from '@fortawesome/pro-solid-svg-icons/faObjectsColumn';
+library.add(falObjectsColumn, farObjectsColumn, fasObjectsColumn);
 
 // pen-square
 import { faPenSquare as falPenSquare } from '@fortawesome/pro-light-svg-icons/faPenSquare';
