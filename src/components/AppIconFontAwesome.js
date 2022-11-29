@@ -171,6 +171,13 @@ import { faBringForward as fasBringForward } from '@fortawesome/pro-solid-svg-ic
 import { faBringForward as fadBringForward } from '@fortawesome/pro-duotone-svg-icons/faBringForward';
 library.add(falBringForward, farBringForward, fasBringForward, fadBringForward);
 
+// bring-front
+import { faBringFront as falBringFront } from '@fortawesome/pro-light-svg-icons/faBringFront';
+import { faBringFront as farBringFront } from '@fortawesome/pro-regular-svg-icons/faBringFront';
+import { faBringFront as fasBringFront } from '@fortawesome/pro-solid-svg-icons/faBringFront';
+import { faBringFront as fadBringFront } from '@fortawesome/pro-duotone-svg-icons/faBringFront';
+library.add(falBringFront, farBringFront, fasBringFront, fadBringFront);
+
 // calculator
 import { faCalculator as falCalculator } from '@fortawesome/pro-light-svg-icons/faCalculator';
 import { faCalculator as farCalculator } from '@fortawesome/pro-regular-svg-icons/faCalculator';
