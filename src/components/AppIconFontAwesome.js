@@ -164,6 +164,13 @@ import { faBriefcase as farBriefcase } from '@fortawesome/pro-regular-svg-icons/
 import { faBriefcase as fasBriefcase } from '@fortawesome/pro-solid-svg-icons/faBriefcase';
 library.add(falBriefcase, farBriefcase, fasBriefcase);
 
+// bring-forward
+import { faBringForward as falBringForward } from '@fortawesome/pro-light-svg-icons/faBringForward';
+import { faBringForward as farBringForward } from '@fortawesome/pro-regular-svg-icons/faBringForward';
+import { faBringForward as fasBringForward } from '@fortawesome/pro-solid-svg-icons/faBringForward';
+import { faBringForward as fadBringForward } from '@fortawesome/pro-duotone-svg-icons/faBringForward';
+library.add(falBringForward, farBringForward, fasBringForward, fadBringForward);
+
 // calculator
 import { faCalculator as falCalculator } from '@fortawesome/pro-light-svg-icons/faCalculator';
 import { faCalculator as farCalculator } from '@fortawesome/pro-regular-svg-icons/faCalculator';
@@ -792,6 +799,13 @@ import { faSearch as falSearch } from '@fortawesome/pro-light-svg-icons/faSearch
 import { faSearch as farSearch } from '@fortawesome/pro-regular-svg-icons/faSearch';
 import { faSearch as fasSearch } from '@fortawesome/pro-solid-svg-icons/faSearch';
 library.add(falSearch, farSearch, fasSearch);
+
+// send-backward
+import { faSendBackward as falSendBackward } from '@fortawesome/pro-light-svg-icons/faSendBackward';
+import { faSendBackward as farSendBackward } from '@fortawesome/pro-regular-svg-icons/faSendBackward';
+import { faSendBackward as fasSendBackward } from '@fortawesome/pro-solid-svg-icons/faSendBackward';
+import { faSendBackward as fadSendBackward } from '@fortawesome/pro-duotone-svg-icons/faSendBackward';
+library.add(falSendBackward, farSendBackward, fasSendBackward, fadSendBackward);
 
 // shield-check
 import { faShieldCheck as falShieldCheck } from '@fortawesome/pro-light-svg-icons/faShieldCheck';
