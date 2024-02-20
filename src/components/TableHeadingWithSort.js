@@ -37,6 +37,7 @@ const TableHeadingWithSort = (props) => {
       href="#"
       type="button"
       onClick={onClick}
+      aria-label={`Sort by ${heading} ${sortDirection === 'asc' ? 'ascending' : sortDirection === 'desc' ? 'descending' : ''}`}
     >
       <strong className="bs4 me-2">
         {heading}
